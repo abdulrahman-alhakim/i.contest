@@ -1,0 +1,6 @@
+
+    .bg-with-opacity {
+      background-color: rgba(255, 255, 255, 0.3); /* White background with 50% opacity */
+      display: inline-block; /* To fit the background closely around the text */
+      padding: 10px; /* Optional: for some spacing around the text */
+    }
