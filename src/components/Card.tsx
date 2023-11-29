@@ -15,10 +15,13 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
 
   const [textColor, setTextColor] = useState('text-light');
 
-  useEffect(() => {
+  useEffect(() => {    
+    const theme = localStorage.getItem('dark') || 'light';
+
     setTextColor(theme === 'light' ? 'text-dark' : 'text-light');
-    console.log(theme);
+
   }, [theme]);
+
 
   return (
     <section>
@@ -59,7 +62,7 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
                   More speed. Less spend
                 </div>
                 <h3 className="h3 mb-2">Keep projects on schedule</h3>
-                <p className={textColor}>
+                <p className="lead" >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
@@ -84,7 +87,7 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
                   More speed. Less spend
                 </div>
                 <h3 className="h3 mb-2">A view to climate change</h3>
-                <p className={textColor}>
+                <p className="lead">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
@@ -126,7 +129,7 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
                   More speed. Less spend
                 </div>
                 <h3 className="h3 mb-2">Keep projects on schedule</h3>
-                <p className={textColor}>
+                <p className="lead">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>

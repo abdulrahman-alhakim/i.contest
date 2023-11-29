@@ -10,6 +10,7 @@ import lightBackground from './images/topography.svg';
 import darkBackground from './images/topography2.svg';
 
 import { useEffect, useState } from 'react';
+import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
 
@@ -37,6 +38,9 @@ const App: React.FC = () => {
           <Route path="/about" component={AboutUsPage} />
           <Route path="/contact" component={ContactUsPage} />
         </Switch>
+        <footer>
+        <Footer/>  
+      </footer>
       </div>
     </Router>
   );

@@ -1,16 +1,15 @@
 import { Carousel } from "../components/Carousel";
 import { Card } from "../components/Card";
 import bgImage from "../images/i4.jpg";
-import '../style.css'
-
+import "../style.css";
+import { Solution } from "../components/Solution";
 
 interface HomePageProps {
   theme: string;
   setTheme: (theme: string) => void;
 }
 
-const HomePage: React.FC<HomePageProps> = ({theme, setTheme}) => {
-
+const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
   return (
     <div>
       <div
@@ -31,8 +30,10 @@ const HomePage: React.FC<HomePageProps> = ({theme, setTheme}) => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              "Our commitment is to drive the global shift to clean, 
-              stable energy with resilient power solutions. We aim to lead in sustainable, secure, and cost-efficient microgrid technology, facilitating a smarter energy future."
+              "Our commitment is to drive the global shift to clean, stable
+              energy with resilient power solutions. We aim to lead in
+              sustainable, secure, and cost-efficient microgrid technology,
+              facilitating a smarter energy future."
             </p>
             <div
               className="d-flex justify-content-center flex-wrap"
@@ -46,10 +47,7 @@ const HomePage: React.FC<HomePageProps> = ({theme, setTheme}) => {
               >
                 About Us
               </a>
-              <a
-                className="btn bg-secondary text-white mx-2"
-                href="/contact"
-              >
+              <a className="btn bg-secondary text-white mx-2" href="/contact">
                 Contact Us
               </a>
             </div>
@@ -60,7 +58,7 @@ const HomePage: React.FC<HomePageProps> = ({theme, setTheme}) => {
       <Carousel />
       <Card theme={theme} setTheme={setTheme} />
 
-      <footer>{/* Add footer content here */}</footer>
+      <Solution theme={theme} setTheme={setTheme} />
     </div>
   );
 };
