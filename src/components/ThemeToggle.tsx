@@ -11,7 +11,7 @@ interface ThemeToggleProps {
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, setTheme }) => {
   return (
     <button
-      className="me-2 border border-none rounded-circle"
+      className="m-2 border border-none rounded-circle"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <FontAwesomeIcon

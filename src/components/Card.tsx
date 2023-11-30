@@ -24,7 +24,7 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
 
 
   return (
-    <section>
+    <section id="first-card">
       <div className="container" style={{ maxWidth: "1280px" }}>
         <div
           className="py-3 py-md-5 border-top"
@@ -35,9 +35,7 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
             className="mx-auto text-center pb-3 pb-md-4"
             style={{ maxWidth: "600px" }}
           >
-            <div className="badge text-green-600 bg-green-200 rounded-pill mb-2">
-                Energy challenges for companies
-            </div>
+            
             <h1 className="h2 mb-2">Our products, unlimited solutions</h1>
             
           </div>

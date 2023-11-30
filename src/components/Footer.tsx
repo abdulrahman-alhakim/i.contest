@@ -40,7 +40,7 @@ export const Footer = () => {
                     Location
                   </h6>
                   <ul className="list-unstyled text-light">
-                     <li><b>iContest GmbH</b></li>  
+                     <li><b>i.contest UG</b></li>  
                      <li>Hauptstraße 30a</li>  
                      <li>38446 Wolfsburg</li>
                     

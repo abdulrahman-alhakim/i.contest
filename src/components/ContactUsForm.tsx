@@ -1,101 +1,111 @@
-import { faFaceSmile } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import emailjs from 'emailjs-com';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import image from "../images/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg"
 
-export const ContactUsForm = () => {
+interface IState {
+  name: string;
+  email: string;
+  message: string;
+}
+
+interface IProps {
+  data?: {
+    address?: string;
+    phone?: string;
+    email?: string;
+    facebook?: string;
+    twitter?: string;
+    youtube?: string;
+  };
+}
+
+export const ContactUsForm: React.FC<IProps> = (props) => {
+  const [state, setState] = useState<IState>({ name: '', email: '', message: '' });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setState((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.currentTarget, 'YOUR_USER_ID')
+      .then(
+        (result) => {
+          console.log(result.text);
+          setState({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
-    <section className="container my-5">
-        
+    <div className="container mt-5">
       <div className="row">
-        {/* Left side with photo and name */}
-        <div className="col-md-6">
-          <div className="row">
-            <div className="col-4 text-center">
-              {/* Replace `personPhoto.jpg` with the path to your photo 
-            <img
-              src="personPhoto.jpg"
-              alt="Person's Name"
-              className="rounded-circle mb-3"
-              width="200"
-              height="200"
-            />
-            */}
-
-              <FontAwesomeIcon icon={faFaceSmile} spin size="2xl" />
-              <h5>Faisal Hakim</h5>
-            </div>
-            <div className="col-4 text-center">
-              {/* Replace `personPhoto.jpg` with the path to your photo 
-            <img
-              src="personPhoto.jpg"
-              alt="Person's Name"
-              className="rounded-circle mb-3"
-              width="200"
-              height="200"
-            />
-            */}
-
-              <FontAwesomeIcon icon={faFaceSmile} spin size="2xl" />
-              <h5>Abdulrahman Hanoun</h5>
-            </div>
-          </div>
-          {/* Company email and address */}
-          <div className="row mt-4">
-            <div className="col-12 text-start">
-              {/* Replace with your company's email and address */}
-              <p className="mb-1">Email: contact@company.com</p>
-              <b>Address:</b>
-              <ul className="">
-                <li>Hauptstraße 30a,</li>
-                <li>38448 Wolfsburg,</li>
-                <li>Germany</li>
-              </ul>
-            
-            </div>
-          </div>
+      <div className="col-md-6">
+          <img 
+            src={image} 
+            alt="Descriptive Alt Text"
+            className="img-fluid" // Bootstrap class for responsive images
+          />
         </div>
-
-        {/* Right side with contact form */}
         <div className="col-md-6">
-          <form>
+          <h2>Get In Touch</h2>
+          <p>Please fill out the form below to send us an email and we will get back to you as soon as possible.</p>
+          <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="name" className="form-label">
-                Name
-              </label>
+              <label htmlFor="name" className="form-label">Name</label>
               <input
                 type="text"
                 className="form-control"
                 id="name"
-                placeholder="Your Name"
+                name="name"
+                value={state.name}
+                onChange={handleChange}
+                required
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email
-              </label>
+              <label htmlFor="email" className="form-label">Email</label>
               <input
                 type="email"
                 className="form-control"
                 id="email"
-                placeholder="Your Email"
+                name="email"
+                value={state.email}
+                onChange={handleChange}
+                required
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="description" className="form-label">
-                Description
-              </label>
+              <label htmlFor="message" className="form-label">Message</label>
               <textarea
                 className="form-control"
-                id="description"
-                rows={3}
-                placeholder="Your Message"
+                id="message"
+                name="message"
+                rows={4}
+                value={state.message}
+                onChange={handleChange}
+                required
               ></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
+            <button type="submit" className="btn btn-primary">Send Message</button>
           </form>
         </div>
+        <div className="col-md-4">
+          <div className='container row'>
+            <h3 className=''></h3>
+            <div className='col-6 mb-5'>
+              <p><i className="bi bi-geo-alt-fill"></i></p>
+              <p><i className="bi bi-telephone-fill"></i></p>
+              <p><i className="bi bi-envelope-fill"></i></p>
+            </div>            
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };

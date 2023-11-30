@@ -16,7 +16,7 @@ export const Carousel = () => {
               Services in Functional Safety, Cybersecurity, Test Management and
               Project Management.
             </h2>
-            <p className="lead text-muted">
+            <p className="lead">
               In parallel, we launch our own innovative products or those
               developed through/with our partners
             </p>
@@ -30,7 +30,7 @@ export const Carousel = () => {
             >
               <FontAwesomeIcon icon={faSolarPanel} beatFade size="2xl" />
               <h4 className="mb-2">Energy</h4>
-              <p className="text-muted">
+              <p className="mt-2">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                 cupidatat.
@@ -43,7 +43,7 @@ export const Carousel = () => {
             >
               <FontAwesomeIcon icon={faCar} beatFade size="2xl" />
               <h4 className="mb-2">Automotive</h4>
-              <p className="text-muted">
+              <p className="mt-2">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                 cupidatat.
@@ -56,7 +56,7 @@ export const Carousel = () => {
             >
               <FontAwesomeIcon icon={faSignsPost} beat size="2xl" />
               <h4 className="mb-2">Railway technologies</h4>
-              <p className="text-muted">
+              <p className="mt-2">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                 cupidatat.
