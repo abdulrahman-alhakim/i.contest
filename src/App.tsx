@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
-
+import ServicePage from './pages/ServicePage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
 
@@ -10,7 +10,6 @@ import darkBackground from './images/topography2.svg';
 
 import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
-import { Services } from './pages/Services';
 
 const App: React.FC = () => {
 
@@ -33,11 +32,10 @@ const App: React.FC = () => {
       <div className={`App ${theme}-mode`}>
         <NavBar theme={theme} setTheme={setTheme} />
         <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/services" component={Services} />
-
-          <Route path="/" component={AboutUsPage} />
+          <Route path="/i.contest" exact component={HomePage} />
+          <Route path="/services" component={ServicePage} />
           <Route path="/contact" component={ContactUsPage} />
+          <Route path="/" component={AboutUsPage} />
         </Switch>
         <footer>
         <Footer/>  

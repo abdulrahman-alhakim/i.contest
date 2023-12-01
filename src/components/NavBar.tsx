@@ -38,18 +38,19 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/" className={textColor}>
+          <Nav.Link as={Link} to="/i.contest" className={textColor}>
             Home
           </Nav.Link>
           <Nav.Link as={Link} to="/services" className={textColor}>
             Services
           </Nav.Link>
-          <Nav.Link as={Link} to="/" className={textColor}>
-            About Us
-          </Nav.Link>
           <Nav.Link as={Link} to="/contact" className={textColor}>
             Contact Us
           </Nav.Link>
+          <Nav.Link disabled as={Link} to="/" className={textColor}>
+            About Us
+          </Nav.Link>
+          
         </Nav>
       </Navbar.Collapse>
       <ThemeToggle theme={theme} setTheme={setTheme} />

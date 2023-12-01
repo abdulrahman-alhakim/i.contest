@@ -1,6 +1,6 @@
 import { Card } from "../components/Card"
 
-export const Services= () =>{
+const ServicePage= () =>{
     return(
         <div>
             <Card theme={""} setTheme={function (theme: string): void {
@@ -9,3 +9,5 @@ export const Services= () =>{
         </div>
     )
 }
+
+export default ServicePage;
