@@ -36,7 +36,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
         </span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center custom-dropdown-menu">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/i.contest" className={textColor}>
             Home

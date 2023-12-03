@@ -13,7 +13,7 @@ interface SolutionProps {
 export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
   return (
     <section>
-      <div className="container" style={{ maxWidth: "1600px" }}>
+      <div className="container" style={{ maxWidth: "1200px" }}>
         <div
           className="py-3 py-md-5 border-top"
           style={{ borderColor: "#4a5568" }}
@@ -34,12 +34,8 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
           {/* Testimonials 1 */}
           <div className="row">
             {/* 1st testimonial */}
-            <div className="row g-2">
-              <div
-                className="col-lg-4 d-flex flex-column h-100 p-3"
-                style={{ backgroundColor: "#F0F0F0" }}
-                data-aos="fade-up"
-              >
+            <div className="row g-23">
+            <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
                 <blockquote className="blockquote">
                   <p className="mb-2 text-secondary">
                     An overview of our proposed solution
@@ -64,11 +60,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
               </div>
 
               {/* 2 testimonial */}
-              <div
-                className="col-lg-4 d-flex flex-column h-100 p-3"
-                style={{ backgroundColor: "#F0F0F0" }}
-                data-aos="fade-up"
-              >
+              <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
                 <blockquote className="blockquote">
                   <p className="mb-2 text-secondary">
                     Modularity and scalability of the proposed microgird system
@@ -93,11 +85,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
               </div>
 
               {/* 3 testimonial */}
-              <div
-                className="col-lg-4 d-flex flex-column h-100 p-3"
-                style={{ backgroundColor: "#F0F0F0" }}
-                data-aos="fade-up"
-              >
+              <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
                 <blockquote className="blockquote">
                   <p className="mb-2 text-secondary">MPX system in use</p>
                   <div>
@@ -125,11 +113,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
           <div className="row">
             {/* 4st testimonial */}
             <div className="row g-4">
-              <div
-                className="col-lg-4 d-flex flex-column h-100 p-3"
-                style={{ backgroundColor: "#F0F0F0" }}
-                data-aos="fade-up"
-              >
+            <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
                 <blockquote className="blockquote">
                   <p className="mb-2 text-secondary">
                     Turnkey service meets the needs of every customer
@@ -151,11 +135,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
               </div>
 
               {/* 5 testimonial */}
-              <div
-                className="col-lg-4 d-flex flex-column h-100 p-3"
-                style={{ backgroundColor: "#F0F0F0" }}
-                data-aos="fade-up"
-              >
+              <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
                 <blockquote className="blockquote">
                   <p className="mb-2 text-secondary">
                     Optimal investment decision for the energy transition{" "}
@@ -179,11 +159,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
 
               {/* 6 testimonial */}
 
-              <div
-                className="col-lg-4 d-flex flex-column h-100 p-3"
-                style={{ backgroundColor: "#F0F0F0" }}
-                data-aos="fade-up"
-              >
+              <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
                 <blockquote className="blockquote">
                   <p className="mb-2 text-secondary">
                     Rapidly increasing market demand for decentralized
