@@ -47,7 +47,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
           <Nav.Link as={Link} to="/contact" className="text-dark">
             Contact Us
           </Nav.Link>
-          <Nav.Link disabled as={Link} to="/" className="text-dark">
+          <Nav.Link  as={Link} to="/" className="text-dark">
             About Us
           </Nav.Link>          
         </Nav>

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage';
 import ServicePage from './pages/ServicePage';
@@ -13,33 +13,33 @@ import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
 
-  const[theme, setTheme] = useState<string>('light');
+  const [theme, setTheme] = useState<string>('light');
 
-  useEffect(()=>{
+  useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
-  },[]);
+  }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     localStorage.setItem('theme', theme);
     document.body.style.backgroundImage = `url(${theme === 'light' ? lightBackground : darkBackground})`;
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
-  },[theme])
+  }, [theme])
 
   return (
     <Router>
-      <div className={`App ${theme}-mode`}>
+      <div className={`d-flex flex-column min-vh-100 App ${theme}-mode`}>
         <NavBar theme={theme} setTheme={setTheme} />
-        <Switch>
-          <Route path="/i.contest" exact component={HomePage} />
-          <Route path="/services" component={ServicePage} />
-          <Route path="/contact" component={ContactUsPage} />
-          <Route path="/" component={AboutUsPage} />
-        </Switch>
-        <footer>
-        <Footer/>  
-      </footer>
+        <div className="flex-grow-1">
+          <Switch>
+            <Route path="/i.contest" exact component={HomePage} />
+            <Route path="/services" component={ServicePage} />
+            <Route path="/contact" component={ContactUsPage} />
+            <Route path="/" component={AboutUsPage} />
+          </Switch>
+        </div>
+        <Footer />
       </div>
     </Router>
   );
