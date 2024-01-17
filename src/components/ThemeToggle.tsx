@@ -15,7 +15,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, setTheme }) => {
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <FontAwesomeIcon
-        style={{ color: "rgb(32,98,98)" }}
+        style={{ color: "#424143" }}
         icon={theme === "light" ? faMoon : faSun}
       />
     </button>

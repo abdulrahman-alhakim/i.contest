@@ -1,5 +1,6 @@
 html, body, #root {
   height: 100%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -41,5 +42,5 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .hover-scale:hover {
-  transform: scale(2); /* Adjust the scale value as needed */
+  transform: scale(1.2); /* Adjust the scale value as needed */
 }
