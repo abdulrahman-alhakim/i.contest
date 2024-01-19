@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import emailjs from 'emailjs-com';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import image from "../images/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg"
+import image from "../images/carcharging.jpeg"
 
 interface IState {
   name: string;
@@ -49,7 +49,8 @@ export const ContactUsForm: React.FC<IProps> = (props) => {
           <img 
             src={image} 
             alt="Descriptive Alt Text"
-            className="img-fluid" // Bootstrap class for responsive images
+            className="img-fluid" 
+            loading="lazy" 
           />
         </div>
         <div className="col-md-6">

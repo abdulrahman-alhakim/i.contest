@@ -3,6 +3,7 @@ import { Card } from "../components/Card";
 import bgImage from "../images/12029.jpg";
 import "../style.css";
 import { Solution } from "../components/Solution";
+import TurnKeyService from "../components/TurnKeyService";
 
 
 interface HomePageProps {
@@ -14,20 +15,21 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
   return (
     <div>
       <div
-        className="vh-100"
+        className="vh-100 mt-9"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
         }}
+        
       >
         <div className="container h-100 d-flex justify-content-center">
           <div className="text-center mt-5">
-            <h1 className="mb-4 text-light bg-with-opacity" data-aos="fade-up">
+            <h1 className="mb-4 text-light" data-aos="fade-up">
               Welcome to i.contest
             </h1>
             <p
-              className="fs-4 mb-5 text-light bg-with-opacity"
+              className="fs-4 mb-5 text-light"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -57,6 +59,9 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
       </div>
 
       <Carousel />
+
+      <TurnKeyService/>
+
       <Card theme={theme} setTheme={setTheme} />
 
       <Solution theme={theme} setTheme={setTheme} />

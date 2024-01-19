@@ -1,5 +1,5 @@
 
-import FeatImage01 from '../images/fre-sonneveld-q6n8nIrDQHE-unsplash.jpg'
+import FeatImage01 from '../images/xyz.png'
 import FeatImage02 from '../images/solar-panels-on-skyscrapers.png'
 import FeatImage03 from '../images/clean-city.png'
 import { useEffect, useState } from 'react';
@@ -10,12 +10,12 @@ interface CardProps {
   setTheme: (theme: string) => void;
 }
 
-export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
+export const Card: React.FC<CardProps> = ({ theme, setTheme }) => {
 
 
   const [textColor, setTextColor] = useState('text-light');
 
-  useEffect(() => {    
+  useEffect(() => {
     const theme = localStorage.getItem('dark') || 'light';
 
     setTextColor(theme === 'light' ? 'text-dark' : 'text-light');
@@ -27,7 +27,7 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
     <section id="first-card">
       <div className="container" style={{ maxWidth: "1280px" }}>
         <div
-          className="py-3 py-md-5 border-top"
+          className="py-3 py-md-5 border-top mt-5"
           style={{ borderColor: "#4a5568" }}
         >
           {/* Section header */}
@@ -35,9 +35,12 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
             className="mx-auto text-center pb-3 pb-md-4"
             style={{ maxWidth: "600px" }}
           >
-            
-            <h1 className="h2 mb-2">Our products, unlimited solutions</h1>
-            
+
+            <h1 className="h2 mb-2">Energy challenges for companies</h1>
+
+            <br />
+            <br />
+
           </div>
 
           {/* Item */}
@@ -46,8 +49,8 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
               <img
                 className="img-fluid"
                 src={FeatImage01}
-                width={540}
-                height={405}
+                width={400}
+                height={400}
                 alt="Features 01"
               />
             </div>
@@ -60,10 +63,8 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
                   More speed. Less spend
                 </div>
                 <h3 className="h3 mb-2">Keep projects on schedule</h3>
-                <p className="lead" >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+
+                <br />
 
                 <ul className='list-unstyled'>
                   <li className="mb-2">• High energy costs are weighing heavily on businesses, particularly small and medium enterprises, due to the global energy crisis.</li>
@@ -75,7 +76,7 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
             </div>
           </div>
           <div className="row g-4 align-items-center mt-4">
-            
+
             <div className="col-md-6" data-aos="fade-right">
               <div className="pr-md-2 pr-lg-4 pr-xl-5">
                 <div
@@ -85,10 +86,9 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
                   More speed. Less spend
                 </div>
                 <h3 className="h3 mb-2">A view to climate change</h3>
-                <p className="lead">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+
+                <br />
+
 
                 <ul className="list-unstyled">
                   <li className="mb-2">• With a view to climate change, legislators are pushing ahead with the electrification of mobility at full speed.</li>
@@ -127,10 +127,7 @@ export const Card:React.FC<CardProps> = ({theme, setTheme}) => {
                   More speed. Less spend
                 </div>
                 <h3 className="h3 mb-2">Keep projects on schedule</h3>
-                <p className="lead">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                <br />
 
                 <ul className="list-unstyled">
                   <li className="mb-2">• Renewable energy generation plants and recharging infrastructure must be approved by the grid operator.</li>

@@ -1,22 +1,18 @@
 const people = [
   {
-    name: 'Faisal Hakim',
-    role: 'Co-Founder',
-    imageUrl:
-      'https://images.unsplash.com/photo-1704807395127-898b64191a16?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    name: 'Abdulrahman Hanoun',
+    name: 'Dr. Wolfgang Hanoun',
     role: 'Co-Founder / CEO',
     imageUrl:
       'https://images.unsplash.com/photo-1704807395127-898b64191a16?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
-    name: 'Jawhar Ksiksi',
+    name: 'Eng. Faisal Hakim',
     role: 'Co-Founder',
     imageUrl:
       'https://images.unsplash.com/photo-1704807395127-898b64191a16?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
+
+
 ]
 const AboutUsPage: React.FC = () => {
   return (
@@ -31,8 +27,7 @@ const AboutUsPage: React.FC = () => {
           <h2 className="h2 fw-bold mb-4">Meet our leadership</h2>
 
           <p className="fs-5 mb-4 p-3">
-            Welcome to iContest, a pioneer in the realm of clean energy and advanced battery technology. Born from a vision of the future, our company specializes in revolutionary power solutions that are not just sustainable but also remarkably efficient. We're here to redefine how energy is stored and utilized, offering cutting-edge battery systems designed to power homes, vehicles, and even heavy-duty machinery. Our commitment lies in harnessing the power of clean energy to create a greener, more sustainable future, making us a beacon of innovation in an ever-evolving world.
-          </p>
+            i.contest, located in Wolfsburg (Volkswagen City), is the product of innovative collaboration among professionals with diverse expertise. Our specialization lies in providing environmentally and economically sustainable solutions for power generation in remote areas, islands, and beyond. Through our electrical energy systems, we aim to reduce dependence on fossil fuels, maximize the use of renewable energy, and minimize overall energy costs.          </p>
         </div>
         <ul role="list" className=" mt-5 row g-4">
           {people.map((person) => (

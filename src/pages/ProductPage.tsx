@@ -2,11 +2,11 @@ import { Card } from "../components/Card"
 
 const ServicePage= () =>{
     return(
-        <div>
+        <section id="product">
             <Card theme={""} setTheme={function (theme: string): void {
                 throw new Error("Function not implemented.")
             } } />
-        </div>
+        </section>
     )
 }
 

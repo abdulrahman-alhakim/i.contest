@@ -1,12 +1,13 @@
 import { ContactUsForm } from "../components/ContactUsForm";
-import fImage from "../images/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg"
 
 const ContactUsPage: React.FC = () => {
-    return (
+  return (
     <div>
-      <ContactUsForm />
+      <div className="mt-9">
+        <ContactUsForm />
+      </div>
     </div>
-    )
-  };
+  )
+};
 
-  export default ContactUsPage;
+export default ContactUsPage;
