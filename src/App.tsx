@@ -26,12 +26,13 @@ const App: React.FC = () => {
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
   }, [theme])
+  
 
   return (
     <Router>
       <div className={`d-flex flex-column min-vh-100 App ${theme}-mode`}>
         <NavBar theme={theme} setTheme={setTheme} />
-        <div className="flex-grow-1">
+        <div className="flex-grow-1" style={{ paddingTop: "100px" }}>
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/products" component={ProductPage} />

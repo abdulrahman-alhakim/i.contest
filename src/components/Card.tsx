@@ -27,20 +27,15 @@ export const Card: React.FC<CardProps> = ({ theme, setTheme }) => {
     <section id="first-card">
       <div className="container" style={{ maxWidth: "1280px" }}>
         <div
-          className="py-3 py-md-5 border-top mt-5"
-          style={{ borderColor: "#4a5568" }}
+          className="py-3 py-md-5"
         >
           {/* Section header */}
           <div
-            className="mx-auto text-center pb-3 pb-md-4"
-            style={{ maxWidth: "600px" }}
+            className="mx-auto"
+            style={{ maxWidth: "600px"}}
           >
-
-            <h1 className="h2 mb-2">Energy challenges for companies</h1>
-
+            <h1 className="h2 mb-2 text-center pb-3 pb-md-4">Energy challenges for companies</h1>
             <br />
-            <br />
-
           </div>
 
           {/* Item */}
@@ -140,6 +135,7 @@ export const Card: React.FC<CardProps> = ({ theme, setTheme }) => {
           </div>
         </div>
       </div>
+      <br />
     </section>
   );
 };
