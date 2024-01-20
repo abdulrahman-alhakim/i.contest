@@ -11,9 +11,9 @@ export const Carousel = () => {
             className="mx-auto text-center pb-3 pb-md-5"
             style={{ maxWidth: "600px" }}
           >
-            <h2 className="mb-2">
-            We offer our customers meticulously crafted, high-quality, customized EV charging solutions designed to meet the unique requirements of diverse scenarios.
-            </h2>
+            <h3 className="mb-2">
+              We offer our customers meticulously crafted, high-quality, customized EV charging solutions designed to meet the unique requirements of diverse scenarios.
+            </h3>
             <p className="lead">
               In parallel, we launch our own innovative products or those
               developed through/with our partners
@@ -29,9 +29,7 @@ export const Carousel = () => {
               <FontAwesomeIcon icon={faSolarPanel} beatFade size="2xl" />
               <h4 className="mb-2">Energy</h4>
               <p className="mt-2">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat.
+                Revolutionizing the energy landscape with sustainable, high-efficiency EV charging solutions tailored to modern energy needs and environmental conservation.
               </p>
             </div>
             <div
@@ -42,9 +40,7 @@ export const Carousel = () => {
               <FontAwesomeIcon icon={faCar} beatFade size="2xl" />
               <h4 className="mb-2">Automotive</h4>
               <p className="mt-2">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat.
+                Leading the automotive electrification era with bespoke, advanced EV charging systems, enhancing the electric vehicle experience for all users.
               </p>
             </div>
 

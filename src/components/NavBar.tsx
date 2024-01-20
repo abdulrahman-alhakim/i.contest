@@ -15,11 +15,18 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
   const history = useHistory();
   const navbarRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLDivElement>(null);
+  const [shrink, setShrink] = useState(false);
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    setShrink(currentScrollY > 50); // 50 is the number of pixels after which the navbar will shrink
+  };
 
   useEffect(() => {
     setTextColor(theme === "light" ? "text-dark" : "text-light");
   }, [theme]);
+
+  // ...useEffects for expand and click outside...
 
   useEffect(() => {
     const handleOutsideClick = (event:any) => {
@@ -39,6 +46,16 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
     };
   }, [expanded]);
 
+// ...useEffects for shrinking the NavBar...
+  useEffect(() => {
+    
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
 
@@ -63,11 +80,16 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
   }
 
 
+  const shrinkNav = {
+    transition: 'height 0.3s ease',
+    height: '75px'
+  }
+
   return (
     <Navbar
       bg="light" expand="lg" fixed="top"
-      className="justify-content-center"
-      style={{ height: "100px" }}
+      className={`justify-content-center ${shrink ? shrinkNav : ""}`}
+      style={{ height: shrink ? "75px" : "100px" }} // Adjust these values as needed
     >
       <Navbar.Brand as={Link} to="/" className="ms-3">
         <img
@@ -89,9 +111,9 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             Services
           </Nav.Link>
 
-          <Nav.Link as={Link} to="products" className="text-dark">
+          {/* <Nav.Link as={Link} to="products" className="text-dark">
             Products
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link as={Link} to="/contact" className="text-dark">
             Contact Us
           </Nav.Link>

@@ -9,7 +9,6 @@ import darkBackground from './images/topography2.svg';
 
 import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
-import ProductPage from './pages/ProductPage';
 
 const App: React.FC = () => {
 
@@ -32,10 +31,10 @@ const App: React.FC = () => {
     <Router>
       <div className={`d-flex flex-column min-vh-100 App ${theme}-mode`}>
         <NavBar theme={theme} setTheme={setTheme} />
-        <div className="flex-grow-1" style={{ paddingTop: "100px" }}>
+        <div className="flex-grow-1" >
           <Switch>
             <Route path="/" exact component={HomePage} />
-            <Route path="/products" component={ProductPage} />
+            {/* <Route path="/products" component={ProductPage} /> */}
             <Route path="/contact" component={ContactUsPage} />
             <Route path="/about" component={AboutUsPage} />
           </Switch>

@@ -1,9 +1,7 @@
-import overViewImage from "../images/Overview.webp";
-import image2 from "../images/plattform.png";
-import image3 from "../images/category-big-komplettset2.webp";
-import image4 from "../images/image4.png";
-import image5 from "../images/image5.png";
-import image6 from "../images/stat.jpg";
+import image2 from "../images/Overview.webp";
+import image3 from "../images/product1.png";
+import image4 from "../images/plattform.png";
+
 
 interface SolutionProps {
   theme: string;
@@ -13,7 +11,7 @@ interface SolutionProps {
 export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
   return (
     <section>
-      <div className="container" style={{ maxWidth: "1200px" }}>
+      <div className="container mb-5" style={{ maxWidth: "1200px" }}>
         <div
           className="py-3 py-md-5 border-top"
           style={{ borderColor: "#4a5568" }}
@@ -23,169 +21,127 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
             className="mx-auto text-center pb-3 pb-md-5"
             style={{ maxWidth: "600px" }}
           >
-            <h2 className="mb-2">An overview of our proposed solution</h2>
-            <p className="lead" style={{ color: "#a0aec0" }}>
-              Vitae aliquet nec ullamcorper sit amet risus nullam eget felis
-              semper quis lectus nulla at volutpat diam ut venenatis tellus—in
-              ornare.
-            </p>
+            <h2 className="mb-4">An overview of our proposed solution</h2>
+
           </div>
 
-          {/* Testimonials 1 */}
-          <div className="row">
-            {/* 1st testimonial */}
-            <div className="row g-23">
-            <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
-                <blockquote className="blockquote">
-                  <p className="mb-2 text-secondary">
-                    An overview of our proposed solution
-                  </p>
-                  <div>
-                    {/* Image and SVG icon */}
-                    <img
-                      src={overViewImage}
-                      width={350}
-                      alt="Image"
-                      className="hover-scale bg-light"
-                    />
-                  </div>
-                  <footer className="blockquote-footer mt-3 text-secondary">
-                    The MPX system networks all energy sources and consumers
-                    into a clean, smart and reliable{" "}
-                    <cite title="Source Title" style={{ color: "#9f7aea" }}>
-                      microgrid
-                    </cite>
-                  </footer>
-                </blockquote>
-              </div>
 
-              {/* 2 testimonial */}
-              <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
-                <blockquote className="blockquote">
-                  <p className="mb-2 text-secondary">
-                    Modularity and scalability of the proposed microgird system
-                  </p>
-                  <div>
-                    {/* Image and SVG icon */}
-                    <img
-                      src={image2}
-                      width={350}
-                      alt="Image"
-                      className="hover-scale bg-light"
-                    />
-                  </div>
-                  <footer className="blockquote-footer mt-3 text-secondary">
-                    The technology tailored to the needs of{" "}
-                    <cite title="Source Title" style={{ color: "#9f7aea" }}>
-                      small and medium-sized
-                    </cite>{" "}
-                    customers
-                  </footer>
-                </blockquote>
-              </div>
+          <div className="py-3 py-md-5">
+            {/* Section header */}
 
-              {/* 3 testimonial */}
-              <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
-                <blockquote className="blockquote">
-                  <p className="mb-2 text-secondary">MPX system in use</p>
-                  <div>
-                    {/* Image and SVG icon */}
-                    <img
-                      src={image3}
-                      width={350}
-                      height={250}
-                      alt="Image"
-                      className="hover-scale bg-light"
-                    />
-                  </div>
-                  <footer className="blockquote-footer mt-3 text-secondary">
-                    Case study of an independent and cost-effective{" "}
-                    <cite title="Source Title" style={{ color: "#9f7aea" }}>
-                      fast charging
-                    </cite>{" "}
-                    station with solar carports
-                  </footer>
-                </blockquote>
-              </div>
-              {/* Repeat for other testimonials */}
-            </div>
-          </div>
-          <div className="row">
-            {/* 4st testimonial */}
             <div className="row g-4">
-            <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
-                <blockquote className="blockquote">
-                  <p className="mb-2 text-secondary">
-                    Turnkey service meets the needs of every customer
-                  </p>
-                  <div>
-                    {/* Image and SVG icon */}
-                    <img
-                      src={image4}
-                      width={350}
-                      alt="Image"
-                      className="hover-scale bg-light"
-                    />
-                  </div>
-                  <footer className="blockquote-footer mt-3 text-secondary">
-                    The comprehensive EPCM service accompanies a customer case
-                    from conception to implementation
-                  </footer>
-                </blockquote>
+              <div
+                className="col-md-12 d-flex flex-column align-items-center"
+                data-aos="fade-up"
+                data-aos-anchor="[data-aos-id-blocks]"
+              >
+                <img
+                  className="img-fluid bg-light rounded p-3"
+                  src={image2}
+                  width={900}
+                  height={900}
+                  alt="Features 01"
+                />
+
+              </div>
+              <div
+                className="mx-auto text-center pb-3 pb-md-5"
+                style={{fontSize:'1.3rem', fontWeight:'normal'}}
+              >
+                The system networks all energy sources and consumers into a clean, smart and reliable microgrid
               </div>
 
-              {/* 5 testimonial */}
-              <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
-                <blockquote className="blockquote">
-                  <p className="mb-2 text-secondary">
-                    Optimal investment decision for the energy transition{" "}
-                  </p>
-                  <div>
-                    {/* Image and SVG icon */}
-                    <img
-                      src={image5}
-                      width={350}
-                      alt="Image"
-                      className="hover-scale bg-light"
-                    />
-                  </div>
-                  <footer className="blockquote-footer mt-3 text-secondary">
-                    Sustainability and profitability of the investment due to
-                    various attractive savings and income streams Your cost
-                    levers at a glance:
-                  </footer>
-                </blockquote>
-              </div>
+            </div>
+            <hr />
+          </div>
 
-              {/* 6 testimonial */}
+          <div className="row g-4 align-items-center">
+            <div className="col-md-6" data-aos="fade-up">
+              <img
+                className="img-fluid"
+                src={image3}
+                width={400}
+                height={400}
+                alt="Features 01"
+              />
+            </div>
+            <div className="col-md-6" data-aos="fade-right">
+              <div className="pr-md-2 pr-lg-4 pr-xl-5">
+                <h3 className="h3 mb-2" style={{ color: 'rgb(32,98,98' }}></h3>
+                <div
+                  className="text-purple-600 mb-2"
+                  style={{ fontSize: "2rem", color: 'rgb(32,98,98' }}
+                >
+                  Stand-alone Integrated Charging Container
+                </div>
 
-              <div className="col-lg-4 col-md-6 col-12 p-3" data-aos="fade-up">
-                <blockquote className="blockquote">
-                  <p className="mb-2 text-secondary">
-                    Rapidly increasing market demand for decentralized
-                    microgrids
-                  </p>
-                  <div>
-                    {/* Image and SVG icon */}
-                    <img
-                      src={image6}
-                      width={350}
-                      alt="Image"
-                      className="hover-scale bg-light"
-                    />
-                  </div>
-                  <footer className="blockquote-footer mt-3 text-secondary">
-                    The global microgrid market size was estimated at USD 29.99
-                    billion in 2022 and it is expected to surpass around USD
-                    85.7 billion by the end of 2030, expanding at a registered
-                    compound annual growth rate of 14.03% from 2022 to 2030.
-                  </footer>
-                </blockquote>
+                <br />
+
+                <ul className='list-unstyled'>
+                  <li className="mb-2">• High integration, system optimized by AI-EMS.</li>
+                  <li className="mb-2">• Weak grid infrastructure boost for HP charge.</li>
+                  <li className="mb-2">• Compact design, all storage units and power units within single housing.</li>
+                  <li className="mb-2">• Plug-and-play installation, easy to relocate.</li>
+                  <li className="mb-2">• Suitable for urban applications, especially for space-limiting, light usage demanding cases, e.g., 2
+                    charging ports in central business district.
+                  </li>
+                  <li className="mb-2">
+                    • Apparant coloring open for customization, open protocol for LED screen display.
+                  </li>
+
+
+                </ul>
               </div>
             </div>
           </div>
+
+
+          <div className="row g-4 align-items-center mt-5">
+            <div className="col-md-6" data-aos="fade-up">
+              <img
+                className="img-fluid"
+                src={image4}
+                width={400}
+                height={400}
+                alt="Features 01"
+              />
+            </div>
+
+            <div className="col-md-6" data-aos="fade-right">
+              <div className="pr-md-2 pr-lg-4 pr-xl-5">
+                <h3 className="h3 mb-2" style={{ color: 'rgb(32,98,98' }}></h3>
+                <div
+                  className="text-purple-600 mb-2"
+                  style={{ fontSize: "2rem", color: 'rgb(32,98,98' }}
+                >
+                  Charging Station w/ Discrete Facility
+                </div>
+
+                <br />
+
+                <ul className='list-unstyled'>
+                  <li className="mb-2">• Total flexibility with system configuration, adaptable to various requirements.</li>
+                  <li className="mb-2">• Modular design suitable for station retrofit or extension, especially important during e-auto
+                    ramping-up phase as new life style.</li>
+                  <li className="mb-2">• Equipment room provides extra protection against extreme temperature conditions.</li>
+                  <li className="mb-2">• Plug-and-play installation, easy to relocate.</li>
+                  <li className="mb-2">• Centralized energy and power arrangement makes station qualified for energy trading, extra
+                    profitting mechanism.
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
         </div>
+
+
       </div>
     </section>
   );
 };
+
+
+//                

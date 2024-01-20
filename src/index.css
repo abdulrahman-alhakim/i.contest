@@ -5,6 +5,35 @@ body,
   scroll-behavior: smooth;
 }
 
+.custom-font-large {
+  font-size: 6rem;
+  /* Default size for large screens */
+}
+
+@media (max-width: 992px) {
+
+  /* For medium screens */
+  .custom-font-large {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* For small screens */
+  .custom-font-large {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* For extra small screens */
+  .custom-font-large {
+    font-size: 2rem;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
