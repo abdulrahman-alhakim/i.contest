@@ -14,10 +14,7 @@ export const Carousel = () => {
             <h3 className="mb-2">
               We offer our customers meticulously crafted, high-quality, customized EV charging solutions designed to meet the unique requirements of diverse scenarios.
             </h3>
-            <p className="lead">
-              In parallel, we launch our own innovative products or those
-              developed through/with our partners
-            </p>
+            
           </div>
 
           <div className="row g-4">

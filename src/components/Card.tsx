@@ -43,20 +43,15 @@ export const Card: React.FC<CardProps> = ({ theme, setTheme }) => {
             <div className="col-md-6" data-aos="fade-up">
               <img
                 className="img-fluid"
-                src={FeatImage01}
-                width={400}
-                height={400}
+                src={FeatImage03}
+                width={480}
+                height={405}
                 alt="Features 01"
               />
             </div>
             <div className="col-md-6" data-aos="fade-right">
               <div className="pr-md-2 pr-lg-4 pr-xl-5">
-                <div
-                  className="text-purple-600 mb-2"
-                  style={{ fontSize: "1.25rem" }}
-                >
-                  More speed. Less spend
-                </div>
+               
                 <h3 className="h3 mb-2">Keep projects on schedule</h3>
 
                 <br />
@@ -71,15 +66,19 @@ export const Card: React.FC<CardProps> = ({ theme, setTheme }) => {
             </div>
           </div>
           <div className="row g-4 align-items-center mt-4">
+          <div className="col-md-6 order-md-2" data-aos="fade-up">
+              <img
+                className="img-fluid"
+                src={FeatImage02}
+                width={480}
+                height={405}
+                alt="Features 01"
+              />
+            </div>
 
-            <div className="col-md-6" data-aos="fade-right">
+            <div className="col-md-6 order-md-1" data-aos="fade-right">
               <div className="pr-md-2 pr-lg-4 pr-xl-5">
-                <div
-                  className="text-purple-600 mb-2"
-                  style={{ fontSize: "1.25rem" }}
-                >
-                  More speed. Less spend
-                </div>
+                
                 <h3 className="h3 mb-2">A view to climate change</h3>
 
                 <br />
@@ -93,46 +92,9 @@ export const Card: React.FC<CardProps> = ({ theme, setTheme }) => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-6" data-aos="fade-up">
-              <img
-                className="img-fluid"
-                src={FeatImage02}
-                width={540}
-                height={405}
-                alt="Features 01"
-              />
-            </div>
+            
           </div>
-          <div className="row g-4 align-items-center mt-3">
-            <div className="col-md-6" data-aos="fade-up">
-              <img
-                className="img-fluid"
-                src={FeatImage03}
-                width={540}
-                height={405}
-                alt="Features 01"
-              />
-            </div>
-            <div className="col-md-6" data-aos="fade-right">
-              <div className="pr-md-2 pr-lg-4 pr-xl-5">
-                <div
-                  className="text-purple-600 mb-2"
-                  style={{ fontSize: "1.25rem" }}
-                >
-                  More speed. Less spend
-                </div>
-                <h3 className="h3 mb-2">Keep projects on schedule</h3>
-                <br />
-
-                <ul className="list-unstyled">
-                  <li className="mb-2">• Renewable energy generation plants and recharging infrastructure must be approved by the grid operator.</li>
-                  <li className="mb-2">• The complex processes are time- consuming and tie up internal resources.</li>
-                  <li className="mb-2">• In the worst case, the network test leads to a construction cost surcharge.</li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
       <br />

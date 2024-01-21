@@ -81,3 +81,25 @@ code {
   transform: scale(1.2);
   /* Adjust the scale value as needed */
 }
+/* Custom Navbar Styles */
+.shrink-nav {
+  transition: height 0.3s ease;
+  height: 75px;
+}
+
+.normal-nav {
+  height: 100px;
+  position: fixed;
+
+}
+
+/* Fix navbar at the top in desktop mode */
+@media (min-width: 700px) {
+  .custom-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030; /* Bootstrap's default z-index for fixed navbar */
+  }
+}

@@ -10,6 +10,7 @@ import darkBackground from './images/topography2.svg';
 import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
 
+
 const App: React.FC = () => {
 
   const [theme, setTheme] = useState<string>('light');
@@ -25,7 +26,7 @@ const App: React.FC = () => {
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
   }, [theme])
-  
+
 
   return (
     <Router>
@@ -34,7 +35,6 @@ const App: React.FC = () => {
         <div className="flex-grow-1" >
           <Switch>
             <Route path="/" exact component={HomePage} />
-            {/* <Route path="/products" component={ProductPage} /> */}
             <Route path="/contact" component={ContactUsPage} />
             <Route path="/about" component={AboutUsPage} />
           </Switch>

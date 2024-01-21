@@ -93,7 +93,7 @@ export const ContactUsForm: React.FC<IProps> = (props) => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">Send Message</button>
+            <button type="submit" className="btn text-light" style={{backgroundColor:'rgba(32,98,98,.9)'}}>Send Message</button>
           </form>
         </div>
         <div className="col-md-4">

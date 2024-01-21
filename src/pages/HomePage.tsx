@@ -6,7 +6,7 @@ import "../style.css";
 import { Solution } from "../components/Solution";
 import TurnKeyService from "../components/TurnKeyService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 interface HomePageProps {
   theme: string;
@@ -39,6 +39,8 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
       }
     }
   }, []);
+
+
   return (
     <div>
       <div className="vh-100">
@@ -51,14 +53,24 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
                 Welcome to i.contest
               </p>
               <p className="fs-4 mb-5 " data-aos="fade-up" data-aos-delay="200" style={{ color: "rgb(32,98,98)" }}>
-                Our commitment is to drive the global shift to clean, stable energy with resilient power solutions...
+                Our commitment is to drive the global shift to clean and stable energy with resilient power solutions...
               </p>
 
-              {/* Buttons */}
+              {/* Buttons 
               <div className="d-flex justify-content-center justify-content-md-start flex-wrap" data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white mx-2 mb-2" style={{ backgroundColor: "rgb(32,98,98)" }} href="/about">About Us</a>
-                <a className="btn bg-secondary text-white mx-2 mb-2" href="/contact">Contact Us</a>
-              </div>
+                <button
+                  className="btn text-white mx-2 mb-2"
+                  style={{ backgroundColor: "rgb(32,98,98)" }}
+                  onClick={() => window.location.href = '/about'}
+                >
+                  About Us</button>
+                <button
+                  className="btn bg-secondary text-white mx-2 mb-2"
+                  onClick={() => window.location.href = '/contact'}
+                >
+                  Contact Us
+                </button>
+              </div>*/}
             </div>
 
             {/* Image Column */}
@@ -74,14 +86,14 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
 
       <button onClick={scrollToTop} style={{
         position: 'fixed',
-        bottom: '40px',
+        bottom: '50px',
         right: '50px',
         zIndex: '99',
         cursor: 'pointer',
         border: 'none',
         background: 'none'
       }}>
-        <FontAwesomeIcon icon={faArrowUp} style={{ color: "#206262", }} />
+        <FontAwesomeIcon icon={faCircleArrowUp} size="2xl" style={{ color: "#309191", }} />
       </button>
 
       <TurnKeyService />
@@ -89,7 +101,7 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
       <Card theme={theme} setTheme={setTheme} />
 
       <Solution theme={theme} setTheme={setTheme} />
-      <hr />
+
 
       <div className="container-fluid">
         {/* <div className="row">

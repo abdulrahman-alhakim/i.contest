@@ -17,7 +17,7 @@ export const Footer = () => {
                     src={require("../images/iconteststereo.png")}
                     width="225"
                     height="40"
-                    loading="lazy" 
+                    loading="lazy"
                     alt="Logo"
                   />
                 </Link>
@@ -29,9 +29,9 @@ export const Footer = () => {
 
             {/* 2nd, 3rd, and 4th blocks */}
             <div className="col-md-8 col-lg-7">
-              <div className="row">
+              <div className=" row justify-content-end">
                 {/* 2nd block  */}
-                <div className="col-sm-4 mb-3 me-1 mb-sm-0">
+                <div className="col-sm-4 mb-3 me-1 mb-sm-0 text-center text-md-end">
                   <h6 className="font-weight-bold text-light m-2 mb-3">Contact Us</h6>
                   <ul className="list-unstyled text-light">
                     <li>info@i-contest.net</li>
@@ -40,16 +40,16 @@ export const Footer = () => {
                 </div>
 
                 {/* 3rd block */}
-                <div className="col-sm-6 mb-3 mb-sm-0">
+                <div className="col-sm-6 mb-3 mb-sm-0 text-center text-md-end">
                   <h6 className="m-2 text-light font-weight-bold mb-3">
                     Location
                   </h6>
-                  <ul className="list-unstyled text-light">
-                    <li><b>i.contest UG</b></li>
-                    <li>Hauptstraße 30a</li>
-                    <li>38446 Wolfsburg</li>
-
-                  </ul>
+                  <a style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }} href="https://www.google.com/maps/place/Hauptstraße+30a,+38446+Wolfsburg,+Germany" target="_blank" rel="noopener noreferrer">
+                    i.contest UG<br />
+                    Hauptstraße 30a<br />
+                    38446 Wolfsburg<br />
+                    Germany
+                  </a>
                 </div>
 
               </div>
@@ -57,13 +57,9 @@ export const Footer = () => {
           </div>
 
           {/* Bottom area */}
-          <div className="d-md-flex justify-content-between align-items-center">
-            {/* Social links */}
-            <ul className="nav mb-3 mb-md-0">{/* Social icons */}</ul>
-
-            {/* Copyrights note */}
-            <div className="text-light">
-              &copy; 3icontest.com. All rights reserved.
+          <div className="row d-flex d-md-flex text-center">
+            <div className="text-light text-center">
+              &copy; www.i-contest.eu. All rights reserved.
             </div>
           </div>
         </div>

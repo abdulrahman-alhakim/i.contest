@@ -1,0 +1,10 @@
+.normal-nav {
+    height: 100px;
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) { /* Adjust the max-width as per your requirement */
+    .shrink-nav, .normal-nav {
+      margin-bottom: 100px;
+    }
+  }

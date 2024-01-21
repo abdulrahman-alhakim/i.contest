@@ -14,7 +14,7 @@ const people = [
 ]
 const AboutUsPage: React.FC = () => {
   return (
-    <div className="d-flex justify-content-center align-items-center mt-5">
+    <div className="d-flex justify-content-center align-items-center m-5">
       <div className="" style={{ maxWidth: '1000px', width: '100%' }}>
         <div className="d-none d-md-flex justify-content-between p-4">
           <p className="ms-5">INNOVATIVE</p>
