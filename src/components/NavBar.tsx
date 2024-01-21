@@ -102,7 +102,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
 
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
-      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center custom-dropdown-menu">
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center custom-dropdown-menu px-2">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/" className="text-dark">
             Home

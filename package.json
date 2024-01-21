@@ -2,7 +2,7 @@
   "name": "icontest-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://abdulrahman-alhakim.github.io/i.contest",
+  "homepage": "https://www.i-contest.eu",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",

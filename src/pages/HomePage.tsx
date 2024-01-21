@@ -44,28 +44,31 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
       <div className="vh-100">
         <div className="container h-100">
           <div className="row align-items-center h-100">
+
             {/* Text Column */}
             <div className="col-md-6 text-center text-md-start">
-              <p className="mb-4 custom-font-large" data-aos="fade-up" style={{color:"rgb(32,98,98)", fontSize:'6rem'}}>
+              <p className="mb-4 display-4" data-aos="fade-up" style={{ color: "rgb(32,98,98)" }}>
                 Welcome to i.contest
               </p>
-              <p className="fs-4 mb-5 " data-aos="fade-up" data-aos-delay="200" style={{color:"rgb(32,98,98)"}}>
+              <p className="fs-4 mb-5 " data-aos="fade-up" data-aos-delay="200" style={{ color: "rgb(32,98,98)" }}>
                 Our commitment is to drive the global shift to clean, stable energy with resilient power solutions...
               </p>
+
               {/* Buttons */}
               <div className="d-flex justify-content-center justify-content-md-start flex-wrap" data-aos="fade-up" data-aos-delay="400">
-                <a className="btn text-white mx-2" style={{ backgroundColor: "rgb(32,98,98)" }} href="/about">About Us</a>
-                <a className="btn bg-secondary text-white mx-2" href="/contact">Contact Us</a>
+                <a className="btn text-white mx-2 mb-2" style={{ backgroundColor: "rgb(32,98,98)" }} href="/about">About Us</a>
+                <a className="btn bg-secondary text-white mx-2 mb-2" href="/contact">Contact Us</a>
               </div>
             </div>
 
             {/* Image Column */}
-            <div className="col-md-6 d-flex align-items-center justify-content-center ">
-              <img src={bgImage} width={1000}  alt="Custom" className="img-fluid" />
+            <div className="col-md-6 d-flex align-items-center justify-content-center">
+              <img src={bgImage} alt="Custom" className="img-fluid" />
             </div>
           </div>
         </div>
-        </div>
+      </div>
+
 
       <Carousel />
 
@@ -89,7 +92,7 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
       <hr />
 
       <div className="container-fluid">
-  <div className="row">
+        {/* <div className="row">
     <div className="col-12 col-md-8 d-flex align-items-center justify-content-end">
       <p>Contact us here please</p>
     </div>
@@ -101,8 +104,8 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
         Contact Us
       </button>
     </div>
-  </div>
-</div>
+  </div> */}
+      </div>
 
 
     </div >
