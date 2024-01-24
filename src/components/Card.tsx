@@ -87,7 +87,7 @@ export const Card: React.FC<CardProps> = ({ theme, setTheme }) => {
                 <ul className="list-unstyled">
                   <li className="mb-2">• With a view to climate change, legislators are pushing ahead with the electrification of mobility at full speed.</li>
                   <li className="mb-2">• More and more employees are looking for a recharging infrastructure at their workplace.</li>
-                  <li className="mb-2">• Countless options and a continuously changing range of charging infrastructure make the situation confusing for confusing for newcomers.</li>
+                  <li className="mb-2">• The multitude of options and the consistently evolving charging infrastructure can create confusion for new users.</li>
 
                 </ul>
               </div>

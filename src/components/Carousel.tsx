@@ -12,7 +12,7 @@ export const Carousel = () => {
             style={{ maxWidth: "600px" }}
           >
             <h3 className="mb-2">
-              We offer our customers meticulously crafted, high-quality, customized EV charging solutions designed to meet the unique requirements of diverse scenarios.
+              We offer meticulously crafted, high-quality, customized EV charging solutions designed to meet the unique requirements of diverse scenarios.
             </h3>
             
           </div>

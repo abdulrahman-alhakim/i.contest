@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Carousel } from "../components/Carousel";
 import { Card } from "../components/Card";
-import bgImage from "../images/landingpage.webp";
+import bgImage from "../images/landpage.webp";
 import "../style.css";
 import { Solution } from "../components/Solution";
 import TurnKeyService from "../components/TurnKeyService";
@@ -50,7 +50,7 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
             {/* Text Column */}
             <div className="col-md-6 text-center text-md-start">
               <p className="mb-4 display-4" data-aos="fade-up" style={{ color: "rgb(32,98,98)" }}>
-                Welcome to i.contest
+                Welcome to I.CONTEST
               </p>
               <p className="fs-4 mb-5 " data-aos="fade-up" data-aos-delay="200" style={{ color: "rgb(32,98,98)" }}>
                 Our commitment is to drive the global shift to clean and stable energy with resilient power solutions...

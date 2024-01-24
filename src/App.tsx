@@ -42,7 +42,7 @@ const App: React.FC = () => {
             <Route path="/about" component={AboutUsPage} />
           </Switch>
         </div>
-        <PrivacyPolicyModal />
+        {/* <PrivacyPolicyModal /> */}
         <CookieConsent
           location="bottom"
           buttonText="Agree"

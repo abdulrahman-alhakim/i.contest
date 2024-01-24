@@ -29,28 +29,32 @@ export const Footer = () => {
               <div className="text-light">
                 Make yourself more independent with our Systems, we will accompany you from the consultation to the commissioning
               </div>
-              <div>
-              <PrivacyPolicyModal />
-              <CookieConsent
-                location="bottom"
-                buttonText="Agree"
-                cookieName="userConsent"
-                style={{ background: "#2B373B" }}
-                buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
-                expires={150}
-              >
-                This website uses cookies to enhance the user experience.
-                <span style={{ fontSize: "12px" }}>
-                  Agree to
-                  <Button variant="link" onClick={() => (document.querySelector("#privacy-policy-btn") as HTMLElement)?.click()}>
-                    Privacy Policy
-                  </Button>.
-                </span>
-              </CookieConsent>
-            </div>
-            <div className="col-md-2">
-              <ImpressumModal />
-            </div>
+              <div className="col-sm-3 mb-3 me-1 mb-sm-0 text-center text-md-start">
+                <div>
+                  <PrivacyPolicyModal />
+                  <CookieConsent
+                    location="bottom"
+                    buttonText="Agree"
+                    cookieName="userConsent"
+                    style={{ background: "#2B373B" }}
+                    buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+                    expires={150}
+                  >
+                    This website uses cookies to enhance the user experience.
+                    <span style={{ fontSize: "12px" }}>
+                      Agree to
+                      <Button variant="link" onClick={() => (document.querySelector("#privacy-policy-btn") as HTMLElement)?.click()}>
+                        Privacy Policy
+                      </Button>.
+                    </span>
+                  </CookieConsent>
+                </div>
+                <div >
+                  <ImpressumModal />
+                </div>
+              </div>
+              
+
             </div>
 
             {/* 2nd and 3rd blocks wrapper */}
@@ -71,7 +75,7 @@ export const Footer = () => {
                     <h6 className="text-light font-weight-bold mb-3">
                       Location
                     </h6>
-                    i.contest UG<br />
+                    I-CONTEST UG<br />
                     Hauptstraße 30a<br />
                     38446 Wolfsburg<br />
                     Germany
@@ -91,10 +95,10 @@ export const Footer = () => {
             </div>
 
             {/* Privacy Policy Modal and Cookie Consent */}
-            
+
 
             {/* Impressum Modal */}
-            
+
           </div>
 
         </div>

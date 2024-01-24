@@ -18,10 +18,10 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
         >
           {/* Section header */}
           <div
-            className="mx-auto text-center pb-3 pb-md-5"
+            className="mx-auto text-center pb-md-5"
             style={{ maxWidth: "600px" }}
           >
-            <h2 className="mb-4">An overview of our proposed solution</h2>
+            <h2>An overview of our proposed solution</h2>
 
           </div>
 
@@ -113,7 +113,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
                   className="text-purple-600 mb-2"
                   style={{ fontSize: "2rem", color: 'rgb(32,98,98' }}
                 >
-                  Charging Station w/ Discrete Facility
+                  Charging Station with Discrete Facility
                 </div>
 
                 <br />
