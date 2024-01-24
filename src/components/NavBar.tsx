@@ -97,7 +97,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
 
 
       <Navbar
-        bg="light" expand="lg"
+        bg="light" expand="md"
         className={`custom-navbar justify-content-center ${shrink ? shrinkNav : 'normal-nav'}  sticky-top`}
       >
         <Navbar.Brand as={Link} to="/" className="ms-3">
@@ -115,26 +115,42 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
         /> */}
         <div className="dropdown d-block d-md-none">
           <Dropdown>
-            <Dropdown.Toggle variant="secondary"  id="navbarToggleExternalContent" style={{ backgroundColor: "#206262", }}>
+            <Dropdown.Toggle variant="secondary" id="navbarToggleExternalContent" style={{ backgroundColor: "#206262", }}>
               <FontAwesomeIcon icon={faBars} />
 
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown-menu-end">
-              <Dropdown.Item href="/">Home</Dropdown.Item>
-              <Dropdown.Item onClick={() => scrollToSection('turnkey')}>Services</Dropdown.Item>
-              <Dropdown.Item href="/about">About Us</Dropdown.Item>
-              <Dropdown.Item href="/contact">Contact Us</Dropdown.Item>
+              <Dropdown.Item>
+                <Nav.Link as={Link} to="/" className="text-dark" onClick={() => (window.scrollTo(0, 0))}>
+                  Home
+                </Nav.Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Nav.Link className="text-dark pe-auto mt-9" onClick={() => { window.scrollTo(0, 0); scrollToSection('turnkey'); }}>
+                  Services
+                </Nav.Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Nav.Link as={Link} to="/about" className="text-dark">
+                  About Us
+                </Nav.Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Nav.Link as={Link} to="/contact" className="text-dark">
+                  Contact Us
+                </Nav.Link>
+              </Dropdown.Item>
 
             </Dropdown.Menu>
           </Dropdown>
         </div>
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center custom-dropdown-menu px-2">
-          <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/" className="text-dark">
+          <Nav className="mr-auto nav nav-pills">
+            <Nav.Link as={Link} to="/" className="text-dark nav-link" onClick={() => (window.scrollTo(0, 0))}>
               Home
             </Nav.Link>
-            <Nav.Link className="text-dark pe-auto mt-9" onClick={() => scrollToSection('turnkey')}>
+            <Nav.Link className="text-dark pe-auto mt-9" onClick={() => { window.scrollTo(0, 0); scrollToSection('turnkey'); }}>
               Services
             </Nav.Link>
             <Nav.Link as={Link} to="/about" className="text-dark">

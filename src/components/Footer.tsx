@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import logo from "../images/icontest-logo.png"
+import logo from "../images/icontest-logo.png";
 
 export const Footer = () => {
   return (
@@ -27,31 +27,30 @@ export const Footer = () => {
               </div>
             </div>
 
-            {/* 2nd, 3rd, and 4th blocks */}
+            {/* 2nd and 3rd blocks wrapper */}
             <div className="col-md-8 col-lg-7">
-              <div className=" row justify-content-end">
-                {/* 2nd block  */}
-                <div className="col-sm-4 mb-3 me-1 mb-sm-0 text-center text-md-end">
-                  <h6 className="font-weight-bold text-light m-2 mb-3">Contact Us</h6>
+              <div className="row justify-content-md-end">
+                {/* 2nd block */}
+                <div className="col-sm-3 mb-3 me-1 mb-sm-0 text-center text-md-start">
+                  <h6 className="font-weight-bold text-light mb-3">Contact</h6>
                   <ul className="list-unstyled text-light">
-                    <li>info@i-contest.net</li>
+                    <li>info@i-contest.eu</li>
                     <li>Tel: +49 157 5171551</li>
                   </ul>
                 </div>
 
                 {/* 3rd block */}
-                <div className="col-sm-6 mb-3 mb-sm-0 text-center text-md-end">
-                  <h6 className="m-2 text-light font-weight-bold mb-3">
+                <div className="col-sm-3 mb-3 me-1 mb-sm-0 text-center text-md-start">
+                  <a style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }} href="https://www.google.com/maps/place/Hauptstraße+30a,+38446+Wolfsburg,+Germany" target="_blank" rel="noopener noreferrer">
+                  <h6 className="text-light font-weight-bold mb-3">
                     Location
                   </h6>
-                  <a style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }} href="https://www.google.com/maps/place/Hauptstraße+30a,+38446+Wolfsburg,+Germany" target="_blank" rel="noopener noreferrer">
                     i.contest UG<br />
                     Hauptstraße 30a<br />
                     38446 Wolfsburg<br />
                     Germany
                   </a>
                 </div>
-
               </div>
             </div>
           </div>

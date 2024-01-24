@@ -48,7 +48,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
                 className="mx-auto text-center pb-3 pb-md-5"
                 style={{ fontSize: '1rem', fontWeight: 'normal' }}
               >
-                A microgrid system with integrated renewable energy sources and smart management to create a clean, efficient, and reliable network.</div>
+                A microgrid system that integrates renewable energy sources and smart management to create a clean, efficient, and reliable network.              </div>
 
             </div>
             <hr />

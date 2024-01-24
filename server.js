@@ -1,36 +1,39 @@
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
-// Replace with your email config
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use your email provider
+  service: process.env.EMAIL_SERVICE, // Use environment variables
   auth: {
-    user: 'abdulrahman.alhakim91@gmail.com', // Your email address
-    pass: 'yourpassword', // Your email password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
 app.post('/send', (req, res) => {
   const { name, email, description } = req.body;
+  // Add validation for name, email, and description here
+  console.log("Received request on /send endpoint");
+
   
   const mailOptions = {
     from: email,
-    to: 'abdulrahman.alhakim91@gmail.com', // Your email where you'll receive messages
+    to: process.env.EMAIL_USER, // Send to your own email
     subject: `New message from ${name}`,
     text: description,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return res.status(500).send(error.message);
+      console.error(error);
+      return res.status(500).json({ message: 'There was a problem sending the email.' });
     }
-    res.status(200).send('Email sent: ' + info.response);
+    res.status(200).json({ message: 'Email sent successfully!' });
   });
 });
 

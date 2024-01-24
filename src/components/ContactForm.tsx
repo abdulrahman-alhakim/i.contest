@@ -3,21 +3,27 @@ import axios from 'axios';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', description: '' });
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+  
     try {
-      const response = await axios.post('http://localhost:3001/send', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/send`, formData);
       console.log(response.data);
-      // Handle the response here. For example, show a success message.
-    } catch (error) {
+      setMessage(response.data.message); // Set the success message from backend
+    } catch (error:any) {
       console.error(error);
-      // Handle errors here, such as displaying a notification.
+      if (error.response && error.response.data) {
+        setMessage(error.response.data.message); // Set the error message from backend
+      } else {
+        setMessage('Failed to send the message.'); // Fallback error message
+      }
     }
   };
+  
 
-  const handleChange = (e:any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -27,6 +33,7 @@ export default function ContactForm() {
       <input type="email" name="email" placeholder="Your Email" onChange={handleChange} required />
       <textarea name="description" placeholder="Your Message" onChange={handleChange} required></textarea>
       <button type="submit">Send</button>
+      {message && <p>{message}</p>}
     </form>
   );
 }
