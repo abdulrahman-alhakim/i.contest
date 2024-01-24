@@ -11,7 +11,9 @@ function PrivacyPolicyModal() {
 
     return (
         <>
-
+            <Button variant="link" onClick={handleShow} id="privacy-policy-btn" style={{ textDecoration: 'none', color: 'white' }}>
+                Privacy Policy
+            </Button>
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>
                     <Modal.Title>Privacy Policy</Modal.Title>

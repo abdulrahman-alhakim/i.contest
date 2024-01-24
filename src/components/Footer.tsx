@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 import logo from "../images/icontest-logo.png";
+import { Button } from "react-bootstrap";
+import CookieConsent from "react-cookie-consent";
+import ImpressumModal from "./ImpressumModal";
+import PrivacyPolicyModal from "./PrivacyPolicyModal";
 
 export const Footer = () => {
   return (
@@ -25,6 +29,28 @@ export const Footer = () => {
               <div className="text-light">
                 Make yourself more independent with our Systems, we will accompany you from the consultation to the commissioning
               </div>
+              <div>
+              <PrivacyPolicyModal />
+              <CookieConsent
+                location="bottom"
+                buttonText="Agree"
+                cookieName="userConsent"
+                style={{ background: "#2B373B" }}
+                buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+                expires={150}
+              >
+                This website uses cookies to enhance the user experience.
+                <span style={{ fontSize: "12px" }}>
+                  Agree to
+                  <Button variant="link" onClick={() => (document.querySelector("#privacy-policy-btn") as HTMLElement)?.click()}>
+                    Privacy Policy
+                  </Button>.
+                </span>
+              </CookieConsent>
+            </div>
+            <div className="col-md-2">
+              <ImpressumModal />
+            </div>
             </div>
 
             {/* 2nd and 3rd blocks wrapper */}
@@ -42,9 +68,9 @@ export const Footer = () => {
                 {/* 3rd block */}
                 <div className="col-sm-3 mb-3 me-1 mb-sm-0 text-center text-md-start">
                   <a style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }} href="https://www.google.com/maps/place/Hauptstraße+30a,+38446+Wolfsburg,+Germany" target="_blank" rel="noopener noreferrer">
-                  <h6 className="text-light font-weight-bold mb-3">
-                    Location
-                  </h6>
+                    <h6 className="text-light font-weight-bold mb-3">
+                      Location
+                    </h6>
                     i.contest UG<br />
                     Hauptstraße 30a<br />
                     38446 Wolfsburg<br />
@@ -56,11 +82,21 @@ export const Footer = () => {
           </div>
 
           {/* Bottom area */}
-          <div className="row d-flex d-md-flex text-center">
-            <div className="text-light text-center">
-              &copy; www.i-contest.eu. All rights reserved.
+          <div className="row text-center">
+            {/* Copyright Notice */}
+            <div className="col-md-8">
+              <div className="text-light text-center">
+                &copy; www.i-contest.eu. All rights reserved.
+              </div>
             </div>
+
+            {/* Privacy Policy Modal and Cookie Consent */}
+            
+
+            {/* Impressum Modal */}
+            
           </div>
+
         </div>
       </div>
     </footer>
