@@ -17,13 +17,10 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
           style={{ borderColor: "#4a5568" }}
         >
           {/* Section header */}
-          <div
-            className="mx-auto text-center pb-md-5"
-            style={{ maxWidth: "600px" }}
-          >
-            <h2>An overview of our proposed solution</h2>
+         
+            <h2 className="text-center">An overview of our proposed solution</h2>
 
-          </div>
+          
 
 
           <div className="py-3 py-md-5">
@@ -54,7 +51,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
             <hr />
           </div>
 
-          <div className="row g-4 align-items-center">
+          <div className="row align-items-center">
             <div className="col-md-6" data-aos="fade-up">
               <img
                 className="img-fluid"
@@ -74,7 +71,6 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
                   Stand-alone Integrated Charging Container
                 </div>
 
-                <br />
 
                 <ul className='list-unstyled'>
                   <li className="mb-2">• High integration, system optimized by AI-EMS.</li>
@@ -95,7 +91,9 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
           </div>
 
 
-          <div className="row g-4 align-items-center mt-5">
+          <hr className="d-block d-sm-none" />
+
+          <div className="row align-items-center mt-2">
             <div className="col-md-6" data-aos="fade-up">
               <img
                 className="img-fluid"

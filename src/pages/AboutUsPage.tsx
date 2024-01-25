@@ -16,11 +16,11 @@ const people = [
     return (
       <div className="d-flex justify-content-center align-items-center m-5">
         <div className="" style={{ maxWidth: '1000px', width: '100%' }}>
-          <div className="d-none d-md-flex justify-content-between p-4">
+          {/* <div className="d-none d-md-flex justify-content-between p-4">
             <p className="ms-5">INNOVATIVE</p>
             <p>INSPIRING</p>
             <p className="me-5">INTELLIGENT</p>
-          </div>
+          </div> */}
           <div className="mx-auto">
             <h2 className="h2 fw-bold mb-4"  style={{color:'rgb(32,98,98)'}}>Meet our leadership</h2>
   
