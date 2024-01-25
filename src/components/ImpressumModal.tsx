@@ -11,7 +11,7 @@ function ImpressumModal() {
 
     return (
         <>
-            <Button variant="link" onClick={handleShow} id="privacy-policy-btn" style={{ color: 'white' }}>
+            <Button variant="link" onClick={handleShow} id="privacy-policy-btn" style={{ color: 'white', padding: "0" }}>
                 Impressum
             </Button>
 

@@ -107,6 +107,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             height="40"
             className="d-inline-block"
             alt="Logo"
+            onClick={() => (window.scrollTo(0, 0))}
           />
 
         </Navbar.Brand>
@@ -127,12 +128,12 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
                 </Nav.Link>
               </Dropdown.Item>
               <Dropdown.Item>
-                <Nav.Link className="text-dark pe-auto mt-9" onClick={() => { window.scrollTo(0, 0); scrollToSection('turnkey'); }}>
+                <Nav.Link className="text-dark pe-auto mt-9" onClick={() => {scrollToSection('turnkey') }}>
                   Services
                 </Nav.Link>
               </Dropdown.Item>
               <Dropdown.Item>
-                <Nav.Link as={Link} to="/about" className="text-dark">
+              <Nav.Link className="text-dark pe-auto mt-9" onClick={() => {scrollToSection('footer') }}>
                   About Us
                 </Nav.Link>
               </Dropdown.Item>
@@ -150,10 +151,10 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             <Nav.Link as={Link} to="/" className="text-dark nav-link" onClick={() => (window.scrollTo(0, 0))}>
               Home
             </Nav.Link>
-            <Nav.Link className="text-dark pe-auto mt-9" onClick={() => { window.scrollTo(0, 0); scrollToSection('turnkey'); }}>
+            <Nav.Link className="text-dark pe-auto mt-9" onClick={() => {scrollToSection('turnkey'); }}>
               Services
             </Nav.Link>
-            <Nav.Link as={Link} to="/about" className="text-dark">
+            <Nav.Link className="text-dark pe-auto mt-9" onClick={() => {scrollToSection('footer') }}>
               About Us
             </Nav.Link>
             <Nav.Link as={Link} to="/contact" className="text-dark">

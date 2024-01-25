@@ -38,7 +38,6 @@ const App: React.FC = () => {
         <div className="flex-grow-1" >
           <Switch>
             <Route path="/" exact component={HomePage} />
-            <Route path="/contact" component={ContactUsPage} />
             <Route path="/about" component={AboutUsPage} />
           </Switch>
         </div>
