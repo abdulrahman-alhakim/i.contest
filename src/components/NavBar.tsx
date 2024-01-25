@@ -107,6 +107,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             height="40"
             className="d-inline-block"
             alt="Logo"
+            onClick={() => (window.scrollTo(0, 0))}
           />
 
         </Navbar.Brand>
