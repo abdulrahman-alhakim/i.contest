@@ -23,12 +23,14 @@ function ImpressumModal() {
                     {/* Insert your privacy policy content here */}
                     <div>
                         <h3>I-CONTEST UG</h3>
-                            <hr/>
+                        
 
+                        <ul>
+                            <li>Hauptstraße 30a</li>
+                            <li>38446 Wolfsburg</li>
+                            <li>Germany</li>
+                        </ul>
 
-                        <p>Hauptstraße 30a</p>
-                        <p>38446 Wolfsburg</p>
-                        <p>Germany</p>
 
                         <p>Tel: +49 157 5171551</p>
                         <p>Email: info@i-contest.eu</p>

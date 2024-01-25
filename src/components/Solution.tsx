@@ -114,7 +114,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
                   Charging Station with Discrete Facility
                 </div>
 
-                <br />
+      
 
                 <ul className='list-unstyled'>
                   <li className="mb-2">• Total flexibility with system configuration, adaptable to various requirements.</li>
