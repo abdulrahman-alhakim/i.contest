@@ -1,9 +1,5 @@
 const people = [
-    {
-      name: 'Dr. Wolfgang Hanoun',
-      role: 'Co-Founder / CEO',
-      imageUrl: require('../images/Hanoun.jpg')
-    },
+    
     {
       name: 'Eng. Faisal Hakim',
       role: 'Co-Founder',
