@@ -98,7 +98,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
 
       <Navbar
         bg="light" expand="md"
-        className={`custom-navbar justify-content-center ${shrink ? shrinkNav : 'normal-nav'}  sticky-top`}
+        className={`custom-navbar justify-content-center 'normal-nav' sticky-top`}
       >
         <Navbar.Brand as={Link} to="/" className="ms-3">
           <img

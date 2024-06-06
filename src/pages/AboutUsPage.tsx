@@ -2,7 +2,7 @@ const people = [
     
     {
       name: 'Eng. Faisal Hakim',
-      role: 'Co-Founder',
+      role: 'CEO',
       imageUrl: require('../images/faisall.png')
     },
   
