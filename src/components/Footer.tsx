@@ -52,7 +52,7 @@ export const Footer = () => {
                     <h6 className="font-weight-bold text-light mb-3">Contact</h6>
                     <ul className="list-unstyled text-light">
                       <li>info@i-contest.eu</li>
-                      <li>Tel: +49 157 5171551</li>
+                      <li>Tel: +49 157 51751551</li>
                     </ul>
                   </div>
 

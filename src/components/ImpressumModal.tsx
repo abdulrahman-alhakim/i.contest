@@ -32,10 +32,10 @@ function ImpressumModal() {
                         </ul>
 
 
-                        <p>Tel: +49 157 5171551</p>
+                        <p>Tel: +49 157 51751551</p>
                         <p>Email: info@i-contest.eu</p>
 
-                        <p>CEO: Dr.-Eng. Wolfgang Hanoun</p>
+                        <p>CEO: Eng. Faisal Hakim</p>
 
                         {/* <p>VAT id number: xxxxxxxxx</p> */}
 
