@@ -66,7 +66,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
                 <h3 className="h3 mb-2" style={{ color: 'rgb(32,98,98' }}></h3>
                 <div
                   className="text-purple-600 mb-2"
-                  style={{ fontSize: "2rem", color: 'rgb(32,98,98' }}
+                  style={{ fontSize: "2rem", color: theme === 'light' ? 'rgb(32,98,98)' : 'white'  }}
                 >
                   Stand-alone Integrated Charging Container
                 </div>
@@ -109,12 +109,10 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
                 <h3 className="h3 mb-2" style={{ color: 'rgb(32,98,98' }}></h3>
                 <div
                   className="text-purple-600 mb-2"
-                  style={{ fontSize: "2rem", color: 'rgb(32,98,98' }}
+                  style={{ fontSize: "2rem", color: theme === 'light' ? 'rgb(32,98,98)' : 'white'  }}
                 >
                   Charging Station with Discrete Facility
                 </div>
-
-      
 
                 <ul className='list-unstyled'>
                   <li className="mb-2">• Total flexibility with system configuration, adaptable to various requirements.</li>
@@ -131,9 +129,7 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
             </div>
           </div>
 
-
         </div>
-
 
       </div>
     </section>

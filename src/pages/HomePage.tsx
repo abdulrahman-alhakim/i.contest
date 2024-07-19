@@ -22,6 +22,8 @@ const scrollToTop = () => {
 
 const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
   useEffect(() => {
+        console.log("Current theme:", theme);
+
     const hash = window.location.hash;
     if (hash === "#turnkey") {
       const section = document.getElementById("turnkey");
@@ -49,14 +51,18 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
 
             {/* Text Column */}
             <div className="col-md-6 text-center text-md-start">
-              <p className="mb-4 display-4" data-aos="fade-up" style={{ color: "rgb(32,98,98)" }}>
-                Welcome to I.CONTEST
-              </p>
-              <p className="fs-4 mb-5 " data-aos="fade-up" data-aos-delay="200" style={{ color: "rgb(32,98,98)" }}>
-                Our commitment is to drive the global shift to clean and stable energy with resilient power solutions...
-              </p>
+            <p
+            className="mb-4 display-4"
+            data-aos="fade-up"
+            style={{ color: theme === 'light' ? 'rgb(32,98,98)' : 'white' }}
+          >                
+          Welcome to I.CONTEST
+          </p>
+          <p className="fs-4 mb-5 " data-aos="fade-up" data-aos-delay="200" style={{ color: theme === 'light' ? 'rgb(32,98,98)' : 'white' }}>
+            Our commitment is to drive the global shift to clean and stable energy with resilient power solutions...
+          </p>
 
-              {/* Buttons 
+               
               <div className="d-flex justify-content-center justify-content-md-start flex-wrap" data-aos="fade-up" data-aos-delay="400">
                 <button
                   className="btn text-white mx-2 mb-2"
@@ -70,7 +76,7 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
                 >
                   Contact Us
                 </button>
-              </div>*/}
+              </div>
             </div>
 
             {/* Image Column */}
@@ -96,7 +102,7 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
         <FontAwesomeIcon icon={faCircleArrowUp} size="2xl" style={{ color: "#309191", }} />
       </button>
 
-      <TurnKeyService />
+      <TurnKeyService theme={theme} setTheme={setTheme}  />
 
       <Card theme={theme} setTheme={setTheme} />
 

@@ -1,56 +1,66 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import emailjs from 'emailjs-com';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import image from "../images/carcharging.jpeg"
+import image from '../images/carcharging.jpeg';
 
 interface IState {
   name: string;
   email: string;
+  inquiryType: string;
   message: string;
 }
 
-interface IProps {
-  data?: {
-    address?: string;
-    phone?: string;
-    email?: string;
-    facebook?: string;
-    twitter?: string;
-    youtube?: string;
-  };
-}
+export const ContactUsForm: React.FC = () => {
+  const [state, setState] = useState<IState>({ name: '', email: '', inquiryType: 'Private', message: '' });
+  const [responseMessage, setResponseMessage] = useState('');
 
-export const ContactUsForm: React.FC<IProps> = (props) => {
-  const [state, setState] = useState<IState>({ name: '', email: '', message: '' });
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.currentTarget, 'YOUR_USER_ID')
-      .then(
-        (result) => {
+
+    // Send email to yourself
+    emailjs.send('service_5oj9mzc', 'template_847hq1z', {
+      name: state.name,
+      email: state.email,
+      inquiry_type: state.inquiryType,
+      message: state.message,
+    }, 'rRIDCCBSkeoeTHuQP')
+      .then((result) => {
+        console.log(result.text);
+
+        // Send acknowledgment email to the client
+        emailjs.send('service_5oj9mzc', 'template_xiq97fo', {
+          name: state.name,
+          email: state.email,
+        }, 'rRIDCCBSkeoeTHuQP')
+        .then((result) => {
           console.log(result.text);
-          setState({ name: '', email: '', message: '' });
-        },
-        (error) => {
+          setResponseMessage('Email sent successfully!');
+          setState({ name: '', email: '', inquiryType: 'Private', message: '' }); // Clear the form
+        }, (error) => {
           console.log(error.text);
-        }
-      );
+          setResponseMessage('Failed to send acknowledgment email.');
+        });
+
+      }, (error) => {
+        console.log(error.text);
+        setResponseMessage('Failed to send the message.');
+      });
   };
 
   return (
     <div className="container mt-5">
       <div className="row">
-      <div className="col-md-6">
-          <img 
-            src={image} 
+        <div className="col-md-6">
+          <img
+            src={image}
             alt="Descriptive Alt Text"
-            className="img-fluid" 
-            loading="lazy" 
+            className="img-fluid"
+            loading="lazy"
           />
         </div>
         <div className="col-md-6">
@@ -82,6 +92,20 @@ export const ContactUsForm: React.FC<IProps> = (props) => {
               />
             </div>
             <div className="mb-3">
+              <label htmlFor="inquiryType" className="form-label">Inquiry Type</label>
+              <select
+                className="form-control"
+                id="inquiryType"
+                name="inquiryType"
+                value={state.inquiryType}
+                onChange={handleChange}
+                required
+              >
+                <option value="Private">Private</option>
+                <option value="Commercial">Commercial</option>
+              </select>
+            </div>
+            <div className="mb-3">
               <label htmlFor="message" className="form-label">Message</label>
               <textarea
                 className="form-control"
@@ -93,20 +117,15 @@ export const ContactUsForm: React.FC<IProps> = (props) => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="btn text-light" style={{backgroundColor:'rgba(32,98,98,.9)'}}>Send Message</button>
+            <button type="submit" className="btn text-light mb-3" style={{ backgroundColor: 'rgba(32,98,98,.9)' }}>Send Message</button>
           </form>
-        </div>
-        <div className="col-md-4">
-          <div className='container row'>
-            <h3 className=''></h3>
-            <div className='col-6 mb-5'>
-              <p><i className="bi bi-geo-alt-fill"></i></p>
-              <p><i className="bi bi-telephone-fill"></i></p>
-              <p><i className="bi bi-envelope-fill"></i></p>
-            </div>            
-          </div>
+          {responseMessage && <p>{responseMessage}</p>}
         </div>
       </div>
     </div>
   );
 };
+
+
+
+//    emailjs.sendForm('service_5oj9mzc', 'template_847hq1z', e.currentTarget, 'rRIDCCBSkeoeTHuQP') 'template_xiq97fo'

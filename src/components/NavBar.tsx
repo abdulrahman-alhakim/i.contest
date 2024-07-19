@@ -33,6 +33,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
   };
 
   useEffect(() => {
+    console.log("Current theme:", theme);
     setTextColor(theme === "light" ? "text-dark" : "text-light");
   }, [theme]);
 
@@ -138,9 +139,9 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
                 </Nav.Link>
               </Dropdown.Item>
               <Dropdown.Item>
-                <Nav.Link className="text-dark"  onClick={() => {scrollToSection('footer') }}>
-                  Contact Us
-                </Nav.Link>
+              <Nav.Link className="text-dark" as={Link} to="/contact"  onClick={() => {scrollToSection('footer') }}>
+              Contact Us
+            </Nav.Link>
               </Dropdown.Item>
 
             </Dropdown.Menu>
@@ -157,12 +158,12 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             <Nav.Link as={Link} to="/about" className="text-dark">
               About Us
             </Nav.Link>
-            <Nav.Link className="text-dark"  onClick={() => {scrollToSection('footer') }}>
+            <Nav.Link className="text-dark" as={Link} to="/contact"  onClick={() => {scrollToSection('footer') }}>
               Contact Us
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        {/* <ThemeToggle theme={theme} setTheme={setTheme} /> */}
+         <ThemeToggle theme={theme} setTheme={setTheme} /> 
 
       </Navbar>
     </>
