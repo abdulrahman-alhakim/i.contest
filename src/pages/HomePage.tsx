@@ -54,11 +54,11 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
             <p
             className="mb-4 display-4"
             data-aos="fade-up"
-            style={{ color: theme === 'light' ? 'rgb(32,98,98)' : 'white' }}
+            style={{ color: theme === 'light' ? 'rgb(32,98,98)' : '#7FFFD4' }}
           >                
-          Welcome to I.CONTEST
+          <span>Welcome to I.CONTEST</span>
           </p>
-          <p className="fs-4 mb-5 " data-aos="fade-up" data-aos-delay="200" style={{ color: theme === 'light' ? 'rgb(32,98,98)' : 'white' }}>
+          <p className="fs-4 mb-5 " data-aos="fade-up" data-aos-delay="200" style={{ color: theme === 'light' ? 'rgb(32,98,98)' : '#E0FFFF' }}>
             Our commitment is to drive the global shift to clean and stable energy with resilient power solutions...
           </p>
 

@@ -34,7 +34,7 @@ const people = [
                 <div className="d-flex align-items-center gap-2">
                   <img className="rounded-circle img-fluid" src={person.imageUrl} alt="" style={{ width: '74px', height: '74px', objectFit: 'cover' }} />
                   <div>
-                    <h3 className="h5 mb-0 fw-semibold" style={{ color: theme === 'light' ? 'rgb(32,98,98)' : 'white' }}>{person.name}</h3>
+                    <h3 className="h5 mb-0 fw-semibold" style={{ color: theme === 'light' ? 'rgb(32,98,98)' : '#E0FFFF' }}>{person.name}</h3>
                     <p className="small fw-semibold">{person.role}</p>
                   </div>
                 </div>
