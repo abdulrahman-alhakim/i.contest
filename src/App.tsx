@@ -10,6 +10,9 @@ import CookieConsent from 'react-cookie-consent';
 import { Button } from 'react-bootstrap';
 import PrivacyPolicyModal from './components/PrivacyPolicyModal';
 import AboutUsPage from './pages/AboutUsPage';
+import ProductsPage from './pages/ProductsPage';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<string>('light');
@@ -40,6 +43,10 @@ const App: React.FC = () => {
             <Route
               path="/about"
               render={(props) => <AboutUsPage {...props} theme={theme} setTheme={setTheme} />}
+            />
+            <Route
+              path="/products"
+              render={(props) => <ProductsPage {...props} theme={theme} setTheme={setTheme} />}
             />
             <Route
               path="/contact"

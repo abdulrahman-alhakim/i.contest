@@ -56,8 +56,6 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
 
   // ...useEffects for shrinking the NavBar...
   useEffect(() => {
-
-
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
@@ -95,8 +93,6 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
 
   return (
     <>
-
-
       <Navbar
         bg="light" expand="md"
         className={`custom-navbar justify-content-center 'normal-nav' sticky-top`}
@@ -134,16 +130,21 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
                 </Nav.Link>
               </Dropdown.Item>
               <Dropdown.Item>
+                <Nav.Link as={Link} to="/products" className="text-dark">
+                Products
+                </Nav.Link>
+             </Dropdown.Item>
+              <Dropdown.Item>
                 <Nav.Link as={Link} to="/about" className="text-dark">
                   About Us
                 </Nav.Link>
               </Dropdown.Item>
               <Dropdown.Item>
-              <Nav.Link className="text-dark" as={Link} to="/contact"  onClick={() => {scrollToSection('footer') }}>
+              <Nav.Link className="text-dark" as={Link} to="/contact">
               Contact Us
             </Nav.Link>
               </Dropdown.Item>
-
+              
             </Dropdown.Menu>
           </Dropdown>
         </div>
@@ -155,10 +156,13 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             <Nav.Link className="text-dark pe-auto mt-9" onClick={() => { window.scrollTo(0, 0); scrollToSection('turnkey'); }}>
               Services
             </Nav.Link>
+            <Nav.Link as={Link} to="/products" className="text-dark">
+              Products
+            </Nav.Link>
             <Nav.Link as={Link} to="/about" className="text-dark">
               About Us
             </Nav.Link>
-            <Nav.Link className="text-dark" as={Link} to="/contact"  onClick={() => {scrollToSection('footer') }}>
+            <Nav.Link className="text-dark" as={Link} to="/contact">
               Contact Us
             </Nav.Link>
           </Nav>

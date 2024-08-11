@@ -72,7 +72,7 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
                   About Us</button>
                 <button
                   className="btn bg-secondary text-white mx-2 mb-2"
-                  onClick={() => window.location.href = '/contact'}
+                  onClick={() => window.location.href = '/contact' }
                 >
                   Contact Us
                 </button>

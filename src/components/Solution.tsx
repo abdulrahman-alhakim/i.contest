@@ -20,9 +20,6 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
          
             <h2 className="text-center">An overview of our proposed solution</h2>
 
-          
-
-
           <div className="py-3 py-md-5">
             {/* Section header */}
 
@@ -45,7 +42,8 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
                 className="mx-auto text-center pb-3 pb-md-5"
                 style={{ fontSize: '1rem', fontWeight: 'normal' }}
               >
-                A microgrid system that integrates renewable energy sources and smart management to create a clean, efficient, and reliable network.              </div>
+                A microgrid system that integrates renewable energy sources and smart management to create a clean, efficient, and reliable network. 
+                </div>
 
             </div>
             <hr />
@@ -123,8 +121,8 @@ export const Solution: React.FC<SolutionProps> = ({ theme, setTheme }) => {
                   <li className="mb-2">• Centralized energy and power arrangement makes station qualified for energy trading, extra
                     profitting mechanism.
                   </li>
-
                 </ul>
+                
               </div>
             </div>
           </div>
