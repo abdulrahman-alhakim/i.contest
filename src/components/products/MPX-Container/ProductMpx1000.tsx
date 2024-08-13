@@ -1,12 +1,12 @@
 import React from "react";
-import MPX200 from "../../images/mpx200.png";
+import MPX200 from "../../../images/product1.png";
 import ProductHighlights from "./ProductHighlights";
-import ProductUseCases from "./ProductUseCases";
 import ProductTechDetails from "./ProductTechDetails";
+import ProductUseCases from "./ProductUseCases";
 
 const Product = () => {
   return (
-    <div className="card" style={{ width: "75rem" }}>
+    <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
         <h5 className="card-title">ENERGY UNIT CABINET ESS-MPX-200</h5>
         <p className="p-3">
@@ -16,66 +16,19 @@ const Product = () => {
         </p>
 
         <div className="row m-3">
-          <div className="col-12 col-md-6">
-            <img src={MPX200} className="card-img-top" alt="Product" />
-          </div>
+          
           <div className="col-12 col-md-6">
             <ProductHighlights />
           </div>
+          <div className="col-12 col-md-4">
+            <img src={MPX200} className="card-img-top" alt="Product" />
+          </div>
         </div>
         <div className="m-3">
-          {/*<p className="d-inline-flex gap-1">
-            <a
-              className="btn btn-success"
-              data-bs-toggle="collapse"
-              href="#multiCollapseExample1"
-              role="button"
-              aria-expanded="false"
-              aria-controls="multiCollapseExample1"
-            >
-              Technical Details
-            </a>
-            <button
-              className="btn btn-success"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#multiCollapseExample2"
-              aria-expanded="false"
-              aria-controls="multiCollapseExample2"
-            >
-              Use Cases
-            </button>
-          </p>
-          
-           <div className="row">
-            <div className="col">
-              <div
-                className="collapse multi-collapse"
-                id="multiCollapseExample1"
-              >
-                <div className="card card-body">
-                  <div>                    
-                   <ProductTechDetails />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className="collapse multi-collapse"
-                id="multiCollapseExample2"
-              >
-                <div className="card card-body">
-                  <ProductUseCases />
-                </div>
-              </div>
-            </div> 
-          </div>*/}
-
           <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li className="nav-item" role="presentation">
+            <li className="nav-item me-2" role="presentation">
               <button
-                className="nav-link active"
+                className="nav-link active text-white"
                 id="pills-home-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-home"
@@ -83,13 +36,15 @@ const Product = () => {
                 role="tab"
                 aria-controls="pills-home"
                 aria-selected="true"
+                style={{backgroundColor:"#00796b", borderRadius:"10px" }}
+
               >
               Technical Details
               </button>
             </li>
             <li className="nav-item" role="presentation">
               <button
-                className="nav-link"
+                className="nav-link text-white"
                 id="pills-profile-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-profile"
@@ -97,6 +52,8 @@ const Product = () => {
                 role="tab"
                 aria-controls="pills-profile"
                 aria-selected="false"
+                style={{backgroundColor:"#00796b", borderRadius:"10px" }}
+
               >
               Use Cases
               </button>
@@ -118,8 +75,8 @@ const Product = () => {
               role="tabpanel"
               aria-labelledby="pills-profile-tab"
             >
-                  <ProductUseCases />
-                  </div>
+               <ProductUseCases />
+            </div>
             
           </div>
         </div>

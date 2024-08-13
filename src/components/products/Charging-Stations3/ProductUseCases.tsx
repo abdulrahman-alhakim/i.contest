@@ -2,10 +2,10 @@ import React from 'react'
 
 const ProductUseCases = () => {
   return (
-    <div>
-    <p className="p-2 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
-                    USE CASES
-                  </p>
+    <div style={{ maxWidth: "35rem" }}>
+      <p className="p-2 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
+      USE CASES
+      </p>
                   <ul className="col-12 col-md-10 px-3 list-group list-group-flush">
                     <li className="list-group-item">
                       1. Renewable Energy Integration
