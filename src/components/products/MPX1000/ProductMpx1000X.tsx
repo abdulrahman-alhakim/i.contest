@@ -8,7 +8,7 @@ const ProductMpx1000X = () => {
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
-        <h5 className="card-title">ENERGY UNIT CABINET ESS-MPX-200</h5>
+        <h5 className="card-title">Model ESS-MPX-1000-EU</h5>
         <p className="p-3">
         Stand-alone Storage Power Container
         </p>
@@ -24,7 +24,7 @@ const ProductMpx1000X = () => {
         </div>
         <div className="m-3">
          
-          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item me-2" role="presentation">
               <button
                 className="nav-link active text-white"
@@ -58,7 +58,7 @@ const ProductMpx1000X = () => {
               </button>
             </li>
             
-          </ul>
+          </ul> */}
           <div className="tab-content" id="pills-tabContent">
             <div
               className="tab-pane fade show active"

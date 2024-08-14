@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import Dropdown from 'react-bootstrap/Dropdown';
-
-import { Link, useHistory } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,89 +11,48 @@ interface NavBarProps {
   setTheme: (theme: string) => void;
 }
 
-
-
 const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
   const [textColor, setTextColor] = useState("light");
   const [expanded, setExpanded] = useState(false);
-  const history = useHistory();
-  const navbarRef = useRef<HTMLDivElement>(null);
-  const toggleRef = useRef<HTMLDivElement>(null);
-  const [shrink, setShrink] = useState(false);
-
-  function handleExpanded() {
-    if (expanded) setExpanded(!expanded)
-  }
-
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    setShrink(currentScrollY > 50); // 50 is the number of pixels after which the navbar will shrink
-  };
+  const [activeLink, setActiveLink] = useState<string>("/");
+  const location = useLocation();
 
   useEffect(() => {
-    console.log("Current theme:", theme);
     setTextColor(theme === "light" ? "text-dark" : "text-light");
   }, [theme]);
 
-  // ...useEffects for expand and click outside...
-
-  // useEffect(() => {
-  //   const handleOutsideClick = (event: any) => {
-  //     if (
-  //       expanded 
-
-  //     ) {
-  //       setExpanded(!expanded);
-  //     }
-  //   };
-  //   document.addEventListener('click', handleOutsideClick);
-  //   return () => {
-  //     document.removeEventListener('click', handleOutsideClick);
-  //   };
-  // }, []);
-
-  // ...useEffects for shrinking the NavBar...
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    setActiveLink(location.pathname);
+  }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offset = 120;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const sectionRect = section.getBoundingClientRect().top;
+      const sectionPosition = sectionRect - bodyRect;
+      const offsetPosition = sectionPosition - offset;
 
-    history.push('/'); // Navigate to the home page
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
-    // Wait for the page to load
-    setTimeout(() => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const offset = 120;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const sectionRect = section.getBoundingClientRect().top;
-        const sectionPosition = sectionRect - bodyRect;
-        const offsetPosition = sectionPosition - offset;
+  const handleLinkClick = (path: string) => {
+    setActiveLink(path);
+  };
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-      }
-    }, 0); // Timeout can be adjusted based on your needs
-  }
-
-
-  const shrinkNav = {
-    transition: 'height 0.3s ease',
-    height: '75px'
-  }
+  const linkClass = (path: string) =>
+    `nav-link ${activeLink === path ? "active-link" : ""}`;
 
   return (
     <>
       <Navbar
         bg="light" expand="md"
-        className={`custom-navbar justify-content-center 'normal-nav' sticky-top`}
+        className={`custom-navbar sticky-top ${expanded ? "expanded" : ""}`}
       >
         <Navbar.Brand as={Link} to="/" className="ms-3">
           <img
@@ -106,69 +63,62 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             alt="Logo"
             onClick={() => (window.scrollTo(0, 0))}
           />
-
         </Navbar.Brand>
-        {/* <Navbar.Toggle aria-controls="basic-navbar-nav"
-          onClick={handleExpanded}
-        /> */}
         <div className="dropdown d-block d-md-none">
           <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="navbarToggleExternalContent" style={{ backgroundColor: "#206262", }}>
+            <Dropdown.Toggle variant="secondary" id="navbarToggleExternalContent" style={{ backgroundColor: "#206262" }}>
               <FontAwesomeIcon icon={faBars} />
-
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown-menu-end">
               <Dropdown.Item>
-                <Nav.Link as={Link} to="/" className="text-dark" onClick={() => (window.scrollTo(0, 0))}>
+                <Nav.Link as={Link} to="/" className={linkClass("/")} onClick={() => { handleLinkClick("/"); window.scrollTo(0, 0); }}>
                   Home
                 </Nav.Link>
               </Dropdown.Item>
               <Dropdown.Item>
-                <Nav.Link className="text-dark pe-auto mt-9" onClick={() => {scrollToSection('turnkey'); }}>
+                <Nav.Link className={linkClass("/#turnkey")} onClick={() => { handleLinkClick("/#turnkey"); scrollToSection('turnkey'); }}>
                   Services
                 </Nav.Link>
               </Dropdown.Item>
               <Dropdown.Item>
-                <Nav.Link as={Link} to="/products" className="text-dark">
-                Products
+                <Nav.Link as={Link} to="/products" className={linkClass("/products")} onClick={() => { handleLinkClick("/products"); window.scrollTo(0, 0); }}>
+                  Products
                 </Nav.Link>
-             </Dropdown.Item>
+              </Dropdown.Item>
               <Dropdown.Item>
-                <Nav.Link as={Link} to="/about" className="text-dark">
+                <Nav.Link as={Link} to="/about" className={linkClass("/about")} onClick={() => { handleLinkClick("/about"); }}>
                   About Us
                 </Nav.Link>
               </Dropdown.Item>
               <Dropdown.Item>
-              <Nav.Link className="text-dark" as={Link} to="/contact">
-              Contact Us
-            </Nav.Link>
+                <Nav.Link as={Link} to="/contact" className={linkClass("/contact")} onClick={() => { handleLinkClick("/contact"); }}>
+                  Contact Us
+                </Nav.Link>
               </Dropdown.Item>
-              
             </Dropdown.Menu>
           </Dropdown>
         </div>
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center custom-dropdown-menu px-2">
-          <Nav className="mr-auto nav nav-pills">
-            <Nav.Link as={Link} to="/" className="text-dark nav-link" onClick={() => (window.scrollTo(0, 0))}>
+        <Navbar.Collapse id="basic-navbar-nav" className="custom-dropdown-menu px-2">
+          <Nav className="mr-auto nav nav-pills" style={{border: "1px solid #206262", borderRadius:"10px", width:"auto", padding:"3px"}}>
+            <Nav.Link as={Link} to="/" className={linkClass("/")} onClick={() => { handleLinkClick("/"); window.scrollTo(0, 0); }}>
               Home
             </Nav.Link>
-            <Nav.Link className="text-dark pe-auto mt-9" onClick={() => { window.scrollTo(0, 0); scrollToSection('turnkey'); }}>
+            {/* <Nav.Link className={linkClass("/#turnkey")} onClick={() => { handleLinkClick("/#turnkey"); scrollToSection('turnkey'); }}>
               Services
-            </Nav.Link>
-            <Nav.Link as={Link} to="/products" className="text-dark">
+            </Nav.Link> */}
+            <Nav.Link as={Link} to="/products" className={linkClass("/products")} onClick={() => { handleLinkClick("/products"); window.scrollTo(0, 0); }}>
               Products
             </Nav.Link>
-            <Nav.Link as={Link} to="/about" className="text-dark">
+            <Nav.Link as={Link} to="/about" className={linkClass("/about")} onClick={() => { handleLinkClick("/about"); }}>
               About Us
             </Nav.Link>
-            <Nav.Link className="text-dark" as={Link} to="/contact">
+            <Nav.Link as={Link} to="/contact" className={linkClass("/contact")} onClick={() => { handleLinkClick("/contact"); }}>
               Contact Us
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-         <ThemeToggle theme={theme} setTheme={setTheme} /> 
-
+        <ThemeToggle theme={theme} setTheme={setTheme} />
       </Navbar>
     </>
   );

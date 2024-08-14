@@ -3,8 +3,8 @@ import React from 'react'
 const ProductTechDetails = () => {
   return (
     <div className="container" style={{ maxWidth: "100%" }}>
-      <p className="p-2 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
-        GENERAL DETAILS
+      <p className="p-2 text-success fw-bold bg-success-subtle border border-success-subtle rounded-3">
+        TECHNICAL DETAILS
       </p>
       <table className="table">
         <tbody>

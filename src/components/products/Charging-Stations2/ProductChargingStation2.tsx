@@ -4,7 +4,7 @@ import ProductHighlights from "./ProductHighlights";
 import ProductTechDetails from "./ProductTechDetails";
 import ProductUseCases from "./ProductUseCases";
 
-const Product = () => {
+const Product: React.FC = () => {
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
@@ -18,13 +18,13 @@ const Product = () => {
           <div className="col-12 col-md-6">
             <ProductHighlights />
           </div>
-          <div className="col-12 col-md-4">
-            <img src={cs2} className="card-img-top" alt="Product" />
+          <div className="col-12 col-md-4"  style={{width: '15rem'}} >
+            <img src={cs2} className="img-fluid card-img-top" alt="Product" />
           </div>
         </div>
         <div className="m-3">
          
-          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item me-2" role="presentation">
               <button
                 className="nav-link active text-white"
@@ -58,7 +58,7 @@ const Product = () => {
               </button>
             </li>
             
-          </ul>
+          </ul> */}
           <div className="tab-content" id="pills-tabContent">
             <div
               className="tab-pane fade show active"

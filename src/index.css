@@ -5,6 +5,16 @@ body,
   scroll-behavior: smooth;
 }
 
+.active-link {
+  background-color: rgb(32, 98, 98) !important;
+  border-radius: 30px;
+  padding: 5px 15px;
+  color: white !important;
+  font-weight: 500 !important;
+  position: relative;
+}
+
+
 .custom-font-large {
   font-size: 6rem;
   /* Default size for large screens */

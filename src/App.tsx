@@ -32,7 +32,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className={`d-flex flex-column min-vh-100 App ${theme}-mode`}>
-        <NavBar theme={theme} setTheme={setTheme} />
+        <NavBar theme={theme} setTheme={setTheme}/>
         <div className="flex-grow-1">
           <Switch>
             <Route

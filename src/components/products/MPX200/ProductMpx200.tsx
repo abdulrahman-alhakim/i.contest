@@ -4,7 +4,7 @@ import ProductHighlights from "./ProductHighlights";
 import ProductTechDetails from "./ProductTechDetails";
 import ProductUseCases from "./ProductUseCases";
 
-const ProductMpx200 = () => {
+const ProductMpx200: React.FC = () => {
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
@@ -19,7 +19,7 @@ const ProductMpx200 = () => {
           <div className="col-12 col-md-6">
             <ProductHighlights />
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6" style={{width: '20rem'}}>
             <img src={MPX200} className="img-fluid card-img-top" alt="Product" />
           </div>
         </div>

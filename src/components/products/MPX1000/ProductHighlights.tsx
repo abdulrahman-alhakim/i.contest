@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductHighlights = () => {
+const ProductHighlights: React.FC = () => {
   return (
     <div>
       <p className="p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
