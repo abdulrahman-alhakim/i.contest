@@ -52,7 +52,7 @@ const Products: React.FC = () => {
             <ul className="dropdown-menu w-100" aria-labelledby="dropdownMenuButton" style={{backgroundColor: "#d1e7dd" }}>
               <li>
                 <button
-                  className="dropdown-item"
+                  className="dropdown-item border-buttom border-primary"
                   onClick={() => handleTabChange('v-pills-mpx200', 'MPX 200')}
                 >
                   MPX 200
@@ -103,7 +103,7 @@ const Products: React.FC = () => {
                   className="dropdown-item"
                   onClick={() => handleTabChange('v-pills-vhighPower', 'Stand-alone Battery Integrated High Power Charging Station')}
                 >
-                  Stand-alone Battery Integrated High Power Charging Station
+                  Battery Integrated High Power Charging Station
                 </button>
               </li>
               <li>
@@ -245,7 +245,7 @@ const Products: React.FC = () => {
               width: activeTab === 'v-pills-vhighPower' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
             }}
           >
-            Stand-alone Battery Integrated High Power Charging Station
+            Battery Integrated High Power Charging Station
           </button>
           <button
             className="nav-link mb-2"
@@ -315,7 +315,10 @@ const Products: React.FC = () => {
             role="tabpanel"
             aria-labelledby="v-pills-5g-tab"
           >
-            <FiveG/>
+            {/* <FiveG/> */}
+            <div className="d-flex flex-column flex-md-row p-3 justify-content-center align-items-center">
+              <h1>Coming Soon ... </h1>
+            </div>
           </div>
           <div
             className={`tab-pane fade ${activeTab === 'v-pills-vacCharger' ? 'show active' : ''}`}
@@ -350,12 +353,16 @@ const Products: React.FC = () => {
             <ProductFuelCells />
           </div>
           <div
-            className={`tab-pane fade ${activeTab === 'v-pills-ems' ? 'show active' : ''}`}
+            className={`tab-pane fade ${activeTab === 'v-pills-ems' ? 'show active' : ''}` }
             id="v-pills-ems"
             role="tabpanel"
             aria-labelledby="v-pills-ems-tab"
           >
-            <Ems />
+            {/* <Ems /> */}
+            
+            <div className="d-flex flex-column flex-md-row p-3 justify-content-center align-items-center">
+              <h1>Coming Soon ... </h1>
+            </div>
           </div>
         </div>
       </div>
@@ -365,4 +372,3 @@ const Products: React.FC = () => {
 
 export default Products;
 
-{/* <div className="d-flex flex-column flex-md-row p-3 justify-content-center align-items-center"> */}

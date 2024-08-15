@@ -54,7 +54,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
         bg="light" expand="md"
         className={`custom-navbar sticky-top ${expanded ? "expanded" : ""}`}
       >
-        <Navbar.Brand as={Link} to="/" className="ms-3">
+        <Navbar.Brand as={Link} to="/" className=" ms-3 ">
           <img
             src={require("../images/iconteststereo.png")}
             width="225"
@@ -64,7 +64,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             onClick={() => (window.scrollTo(0, 0))}
           />
         </Navbar.Brand>
-        <div className="dropdown d-block d-md-none">
+        <div className="dropdown d-block d-md-none me-3">
           <Dropdown>
             <Dropdown.Toggle variant="secondary" id="navbarToggleExternalContent" style={{ backgroundColor: "#206262" }}>
               <FontAwesomeIcon icon={faBars} />
@@ -76,11 +76,11 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
                   Home
                 </Nav.Link>
               </Dropdown.Item>
-              <Dropdown.Item>
+              {/* <Dropdown.Item>
                 <Nav.Link className={linkClass("/#turnkey")} onClick={() => { handleLinkClick("/#turnkey"); scrollToSection('turnkey'); }}>
                   Services
                 </Nav.Link>
-              </Dropdown.Item>
+              </Dropdown.Item> */}
               <Dropdown.Item>
                 <Nav.Link as={Link} to="/products" className={linkClass("/products")} onClick={() => { handleLinkClick("/products"); window.scrollTo(0, 0); }}>
                   Products
@@ -99,7 +99,17 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-        <Navbar.Collapse id="basic-navbar-nav" className="custom-dropdown-menu px-2">
+        <Navbar.Collapse id="basic-navbar-nav " className="custom-dropdown-menu px-2 justify-content-center">
+        {/* <Navbar.Brand as={Link} to="/" className="ms-3 ">
+          <img
+            src={require("../images/iconteststereo.png")}
+            width="225"
+            height="40"
+            className="d-inline-block"
+            alt="Logo"
+            onClick={() => (window.scrollTo(0, 0))}
+          />
+        </Navbar.Brand> */}
           <Nav className="mr-auto nav nav-pills" style={{border: "1px solid #206262", borderRadius:"10px", width:"auto", padding:"3px"}}>
             <Nav.Link as={Link} to="/" className={linkClass("/")} onClick={() => { handleLinkClick("/"); window.scrollTo(0, 0); }}>
               Home
@@ -118,7 +128,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <ThemeToggle theme={theme} setTheme={setTheme} />
+        {/* <ThemeToggle theme={theme} setTheme={setTheme} /> */}
       </Navbar>
     </>
   );

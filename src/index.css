@@ -5,13 +5,15 @@ body,
   scroll-behavior: smooth;
 }
 
-.active-link {
-  background-color: rgb(32, 98, 98) !important;
-  border-radius: 30px;
-  padding: 5px 15px;
-  color: white !important;
-  font-weight: 500 !important;
-  position: relative;
+@media (min-width: 768px) {
+  .active-link {
+    background-color: rgb(32, 98, 98) !important;
+    border-radius: 30px;
+    padding: 5px 15px;
+    color: white !important;
+    font-weight: 500 !important;
+    position: relative;
+  }
 }
 
 

@@ -11,7 +11,7 @@ const DAY = HOUR * 24;
 
 type Units = "Day" | "Hour" | "Minute" | "Second";
 
-const ShiftingCountdown = () => {
+const ShiftingCountdown: React.FC = () => {
     return (
         <div className="bg-light py-5">
             <div className="container">
