@@ -15,15 +15,15 @@ const Product: React.FC = () => {
           implementation in electrical grid.
         </p>
 
-        <div className="row m-3">
-          
+        <div className="row m-3 justify-content-between">
+          <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
+            <img src={MPX200} loading="lazy" className="img-fluid" width={350} alt="MPX200" />
+          </div>
           <div className="col-12 col-md-6">
             <ProductHighlights />
           </div>
-          <div className="col-12 col-md-4">
-            <img src={MPX200} className="card-img-top" alt="Product" />
-          </div>
         </div>
+
         <div className="m-3">
           {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item me-2" role="presentation">
@@ -75,9 +75,9 @@ const Product: React.FC = () => {
               role="tabpanel"
               aria-labelledby="pills-profile-tab"
             >
-               <ProductUseCases />
+              <ProductUseCases />
             </div>
-            
+
           </div>
         </div>
       </div>

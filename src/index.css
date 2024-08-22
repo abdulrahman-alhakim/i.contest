@@ -16,7 +16,6 @@ body,
   }
 }
 
-
 .custom-font-large {
   font-size: 6rem;
   /* Default size for large screens */
@@ -105,13 +104,3 @@ code {
 
 }
 
-/* Fix navbar at the top in desktop mode */
-@media (min-width: 700px) {
-  .custom-navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030; /* Bootstrap's default z-index for fixed navbar */
-  }
-}

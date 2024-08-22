@@ -13,52 +13,16 @@ const Product: React.FC = () => {
           Model ESS-CS-200-EU & Model ESS-CS-310-EU
         </p>
 
-        <div className="row m-3">
-
+        <div className="row m-3 justify-content-between">
+          <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
+            <img src={cs3} loading="lazy" className="img-fluid" width={350} alt="MPX200" />
+          </div>
           <div className="col-12 col-md-6">
             <ProductHighlights />
-          </div>
-          <div className="col-12 col-md-4">
-            <img src={cs3} className="card-img-top" alt="Product" />
           </div>
         </div>
         <div className="m-3">
 
-          {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li className="nav-item me-2" role="presentation">
-              <button
-                className="nav-link active text-white"
-                id="pills-home-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-home"
-                type="button"
-                role="tab"
-                aria-controls="pills-home"
-                aria-selected="true"
-                style={{ backgroundColor: "#00796b", borderRadius: "10px" }}
-
-              >
-                Technical Details
-              </button>
-            </li>
-            <li className="nav-item" role="presentation">
-              <button
-                className="nav-link text-white"
-                id="pills-profile-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-profile"
-                type="button"
-                role="tab"
-                aria-controls="pills-profile"
-                aria-selected="false"
-                style={{ backgroundColor: "#00796b", borderRadius: "10px" }}
-
-              >
-                Use Cases
-              </button>
-            </li>
-
-          </ul> */}
           <div className="tab-content" id="pills-tabContent">
             <div
               className="tab-pane fade show active"

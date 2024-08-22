@@ -33,7 +33,7 @@ const App: React.FC = () => {
     <Router>
       <div className={`d-flex flex-column min-vh-100 App ${theme}-mode`}>
         <NavBar theme={theme} setTheme={setTheme}/>
-        <div className="flex-grow-1">
+        <div className="flex-grow-1 mt-5">
           <Switch>
             <Route
               path="/"

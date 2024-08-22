@@ -1,12 +1,12 @@
+import React from 'react';
+import "./AboutUsPage.css";
+
 const people = [
-    
     {
       name: 'Eng. Faisal Hakim',
       role: 'CEO',
       imageUrl: require('../images/faisall.png')
     },
-  
-  
   ]
   interface AboutUsPageProps {
     theme: string;
@@ -16,14 +16,14 @@ const people = [
   const AboutUsPage: React.FC<AboutUsPageProps> = ({ theme, setTheme }) => {
     return (
       <div className="d-flex justify-content-center align-items-center m-5">
-        <div className="" style={{ maxWidth: '1000px', width: '100%' }}>
+        <div className="mobileMarginTop" style={{ maxWidth: '1000px', width: '100%'}}>
           {/* <div className="d-none d-md-flex justify-content-between p-4">
             <p className="ms-5">INNOVATIVE</p>
             <p>INSPIRING</p>
             <p className="me-5">INTELLIGENT</p>
           </div> */}
           <div className="mx-auto">
-            <h2 className="h2 fw-bold mb-4" >Meet our leadership</h2>
+            <h2 className="h2 fw-bold my-4" >Meet our leadership</h2>
   
             <p className="fs-5 mb-4 p-3">
               i.contest, located in Wolfsburg (Volkswagen City), is the product of innovative collaboration among professionals with diverse expertise. Our specialization lies in providing environmentally and economically sustainable solutions for power generation in remote areas, islands, and beyond. Through our electrical energy systems, we aim to reduce dependence on fossil fuels, maximize the use of renewable energy, and minimize overall energy costs.          </p>

@@ -10,20 +10,19 @@ const Product: React.FC = () => {
       <div className="card-body">
         <h5 className="card-title">ENERGY UNIT CABINET ESS-MPX-200</h5>
         <p className="p-3">
-        DC High Power Charge Station
+          DC High Power Charge Station
         </p>
 
-        <div className="row m-3">
-          
+        <div className="row m-3 justify-content-between">
+          <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
+            <img src={cs2} loading="lazy" className="img-fluid" width={200} alt="MPX200" />
+          </div>
           <div className="col-12 col-md-6">
             <ProductHighlights />
           </div>
-          <div className="col-12 col-md-4"  style={{width: '15rem'}} >
-            <img src={cs2} className="img-fluid card-img-top" alt="Product" />
-          </div>
         </div>
         <div className="m-3">
-         
+
           {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item me-2" role="presentation">
               <button
@@ -74,9 +73,9 @@ const Product: React.FC = () => {
               role="tabpanel"
               aria-labelledby="pills-profile-tab"
             >
-               <ProductUseCases />
+              <ProductUseCases />
             </div>
-            
+
           </div>
         </div>
       </div>

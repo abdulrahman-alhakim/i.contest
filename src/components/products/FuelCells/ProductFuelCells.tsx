@@ -13,15 +13,15 @@ const ProductFuelCells: React.FC = () => {
           Stand-alone Storage Power Container
         </p>
 
-        <div className="row m-2">
-
+        <div className="row m-3 justify-content-between">
+          <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
+            <img src={fuelcell} loading="lazy" className="img-fluid" width={350} alt="MPX200" />
+          </div>
           <div className="col-12 col-md-6">
             <ProductHighlights />
           </div>
-          <div className="col-12 col-md-4">
-            <img src={fuelcell} className="card-img-top" alt="Product" />
-          </div>
         </div>
+
         <div className="m-3">
 
           {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">

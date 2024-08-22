@@ -48,7 +48,7 @@ export const Footer = () => {
               <div className="col-md-8 col-lg-7">
                 <div className="row justify-content-md-end">
                   {/* 2nd block */}
-                  <div className="col-sm-3 mb-3 me-1 mb-sm-0 text-center text-md-start">
+                  <div className="col-sm-4 mb-3 me-1 mb-sm-0 text-center text-md-start">
                     <h6 className="font-weight-bold text-light mb-3">Contact</h6>
                     <ul className="list-unstyled text-light">
                       <li>info@i-contest.eu</li>
@@ -57,7 +57,7 @@ export const Footer = () => {
                   </div>
 
                   {/* 3rd block */}
-                  <div className="col-sm-3 mb-3 me-1 mb-sm-0 text-center text-md-start">
+                  <div className="col-sm-4 mb-3 me-1 mb-sm-0 text-center text-md-start">
                     <a style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }} href="https://www.google.com/maps/place/Hauptstraße+30a,+38446+Wolfsburg,+Germany" target="_blank" rel="noopener noreferrer">
                       <h6 className="text-light font-weight-bold mb-3">
                         Location

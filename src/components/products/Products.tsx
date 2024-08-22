@@ -6,8 +6,13 @@ import ProductFuelCells from './FuelCells/ProductFuelCells';
 import ProductChargingStation1 from './Charging-Stations1/ProductChargingStation1';
 import ProductChargingStation2 from './Charging-Stations2/ProductChargingStation2';
 import ProductChargingStation3 from './Charging-Stations3/ProductChargingStation3';
-import Ems from './EMS/Ems';
-import FiveG from './5G/FiveG';
+import ProductMpx110 from './MPX110/ProductMpx110';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons';
+import FiveGSolution from './5G/FiveGSolution';
+import './Products.css';
+import SolarPark from './SolarPark/SolarPark';
+import SolarPanel from './SolarPanel/SolarPanel';
 
 const Products: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('v-pills-mpx200');
@@ -28,6 +33,13 @@ const Products: React.FC = () => {
     },
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   const handleTabChange = (tab: string, label: string) => {
     setActiveTab(tab);
     setDropdownLabel(label);
@@ -38,96 +50,175 @@ const Products: React.FC = () => {
       <div className="d-flex flex-column flex-md-row p-3 justify-content-center">
         {/* Mobile Dropdown */}
         <div className="col-12 d-md-none mb-3">
-          <div className="dropdown">
-            <button
-              className="btn dropdown-toggle w-100 text-white"
-              type="button"
-              id="dropdownMenuButton"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              style={{backgroundColor: "#00796b" }}
-            >
-              {dropdownLabel}
+          <div className="col-12 d-md-none mb-3">
+            <div>
+              <button
+                className="btn dropdown-toggle text-white fixed-top"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{
+                  marginTop: "15px",
+                  backgroundColor: "#00796b",
+                  height: "50px",
+                  top: "90px", // Adjust the top position as needed
+                  zIndex: "1000", // Ensures the button stays on top of other content
+                }}
+              >
+                {dropdownLabel}
+              </button>
+
+              <ul
+                className="dropdown-menu mx-2"
+                aria-labelledby="dropdownMenuButton"
+                style={{ backgroundColor: "#d1e7dd" }}
+              >
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-mpx110", "MPX 110")}
+                  >
+                    MPX 110
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-mpx200", "MPX 200")}
+                  >
+                    MPX 200
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-mpx1000X", "MPX 1000")}
+                  >
+                    MPX 1000
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-mpx1000", "Model MPX-Container-20HQ")}
+                  >
+                    Model MPX-Container-20HQ
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-5g", "5G Infrastructure")}
+                  >
+                    5G Infrastructure Solution
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-vacCharger", "Electrical Vehicle AC Charger")}
+                  >
+                    Electrical Vehicle AC Charger
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-vdcCharger", "Electrical Vehicle DC Charge Station")}
+                  >
+                    Electrical Vehicle DC Charge Station
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-vhighPower", "Battery Integrated High Power Charging Station")}
+                  >
+                    Battery Integrated High Power Charging Station
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-fuelCells", "Fuel Cells")}
+                  >
+                    Fuel Cells
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-solar", "solar")}
+                  >
+                    Solar Panel
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-solarPark", "solarPark")}
+                  >
+                    Solar Park
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-ems", "EMS")}
+                  >
+                    EMS
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <button onClick={scrollToTop} style={{
+              position: 'fixed',
+              bottom: '30px',
+              right: '20px',
+              zIndex: '99',
+              cursor: 'pointer',
+              border: 'none',
+              background: 'none'
+            }}>
+              <FontAwesomeIcon icon={faCircleArrowUp} size="2xl" style={{ color: "#309191", }} />
             </button>
-            <ul className="dropdown-menu w-100" aria-labelledby="dropdownMenuButton" style={{backgroundColor: "#d1e7dd" }}>
-              <li>
-                <button
-                  className="dropdown-item border-buttom border-primary"
-                  onClick={() => handleTabChange('v-pills-mpx200', 'MPX 200')}
-                >
-                  MPX 200
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleTabChange('v-pills-chargingStation', 'MPX 1000')}
-                >
-                  MPX 1000
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleTabChange('v-pills-mpx1000', 'Model MPX-Container-20HQ')}
-                >
-                  Model MPX-Container-20HQ
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleTabChange('v-pills-5g', '5G Infrastructure')}
-                >
-                  5G Infrastructure
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleTabChange('v-pills-vacCharger', 'Electrical Vehicle AC Charger')}
-                >
-                  Electrical Vehicle AC Charger
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleTabChange('v-pills-vdcCharger', 'Electrical Vehicle DC Charge Station')}
-                >
-                  Electrical Vehicle DC Charge Station
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleTabChange('v-pills-vhighPower', 'Stand-alone Battery Integrated High Power Charging Station')}
-                >
-                  Battery Integrated High Power Charging Station
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleTabChange('v-pills-fuelCells', 'Fuel Cells')}
-                >
-                  Fuel Cells
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleTabChange('v-pills-ems', 'EMS')}
-                >
-                  EMS
-                </button>
-              </li>
-            </ul>
           </div>
+
         </div>
 
         {/* Desktop Sidebar */}
-        <div className="col-md-2 d-none d-md-block nav flex-column nav-pills mb-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <div className="col-md-2 d-none d-md-block nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <button
+            className="nav-link mb-2"
+            id="v-pills-mpx110-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-mpx110"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-mpx110"
+            aria-selected={activeTab === 'v-pills-mpx110'}
+            onClick={() => handleTabChange('v-pills-mpx110', ' mpx110')}
+            style={{
+              ...buttonStyles[activeTab === 'v-pills-mpx110' ? 'active' : 'inactive'],
+              width: activeTab === 'v-pills-mpx110' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
+            }}
+          >
+            MPX 110
+          </button>
           <button
             className="nav-link mb-2"
             id="v-pills-mpx200-tab"
@@ -145,19 +236,20 @@ const Products: React.FC = () => {
           >
             MPX 200
           </button>
+
           <button
             className="nav-link mb-2"
-            id="v-pills-chargingStation-tab"
+            id="v-pills-mpx1000X-tab"
             data-bs-toggle="pill"
-            data-bs-target="#v-pills-chargingStation"
+            data-bs-target="#v-pills-mpx1000X"
             type="button"
             role="tab"
-            aria-controls="v-pills-chargingStation"
-            aria-selected={activeTab === 'v-pills-chargingStation'}
-            onClick={() => handleTabChange('v-pills-chargingStation', 'MPX 1000')}
+            aria-controls="v-pills-mpx1000X"
+            aria-selected={activeTab === 'v-pills-mpx1000X'}
+            onClick={() => handleTabChange('v-pills-mpx1000X', 'MPX 1000')}
             style={{
-              ...buttonStyles[activeTab === 'v-pills-chargingStation' ? 'active' : 'inactive'],
-              width: activeTab === 'v-pills-chargingStation' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
+              ...buttonStyles[activeTab === 'v-pills-mpx1000X' ? 'active' : 'inactive'],
+              width: activeTab === 'v-pills-mpx1000X' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
             }}
           >
             MPX 1000
@@ -194,7 +286,7 @@ const Products: React.FC = () => {
               width: activeTab === 'v-pills-5g' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
             }}
           >
-            5G Infrastructure
+            5G Infrastructure Solution
           </button>
           <button
             className="nav-link mb-2"
@@ -239,7 +331,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-vhighPower"
             aria-selected={activeTab === 'v-pills-vhighPower'}
-            onClick={() => handleTabChange('v-pills-vhighPower', 'Stand-alone Battery Integrated High Power Charging Station')}
+            onClick={() => handleTabChange('v-pills-vhighPower', 'Battery Integrated High Power Charging Station')}
             style={{
               ...buttonStyles[activeTab === 'v-pills-vhighPower' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-vhighPower' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -266,6 +358,40 @@ const Products: React.FC = () => {
           </button>
           <button
             className="nav-link mb-2"
+            id="v-pills-solar-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-solar"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-solar"
+            aria-selected={activeTab === 'v-pills-solar'}
+            onClick={() => handleTabChange('v-pills-solar', 'solar')}
+            style={{
+              ...buttonStyles[activeTab === 'v-pills-solar' ? 'active' : 'inactive'],
+              width: activeTab === 'v-pills-solar' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
+            }}
+          >
+            Solar Panel
+          </button>
+          <button
+            className="nav-link mb-2"
+            id="v-pills-solarPark-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-solarPark"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-solarPark"
+            aria-selected={activeTab === 'v-pills-solarPark'}
+            onClick={() => handleTabChange('v-pills-solarPark', 'solarPark')}
+            style={{
+              ...buttonStyles[activeTab === 'v-pills-solarPark' ? 'active' : 'inactive'],
+              width: activeTab === 'v-pills-solarPark' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
+            }}
+          >
+            Solar Park
+          </button>
+          <button
+            className="nav-link mb-2"
             id="v-pills-ems-tab"
             data-bs-toggle="pill"
             data-bs-target="#v-pills-ems"
@@ -282,9 +408,19 @@ const Products: React.FC = () => {
             EMS
           </button>
         </div>
+        <div className='mx-1'>
 
-        {/* Content area */}
-        <div className="tab-content col-12 col-md-8" id="v-pills-tabContent">
+        </div>
+        <div className="tab-content col-12 col-md-7 mobileMarginTop" id="v-pills-tabContent">
+
+          <div
+            className={`tab-pane fade ${activeTab === 'v-pills-mpx110' ? 'show active' : ''}`}
+            id="v-pills-mpx110"
+            role="tabpanel"
+            aria-labelledby="v-pills-mpx110-tab"
+          >
+            <ProductMpx110 />
+          </div>
           <div
             className={`tab-pane fade ${activeTab === 'v-pills-mpx200' ? 'show active' : ''}`}
             id="v-pills-mpx200"
@@ -294,10 +430,10 @@ const Products: React.FC = () => {
             <ProductMpx200 />
           </div>
           <div
-            className={`tab-pane fade ${activeTab === 'v-pills-chargingStation' ? 'show active' : ''}`}
-            id="v-pills-chargingStation"
+            className={`tab-pane fade ${activeTab === 'v-pills-mpx1000X' ? 'show active' : ''}`}
+            id="v-pills-mpx1000X"
             role="tabpanel"
-            aria-labelledby="v-pills-chargingStation-tab"
+            aria-labelledby="v-pills-mpx1000X-tab"
           >
             <ProductMpx1000X />
           </div>
@@ -315,10 +451,7 @@ const Products: React.FC = () => {
             role="tabpanel"
             aria-labelledby="v-pills-5g-tab"
           >
-            {/* <FiveG/> */}
-            <div className="d-flex flex-column flex-md-row p-3 justify-content-center align-items-center">
-              <h1>Coming Soon ... </h1>
-            </div>
+            <FiveGSolution />
           </div>
           <div
             className={`tab-pane fade ${activeTab === 'v-pills-vacCharger' ? 'show active' : ''}`}
@@ -353,13 +486,29 @@ const Products: React.FC = () => {
             <ProductFuelCells />
           </div>
           <div
-            className={`tab-pane fade ${activeTab === 'v-pills-ems' ? 'show active' : ''}` }
+            className={`tab-pane fade ${activeTab === 'v-pills-solar' ? 'show active' : ''}`}
+            id="v-pills-solar"
+            role="tabpanel"
+            aria-labelledby="v-pills-solar-tab"
+          >
+            <SolarPanel />
+          </div>
+          <div
+            className={`tab-pane fade ${activeTab === 'v-pills-solarPark' ? 'show active' : ''}`}
+            id="v-pills-solarPark"
+            role="tabpanel"
+            aria-labelledby="v-pills-solarPark-tab"
+          >
+            <SolarPark />
+          </div>
+          <div
+            className={`tab-pane fade ${activeTab === 'v-pills-ems' ? 'show active' : ''}`}
             id="v-pills-ems"
             role="tabpanel"
             aria-labelledby="v-pills-ems-tab"
           >
             {/* <Ems /> */}
-            
+
             <div className="d-flex flex-column flex-md-row p-3 justify-content-center align-items-center">
               <h1>Coming Soon ... </h1>
             </div>

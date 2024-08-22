@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .mobileMarginTop {
+        margin-top: 50px;
+    }
+  }
+.sideBarFix{
+    position: fixed;
+    top: 10;
+    left: 50px;
+    z-index: 1000;
+}  

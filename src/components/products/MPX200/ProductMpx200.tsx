@@ -6,7 +6,7 @@ import ProductUseCases from "./ProductUseCases";
 
 const ProductMpx200: React.FC = () => {
   return (
-    <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
+    <div className="card mx-auto bg-light" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
         <h5 className="card-title">ENERGY UNIT CABINET ESS-MPX-200</h5>
         <p className="p-3">
@@ -15,17 +15,17 @@ const ProductMpx200: React.FC = () => {
           implementation in electrical grid.
         </p>
 
-        <div className="row m-3">
+        <div className="row m-3 justify-content-between">
+          <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
+            <img src={MPX200} loading="lazy" className="img-fluid" width={250} alt="MPX200" />
+          </div>
           <div className="col-12 col-md-6">
             <ProductHighlights />
-          </div>
-          <div className="col-12 col-md-6" style={{width: '20rem'}}>
-            <img src={MPX200} className="img-fluid card-img-top" alt="Product" />
           </div>
         </div>
 
         <div className="m-3">
-          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item me-2" role="presentation">
               <button
                 className="nav-link active text-light"
@@ -56,7 +56,7 @@ const ProductMpx200: React.FC = () => {
                 Use Cases
               </button>
             </li>
-          </ul>
+          </ul> */}
           <div className="tab-content" id="pills-tabContent">
             <div
               className="tab-pane fade show active"

@@ -11,8 +11,10 @@ interface IState {
 }
 
 export const ContactUsForm: React.FC = () => {
-  const [state, setState] = useState<IState>({ name: '', email: '', inquiryType: 'Private', message: '' });
+  const [state, setState] = useState<IState>({ name: '', email: '', inquiryType: 'Commercial', message: '' });
   const [responseMessage, setResponseMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -21,6 +23,7 @@ export const ContactUsForm: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
 
     // Send email to yourself
     emailjs.send('service_5oj9mzc', 'template_847hq1z', {
@@ -37,18 +40,21 @@ export const ContactUsForm: React.FC = () => {
           name: state.name,
           email: state.email,
         }, 'rRIDCCBSkeoeTHuQP')
-        .then((result) => {
-          console.log(result.text);
-          setResponseMessage('Email sent successfully!');
-          setState({ name: '', email: '', inquiryType: 'Private', message: '' }); // Clear the form
-        }, (error) => {
-          console.log(error.text);
-          setResponseMessage('Failed to send acknowledgment email.');
-        });
+          .then((result) => {
+            console.log(result.text);
+            setResponseMessage('Email sent successfully!');
+            setState({ name: '', email: '', inquiryType: 'Private', message: '' }); // Clear the form
+          }, (error) => {
+            console.log(error.text);
+            setResponseMessage('Failed to send acknowledgment email.');
+          }).finally(() => {
+            setLoading(false); // Set loading to false after the process completes
+          });
 
       }, (error) => {
         console.log(error.text);
         setResponseMessage('Failed to send the message.');
+        setLoading(false); // Set loading to false after the process completes
       });
   };
 
@@ -117,8 +123,15 @@ export const ContactUsForm: React.FC = () => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="btn text-light mb-3" style={{ backgroundColor: 'rgba(32,98,98,.9)' }}>Send Message</button>
+            {loading ? <button type="submit" className="btn text-light mb-3 disabled" style={{ backgroundColor: 'rgba(32,98,98,.9)' }}>
+              <span className="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+              Send Message
+            </button> :
+              <button type="submit" className="btn text-light mb-3" style={{ backgroundColor: 'rgba(32,98,98,.9)' }}>
+                Send Message
+              </button>}
           </form>
+          {loading && <div className="spinner-border text-secondary" role="status"><span className="visually-hidden">Loading...</span></div>}
           {responseMessage && <p>{responseMessage}</p>}
         </div>
       </div>

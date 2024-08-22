@@ -1,21 +1,21 @@
 import React from "react";
-import cs1 from "../../../images/cs1.png";
+import MPX200 from "../../../images/mpx110.png";
 import ProductHighlights from "./ProductHighlights";
 import ProductTechDetails from "./ProductTechDetails";
 import ProductUseCases from "./ProductUseCases";
 
-const Product: React.FC = () => {
+const ProductMpx110: React.FC = () => {
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
-        <h5 className="card-title">ENERGY UNIT CABINET ESS-MPX-200</h5>
+        <h5 className="card-title">ENERGY UNIT CABINET ESS-MPX-110</h5>
         <p className="p-3">
-          AC Charger
+          All-in-one cabinet integrating liquid-cooled Lithium ion LFP battery of 1st class with high performance power conversion system. Easy implementation in electrical grid.
         </p>
 
         <div className="row m-3 justify-content-between">
           <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
-            <img src={cs1} loading="lazy" className="img-fluid" width={350} alt="MPX200" />
+            <img src={MPX200} loading="lazy" className="img-fluid" width={250} alt="MPX200" />
           </div>
           <div className="col-12 col-md-6">
             <ProductHighlights />
@@ -23,7 +23,6 @@ const Product: React.FC = () => {
         </div>
 
         <div className="m-3">
-
           {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item me-2" role="presentation">
               <button
@@ -35,10 +34,10 @@ const Product: React.FC = () => {
                 role="tab"
                 aria-controls="pills-home"
                 aria-selected="true"
-                style={{ backgroundColor: "#00796b", borderRadius: "10px" }}
+                style={{backgroundColor:"#00796b", borderRadius:"10px" }}
 
               >
-                Technical Details
+              Technical Details
               </button>
             </li>
             <li className="nav-item" role="presentation">
@@ -51,14 +50,14 @@ const Product: React.FC = () => {
                 role="tab"
                 aria-controls="pills-profile"
                 aria-selected="false"
-                style={{ backgroundColor: "#00796b", borderRadius: "10px" }}
+                style={{backgroundColor:"#00796b", borderRadius:"10px" }}
 
               >
-                Use Cases
+              Use Cases
               </button>
-            </li> 
-
-          </ul>*/}
+            </li>
+            
+          </ul> */}
           <div className="tab-content" id="pills-tabContent">
             <div
               className="tab-pane fade show active"
@@ -84,4 +83,4 @@ const Product: React.FC = () => {
   );
 };
 
-export default Product;
+export default ProductMpx110;
