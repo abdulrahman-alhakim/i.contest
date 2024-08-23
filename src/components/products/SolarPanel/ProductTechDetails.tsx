@@ -1,6 +1,7 @@
 import React from 'react'
 import chart from '../../../images/special-figures/chart2.png'
 import chart1 from '../../../images/special-figures/chart3.png'
+import chart2 from '../../../images/special-figures/chart.png'
 
 const ProductTechDetails = () => {
   return (
@@ -9,94 +10,90 @@ const ProductTechDetails = () => {
         TECHNICAL DETAILS
       </p>
       <div className='row'>
-        <div className='col-12'>
-          <div className="row">
-            <div className="col-12 col-md-6">
-              <p className="p-2 text-success fw-bold bg-success-subtle border border-success-subtle rounded-3">
-                ELECTRICAL CHARACTERISTICS I STC
-              </p>
+        <div className='col-12 overflow-x-auto'>
+          <p className="p-2 text-success fw-bold bg-success-subtle border border-success-subtle rounded-3">
+            ELECTRICAL CHARACTERISTICS I STC
+          </p>
 
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">Maximum Power Current (Imp)</th>
-                    <th scope="col">
-                      405W
-                    </th>
-                    <th scope="col">
-                      410W
-                    </th>
-                    <th scope="col">
-                      415W
-                    </th>
-                    <th scope="col">
-                      420W
-                    </th>
-                    <th scope="col">
-                      425W
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Maximum Power Current (Imp)</th>
-                    <td>12.95A</td>
-                    <td>13.05A</td>
-                    <td>13.14A</td>
-                    <td>13.24A</td>
-                    <td>13.33A</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Maximum Power Voltage (Vmp)</th>
-                    <td>31.31V</td>
-                    <td>31.44V</td>
-                    <td>31.60V</td>
-                    <td>31.74V</td>
-                    <td>31.91V</td>
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Maximum Power Current (Imp)</th>
+                <th scope="col">
+                  405W
+                </th>
+                <th scope="col">
+                  410W
+                </th>
+                <th scope="col">
+                  415W
+                </th>
+                <th scope="col">
+                  420W
+                </th>
+                <th scope="col">
+                  425W
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Maximum Power Current (Imp)</th>
+                <td>12.95A</td>
+                <td>13.05A</td>
+                <td>13.14A</td>
+                <td>13.24A</td>
+                <td>13.33A</td>
+              </tr>
+              <tr>
+                <th scope="row">Maximum Power Voltage (Vmp)</th>
+                <td>31.31V</td>
+                <td>31.44V</td>
+                <td>31.60V</td>
+                <td>31.74V</td>
+                <td>31.91V</td>
 
-                  </tr>
-                  <tr>
-                    <th scope="row">Short Circuit Current (Isc)</th>
-                    <td>13.91A</td>
-                    <td>13.98A</td>
-                    <td>14.06A</td>
-                    <td>14.14A</td>
-                    <td>14.22A</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Open Circuit Voltage (Voc)</th>
-                    <td>37.19V</td>
-                    <td>37.33V</td>
-                    <td>37.48V</td>
-                    <td>37.63V</td>
-                    <td>37.79V</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Module Efficiency</th>
-                    <td>20.7%</td>
-                    <td>21.0%</td>
-                    <td>21.2%</td>
-                    <td>21.5%</td>
-                    <td>21.7%</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Power Tolerance</th>
-                    <td>0~+5W</td>
-                    <td>0~+5W</td>
-                    <td>0~+5W</td>
-                    <td>0~+5W</td>
-                    <td>0~+5W</td>
-                  </tr>
+              </tr>
+              <tr>
+                <th scope="row">Short Circuit Current (Isc)</th>
+                <td>13.91A</td>
+                <td>13.98A</td>
+                <td>14.06A</td>
+                <td>14.14A</td>
+                <td>14.22A</td>
+              </tr>
+              <tr>
+                <th scope="row">Open Circuit Voltage (Voc)</th>
+                <td>37.19V</td>
+                <td>37.33V</td>
+                <td>37.48V</td>
+                <td>37.63V</td>
+                <td>37.79V</td>
+              </tr>
+              <tr>
+                <th scope="row">Module Efficiency</th>
+                <td>20.7%</td>
+                <td>21.0%</td>
+                <td>21.2%</td>
+                <td>21.5%</td>
+                <td>21.7%</td>
+              </tr>
+              <tr>
+                <th scope="row">Power Tolerance</th>
+                <td>0~+5W</td>
+                <td>0~+5W</td>
+                <td>0~+5W</td>
+                <td>0~+5W</td>
+                <td>0~+5W</td>
+              </tr>
 
-                </tbody>
-                <caption>STC: AM1.5 Irradiance 1000W/m, 25° C</caption>
+            </tbody>
+            <caption>STC: AM1.5 Irradiance 1000W/m, 25° C</caption>
 
-              </table>
-            </div>
-          </div>
+          </table>
 
         </div>
-        <div className='col-12'>
+        <div className='col-12 overflow-x-auto'>
           <p className="p-2 text-success fw-bold bg-success-subtle border border-success-subtle rounded-3">
             ELECTRICAL CHARACTERISTICS NOCT
           </p>
@@ -297,8 +294,8 @@ const ProductTechDetails = () => {
           </div>
         </div>
         <div className="col-12">
-          <div className="row">
-            <div className="col-12 col-md-6 card m-2" style={{ width: '18rem' }}>
+          <div className="row justify-content-around">
+            <div className="col-12 col-md-6 card m-2 p-2" style={{ width: '18rem' }}>
               <img src={chart} className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className="card-text">
@@ -306,7 +303,7 @@ const ProductTechDetails = () => {
                 </p>
               </div>
             </div>
-            <div className="col-12 col-md-6 card m-2" style={{ width: '18rem' }}>
+            <div className="col-12 col-md-6 card m-2 p-2" style={{ width: '18rem' }}>
               <img src={chart1} className="card-img-top" alt="..." />
               <div className="card-body">
                 <p className="card-text">
@@ -314,6 +311,42 @@ const ProductTechDetails = () => {
                 </p>
               </div>
             </div>
+          </div>
+
+        </div>
+        <div className="col-12">
+          <div className="row justify-content-around">
+            <div className="col-12 col-md-6 card m-2 p-2">
+              <div className="card-body">
+                <p className="card-text">
+                  PV Module: IV Curve
+                </p>
+              </div>
+              <img src={chart2} className="card-img-top mb-3" alt="..." />
+              <ul>
+                <li>
+                  <p className="card-text">Output Linear Warranty: 1 (12) years product warranty</p>
+                </li>
+                <li>
+                  <p className="card-text">
+                    Standard Warranty:
+                    Out linear warranty with 2.5% degradation in the 1st year and
+                    less than 0.6% degradation each year from 2nd year to 25th year
+                  </p>
+                </li>
+              </ul>
+
+            </div>
+            <div className="col-12 col-md-6 card m-2 p-2" style={{ maxWidth: '18rem' }}>
+
+              <div className="card-body">
+                <h5 className="card-title">WARRANTY</h5>
+                <p className="card-text">25- Year linear power warranty <br />
+                  12 -Year product warranty</p>
+
+              </div>
+            </div>
+
           </div>
 
         </div>

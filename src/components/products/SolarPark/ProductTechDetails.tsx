@@ -18,7 +18,7 @@ const ProductTechDetails = () => {
                   <tr>
                     <td className="fw-bold">
                       No. of vehicle places                    </td>
-                    <td>2 – 20 places, flexible configuration</td>
+                    <td>2 – 20 places and more, flexible configuration</td>
                   </tr>
                   <tr>
                     <td className="fw-bold">

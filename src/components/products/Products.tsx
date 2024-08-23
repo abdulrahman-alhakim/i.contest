@@ -78,6 +78,24 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-solar", "solar")}
+                  >
+                    Solar Panel
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
+                    onClick={() => handleTabChange("v-pills-solarPark", "solarPark")}
+                  >
+                    Solar Park
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item w-100"
+                    style={{ whiteSpace: "normal" }}
                     onClick={() => handleTabChange("v-pills-mpx110", "MPX 110")}
                   >
                     MPX 110
@@ -156,24 +174,7 @@ const Products: React.FC = () => {
                     Fuel Cells
                   </button>
                 </li>
-                <li>
-                  <button
-                    className="dropdown-item w-100"
-                    style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-solar", "solar")}
-                  >
-                    Solar Panel
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="dropdown-item w-100"
-                    style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-solarPark", "solarPark")}
-                  >
-                    Solar Park
-                  </button>
-                </li>
+
                 <li>
                   <button
                     className="dropdown-item w-100"
@@ -202,6 +203,40 @@ const Products: React.FC = () => {
 
         {/* Desktop Sidebar */}
         <div className="col-md-2 d-none d-md-block nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <button
+            className="nav-link mb-2"
+            id="v-pills-solar-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-solar"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-solar"
+            aria-selected={activeTab === 'v-pills-solar'}
+            onClick={() => handleTabChange('v-pills-solar', 'solar')}
+            style={{
+              ...buttonStyles[activeTab === 'v-pills-solar' ? 'active' : 'inactive'],
+              width: activeTab === 'v-pills-solar' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
+            }}
+          >
+            Solar Panel
+          </button>
+          <button
+            className="nav-link mb-2"
+            id="v-pills-solarPark-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-solarPark"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-solarPark"
+            aria-selected={activeTab === 'v-pills-solarPark'}
+            onClick={() => handleTabChange('v-pills-solarPark', 'solarPark')}
+            style={{
+              ...buttonStyles[activeTab === 'v-pills-solarPark' ? 'active' : 'inactive'],
+              width: activeTab === 'v-pills-solarPark' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
+            }}
+          >
+            Solar Park
+          </button>
           <button
             className="nav-link mb-2"
             id="v-pills-mpx110-tab"
@@ -356,40 +391,7 @@ const Products: React.FC = () => {
           >
             Fuel Cells
           </button>
-          <button
-            className="nav-link mb-2"
-            id="v-pills-solar-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#v-pills-solar"
-            type="button"
-            role="tab"
-            aria-controls="v-pills-solar"
-            aria-selected={activeTab === 'v-pills-solar'}
-            onClick={() => handleTabChange('v-pills-solar', 'solar')}
-            style={{
-              ...buttonStyles[activeTab === 'v-pills-solar' ? 'active' : 'inactive'],
-              width: activeTab === 'v-pills-solar' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
-            }}
-          >
-            Solar Panel
-          </button>
-          <button
-            className="nav-link mb-2"
-            id="v-pills-solarPark-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#v-pills-solarPark"
-            type="button"
-            role="tab"
-            aria-controls="v-pills-solarPark"
-            aria-selected={activeTab === 'v-pills-solarPark'}
-            onClick={() => handleTabChange('v-pills-solarPark', 'solarPark')}
-            style={{
-              ...buttonStyles[activeTab === 'v-pills-solarPark' ? 'active' : 'inactive'],
-              width: activeTab === 'v-pills-solarPark' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
-            }}
-          >
-            Solar Park
-          </button>
+
           <button
             className="nav-link mb-2"
             id="v-pills-ems-tab"
