@@ -202,7 +202,7 @@ const Products: React.FC = () => {
         </div>
 
         {/* Desktop Sidebar */}
-        <div className="col-md-2 d-none d-md-block nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <div className="col-md-2 d-none d-md-block nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           <button
             className="nav-link mb-2"
             id="v-pills-solar-tab"

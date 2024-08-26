@@ -8,9 +8,9 @@ const ProductFuelCells: React.FC = () => {
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
-        <h5 className="card-title">ENERGY UNIT CABINET ESS-MPX-200</h5>
+        <h5 className="card-title">Fuel-cell Power Unit</h5>
         <p className="p-3">
-          Stand-alone Storage Power Container
+          Fuel-cell Power Unit 160kW
         </p>
 
         <div className="row m-3 justify-content-between">

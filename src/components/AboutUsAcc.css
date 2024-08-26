@@ -1,0 +1,15 @@
+/* Add this CSS to your stylesheet */
+.custom-accordion .accordion-button:not(.collapsed) {
+    background-color: #00796b; /* Background color when the accordion is open */
+    color: white; /* Text color when the accordion is open */
+    border-color: #005349; /* Replace with your desired border color */
+    box-shadow: none; /* Remove the default box shadow if desired */
+  }
+  
+.custom-accordion .accordion-button {
+    background-color: #ffffff; /* Default background color */
+    color: #00796b; /* Default text color */
+    font-weight: bold;
+    border-color: #005349; /* Same as the active state or different as per your design */
+    box-shadow: 0 0 0 0.1rem rgba(234,232,237, 0.25); /* Optional, add custom box shadow */
+}

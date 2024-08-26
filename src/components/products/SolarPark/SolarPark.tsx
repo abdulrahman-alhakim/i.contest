@@ -10,7 +10,7 @@ const SolarPark: React.FC = () => {
       <div className="card-body">
         <h5 className="card-title">PV & ESS Integrated Carport   </h5>
         <p className="p-3">
-          PV & ESS Integrated Carport
+          {/* PV & ESS Integrated Carport */}
         </p>
 
         <div className="row m-3 justify-content-between ">

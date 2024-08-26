@@ -8,7 +8,7 @@ const Product: React.FC = () => {
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
-        <h5 className="card-title">ENERGY UNIT CABINET ESS-MPX-200</h5>
+        <h5 className="card-title">Stand-alone Battery Integrated High Power Charging Station</h5>
         <p className="p-3">
           Model ESS-CS-200-EU & Model ESS-CS-310-EU
         </p>

@@ -106,21 +106,21 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
       <Solution theme={theme} setTheme={setTheme} />
 
 
-      <div className="container-fluid">
-        {/* <div className="row">
-    <div className="col-12 col-md-8 d-flex align-items-center justify-content-end">
-      <p>Contact us here please</p>
-    </div>
-    <div className="col-12 col-md-4 d-flex align-items-center justify-content-start">
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={() => window.location.href='/contact'}>
-        Contact Us
-      </button>
-    </div>
-  </div> */}
-      </div>
+      {/* <div className="container-fluid">
+        <div className="row">
+          <div className="col-12 col-md-8 d-flex align-items-center justify-content-end">
+            <p>Contact us here please</p>
+          </div>
+          <div className="col-12 col-md-4 d-flex align-items-center justify-content-start">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => window.location.href = '/contact'}>
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div> */}
 
 
     </div >
