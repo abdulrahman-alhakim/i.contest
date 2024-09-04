@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import emailjs from 'emailjs-com';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../images/carcharging.jpeg';
+import { useTranslation } from 'react-i18next';
 
 interface IState {
   name: string;
@@ -11,10 +12,10 @@ interface IState {
 }
 
 export const ContactUsForm: React.FC = () => {
+  const { t } = useTranslation('pages-ContactUsForm'); // Use the ContactUsForm namespace
   const [state, setState] = useState<IState>({ name: '', email: '', inquiryType: 'Commercial', message: '' });
   const [responseMessage, setResponseMessage] = useState('');
   const [loading, setLoading] = useState(false);
-
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -42,18 +43,18 @@ export const ContactUsForm: React.FC = () => {
         }, 'rRIDCCBSkeoeTHuQP')
           .then((result) => {
             console.log(result.text);
-            setResponseMessage('Email sent successfully!');
+            setResponseMessage(t('emailSuccess'));
             setState({ name: '', email: '', inquiryType: 'Private', message: '' }); // Clear the form
           }, (error) => {
             console.log(error.text);
-            setResponseMessage('Failed to send acknowledgment email.');
+            setResponseMessage(t('acknowledgmentFailure'));
           }).finally(() => {
             setLoading(false); // Set loading to false after the process completes
           });
 
       }, (error) => {
         console.log(error.text);
-        setResponseMessage('Failed to send the message.');
+        setResponseMessage(t('emailFailure'));
         setLoading(false); // Set loading to false after the process completes
       });
   };
@@ -70,11 +71,11 @@ export const ContactUsForm: React.FC = () => {
           />
         </div>
         <div className="col-md-6">
-          <h2>Get In Touch</h2>
-          <p>Please fill out the form below to send us an email and we will get back to you as soon as possible.</p>
+          <h2>{t('getInTouch')}</h2>
+          <p>{t('description')}</p>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="name" className="form-label">Name</label>
+              <label htmlFor="name" className="form-label">{t('nameLabel')}</label>
               <input
                 type="text"
                 className="form-control"
@@ -86,7 +87,7 @@ export const ContactUsForm: React.FC = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">Email</label>
+              <label htmlFor="email" className="form-label">{t('emailLabel')}</label>
               <input
                 type="email"
                 className="form-control"
@@ -98,7 +99,7 @@ export const ContactUsForm: React.FC = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="inquiryType" className="form-label">Inquiry Type</label>
+              <label htmlFor="inquiryType" className="form-label">{t('inquiryTypeLabel')}</label>
               <select
                 className="form-control"
                 id="inquiryType"
@@ -107,12 +108,12 @@ export const ContactUsForm: React.FC = () => {
                 onChange={handleChange}
                 required
               >
-                <option value="Private">Private</option>
-                <option value="Commercial">Commercial</option>
+                <option value="Private">{t('privateOption')}</option>
+                <option value="Commercial">{t('commercialOption')}</option>
               </select>
             </div>
             <div className="mb-3">
-              <label htmlFor="message" className="form-label">Message</label>
+              <label htmlFor="message" className="form-label">{t('messageLabel')}</label>
               <textarea
                 className="form-control"
                 id="message"
@@ -123,22 +124,21 @@ export const ContactUsForm: React.FC = () => {
                 required
               ></textarea>
             </div>
-            {loading ? <button type="submit" className="btn text-light mb-3 disabled" style={{ backgroundColor: 'rgba(32,98,98,.9)' }}>
-              <span className="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-              Send Message
-            </button> :
+            {loading ? (
+              <button type="submit" className="btn text-light mb-3 disabled" style={{ backgroundColor: 'rgba(32,98,98,.9)' }}>
+                <span className="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                {t('sendMessageButton')}
+              </button>
+            ) : (
               <button type="submit" className="btn text-light mb-3" style={{ backgroundColor: 'rgba(32,98,98,.9)' }}>
-                Send Message
-              </button>}
+                {t('sendMessageButton')}
+              </button>
+            )}
           </form>
-          {loading && <div className="spinner-border text-secondary" role="status"><span className="visually-hidden">Loading...</span></div>}
+          {loading && <div className="spinner-border text-secondary" role="status"><span className="visually-hidden">{t('loadingMessage')}</span></div>}
           {responseMessage && <p>{responseMessage}</p>}
         </div>
       </div>
     </div>
   );
 };
-
-
-
-//    emailjs.sendForm('service_5oj9mzc', 'template_847hq1z', e.currentTarget, 'rRIDCCBSkeoeTHuQP') 'template_xiq97fo'

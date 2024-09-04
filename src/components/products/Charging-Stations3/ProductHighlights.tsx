@@ -1,37 +1,36 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-const ProductHighlights = () => {
+const ProductHighlights: React.FC = () => {
+  const { t } = useTranslation('pages-ProductHighlights4'); // Use the ProductHighlights namespace
+
   return (
     <div>
       <p className="p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
-        Highlights
+        {t('highlights')}
       </p>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">
-          High integration, system optimized by AI-EMS.
+          {t('highlight1')}
         </li>
         <li className="list-group-item">
-          Weak grid infrastructure boost for HP charge.
+          {t('highlight2')}
         </li>
         <li className="list-group-item">
-          Compact design, all storage units and power units
-          within single housing.
+          {t('highlight3')}
         </li>
         <li className="list-group-item">
-          Plug-and-play installation, easy to relocate.
+          {t('highlight4')}
         </li>
         <li className="list-group-item">
-          Suitable for urban applications, especially for
-          space-limiting, light usage demanding cases, e.g., 2
-          charging ports in central business district.
+          {t('highlight5')}
         </li>
         <li className="list-group-item">
-          Apparant coloring open for customization, open
-          protocol for LED screen display.
+          {t('highlight6')}
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
-export default ProductHighlights
+export default ProductHighlights;

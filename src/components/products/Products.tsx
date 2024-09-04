@@ -78,7 +78,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-solar", "solar")}
+                    onClick={() => { handleTabChange("v-pills-solar", "solar"); scrollToTop() }}
                   >
                     Solar Panel
                   </button>
@@ -87,7 +87,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-solarPark", "solarPark")}
+                    onClick={() => {handleTabChange("v-pills-solarPark", "solarPark"); scrollToTop() }}
                   >
                     Solar Park
                   </button>
@@ -96,7 +96,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-mpx110", "MPX 110")}
+                    onClick={() =>{ handleTabChange("v-pills-mpx110", "MPX 110"); scrollToTop() }}
                   >
                     MPX 110
                   </button>
@@ -105,7 +105,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-mpx200", "MPX 200")}
+                    onClick={() =>{ handleTabChange("v-pills-mpx200", "MPX 200"); scrollToTop() }}
                   >
                     MPX 200
                   </button>
@@ -115,7 +115,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-mpx1000X", "MPX 1000")}
+                    onClick={() => {handleTabChange("v-pills-mpx1000X", "MPX 1000"); scrollToTop() }}
                   >
                     MPX 1000
                   </button>
@@ -124,7 +124,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-mpx1000", "Model MPX-Container-20HQ")}
+                    onClick={() =>{ handleTabChange("v-pills-mpx1000", "Model MPX-Container-20HQ"); scrollToTop() }}
                   >
                     Model MPX-Container-20HQ
                   </button>
@@ -133,7 +133,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-5g", "5G Infrastructure")}
+                    onClick={() => {handleTabChange("v-pills-5g", "5G Infrastructure"); scrollToTop() }}
                   >
                     5G Infrastructure Solution
                   </button>
@@ -142,7 +142,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-vacCharger", "Electrical Vehicle AC Charger")}
+                    onClick={() => {handleTabChange("v-pills-vacCharger", "Electrical Vehicle AC Charger"); scrollToTop() }}
                   >
                     Electrical Vehicle AC Charger
                   </button>
@@ -151,7 +151,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-vdcCharger", "Electrical Vehicle DC Charge Station")}
+                    onClick={() => {handleTabChange("v-pills-vdcCharger", "Electrical Vehicle DC Charge Station"); scrollToTop() }}
                   >
                     Electrical Vehicle DC Charge Station
                   </button>
@@ -160,7 +160,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-vhighPower", "Battery Integrated High Power Charging Station")}
+                    onClick={() => {handleTabChange("v-pills-vhighPower", "Battery Integrated High Power Charging Station"); scrollToTop() }}
                   >
                     Battery Integrated High Power Charging Station
                   </button>
@@ -169,7 +169,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-fuelCells", "Fuel Cells")}
+                    onClick={() => {handleTabChange("v-pills-fuelCells", "Fuel Cells"); scrollToTop() }}
                   >
                     Fuel Cells
                   </button>
@@ -179,7 +179,7 @@ const Products: React.FC = () => {
                   <button
                     className="dropdown-item w-100"
                     style={{ whiteSpace: "normal" }}
-                    onClick={() => handleTabChange("v-pills-ems", "EMS")}
+                    onClick={() => {handleTabChange("v-pills-ems", "EMS"); scrollToTop() }}
                   >
                     EMS
                   </button>
@@ -212,7 +212,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-solar"
             aria-selected={activeTab === 'v-pills-solar'}
-            onClick={() => handleTabChange('v-pills-solar', 'solar')}
+            onClick={() => {handleTabChange('v-pills-solar', 'solar'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-solar' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-solar' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -229,7 +229,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-solarPark"
             aria-selected={activeTab === 'v-pills-solarPark'}
-            onClick={() => handleTabChange('v-pills-solarPark', 'solarPark')}
+            onClick={() => {handleTabChange('v-pills-solarPark', 'solarPark'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-solarPark' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-solarPark' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -246,7 +246,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-mpx110"
             aria-selected={activeTab === 'v-pills-mpx110'}
-            onClick={() => handleTabChange('v-pills-mpx110', ' mpx110')}
+            onClick={() =>{ handleTabChange('v-pills-mpx110', ' mpx110'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-mpx110' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-mpx110' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -263,7 +263,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-mpx200"
             aria-selected={activeTab === 'v-pills-mpx200'}
-            onClick={() => handleTabChange('v-pills-mpx200', 'MPX 200')}
+            onClick={() => {handleTabChange('v-pills-mpx200', 'MPX 200'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-mpx200' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-mpx200' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -281,7 +281,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-mpx1000X"
             aria-selected={activeTab === 'v-pills-mpx1000X'}
-            onClick={() => handleTabChange('v-pills-mpx1000X', 'MPX 1000')}
+            onClick={() => {handleTabChange('v-pills-mpx1000X', 'MPX 1000'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-mpx1000X' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-mpx1000X' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -298,7 +298,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-mpx1000"
             aria-selected={activeTab === 'v-pills-mpx1000'}
-            onClick={() => handleTabChange('v-pills-mpx1000', 'Model MPX-Container-20HQ')}
+            onClick={() => {handleTabChange('v-pills-mpx1000', 'Model MPX-Container-20HQ'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-mpx1000' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-mpx1000' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -315,7 +315,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-5g"
             aria-selected={activeTab === 'v-pills-5g'}
-            onClick={() => handleTabChange('v-pills-5g', '5G Infrastructure')}
+            onClick={() => {handleTabChange('v-pills-5g', '5G Infrastructure'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-5g' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-5g' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -332,7 +332,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-vacCharger"
             aria-selected={activeTab === 'v-pills-vacCharger'}
-            onClick={() => handleTabChange('v-pills-vacCharger', 'Electrical Vehicle AC Charger')}
+            onClick={() => {handleTabChange('v-pills-vacCharger', 'Electrical Vehicle AC Charger'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-vacCharger' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-vacCharger' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -349,7 +349,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-vdcCharger"
             aria-selected={activeTab === 'v-pills-vdcCharger'}
-            onClick={() => handleTabChange('v-pills-vdcCharger', 'Electrical Vehicle DC Charge Station')}
+            onClick={() => {handleTabChange('v-pills-vdcCharger', 'Electrical Vehicle DC Charge Station'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-vdcCharger' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-vdcCharger' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -366,7 +366,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-vhighPower"
             aria-selected={activeTab === 'v-pills-vhighPower'}
-            onClick={() => handleTabChange('v-pills-vhighPower', 'Battery Integrated High Power Charging Station')}
+            onClick={() => {handleTabChange('v-pills-vhighPower', 'Battery Integrated High Power Charging Station'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-vhighPower' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-vhighPower' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -383,7 +383,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-fuelCells"
             aria-selected={activeTab === 'v-pills-fuelCells'}
-            onClick={() => handleTabChange('v-pills-fuelCells', 'Fuel Cells')}
+            onClick={() => {handleTabChange('v-pills-fuelCells', 'Fuel Cells'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-fuelCells' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-fuelCells' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop
@@ -401,7 +401,7 @@ const Products: React.FC = () => {
             role="tab"
             aria-controls="v-pills-ems"
             aria-selected={activeTab === 'v-pills-ems'}
-            onClick={() => handleTabChange('v-pills-ems', 'EMS')}
+            onClick={() => {handleTabChange('v-pills-ems', 'EMS'); scrollToTop() }}
             style={{
               ...buttonStyles[activeTab === 'v-pills-ems' ? 'active' : 'inactive'],
               width: activeTab === 'v-pills-ems' && window.innerWidth >= 768 ? '100%' : '100%', // 100% on mobile, auto on desktop

@@ -1,16 +1,19 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import cs3 from "../../../images/cs3.png";
 import ProductHighlights from "./ProductHighlights";
 import ProductTechDetails from "./ProductTechDetails";
 import ProductUseCases from "./ProductUseCases";
 
 const Product: React.FC = () => {
+  const { t } = useTranslation('pages-ChargingStations3'); // Use the Product namespace
+
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
-        <h5 className="card-title">Stand-alone Battery Integrated High Power Charging Station</h5>
+        <h5 className="card-title">{t('title')}</h5>
         <p className="p-3">
-          Model ESS-CS-200-EU & Model ESS-CS-310-EU
+          {t('description')}
         </p>
 
         <div className="row m-3 justify-content-between">
@@ -40,7 +43,6 @@ const Product: React.FC = () => {
             >
               <ProductUseCases />
             </div>
-
           </div>
         </div>
       </div>

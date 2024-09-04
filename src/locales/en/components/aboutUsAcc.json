@@ -1,0 +1,80 @@
+{
+    "overviewTitle": "Overview",
+    "overviewContent": "<span className='fw-bold'>I.CONTEST</span> is an emerging innovator in sustainable energy solutions. As a startup, we specialize in the design, implementation, and maintenance of advanced energy systems, including microgrids, electric vehicle charging stations, photovoltaic (PV) systems, and energy supply solutions for telecommunications infrastructure.",
+    
+    "missionTitle": "Mission",
+    "missionContent": "Our mission is to revolutionize the energy landscape by providing reliable, efficient, and sustainable energy solutions that meet the evolving needs of our customers and contribute to a greener planet. We aim to provide markets with quality products and services and support local content development and knowledge transfer.",
+    
+    "visionTitle": "Vision",
+    "visionContent": "We envision a world where clean energy is accessible to all, driving economic growth, environmental stewardship, and technological advancement.",
+    
+    "coreServicesTitle": "Core Services",
+    "coreServicesContent": {
+      "microgrids": {
+        "title": "Microgrids",
+        "items": [
+          "Design and installation of microgrid systems for residential, commercial, and industrial applications.",
+          "Integration of renewable energy sources and energy storage systems for optimized performance and reliability.",
+          "Advanced control systems for seamless energy management and distribution.",
+          "Adaptation to high temperatures and desert conditions for maximum efficiency."
+        ]
+      },
+      "chargingStations": {
+        "title": "Charging Stations",
+        "items": [
+          "Comprehensive solutions for electric vehicle charging infrastructure, including AC and DC fast chargers.",
+          "Customizable installations to suit various locations such as residential complexes, commercial buildings, and public spaces.",
+          "Smart charging technology to enhance energy efficiency and user convenience.",
+          "Robust technology designed for operation in hot climates."
+        ]
+      },
+      "pvSystems": {
+        "title": "Photovoltaic (PV) Systems",
+        "items": [
+          "Turnkey solutions for solar power generation, from residential rooftop installations to large-scale solar farms.",
+          "High-efficiency PV modules and inverters to maximize energy output and cost savings.",
+          "Monitoring and maintenance services to ensure optimal system performance and longevity.",
+          "Systems specifically engineered for hot and dry environments."
+        ]
+      },
+      "cellTowers": {
+        "title": "Energy Supply for Cell Towers",
+        "items": [
+          "Reliable and sustainable energy solutions for telecommunications infrastructure.",
+          "Hybrid power systems combining solar, wind, and conventional energy sources to ensure uninterrupted service.",
+          "Remote monitoring and control systems to enhance operational efficiency and reduce maintenance costs.",
+          "Solutions designed to withstand extreme heat and dust conditions."
+        ]
+      }
+    },
+    
+    "valuesTitle": "Values",
+    "valuesContent": [
+      {
+        "title": "Innovation",
+        "content": "Continuously driving advancements in energy technology to offer cutting-edge solutions."
+      },
+      {
+        "title": "Integrity",
+        "content": "Upholding the highest standards of honesty and transparency in all our dealings."
+      },
+      {
+        "title": "Intelligence",
+        "content": "Leveraging smart technologies and data-driven insights for optimal performance."
+      },
+      {
+        "title": "Contest (Competition)",
+        "content": "Fostering a spirit of competition to continuously improve and excel in the energy sector."
+      }
+    ],
+    
+    "sustainabilityTitle": "Sustainability Commitment",
+    "sustainabilityContent": "Sustainability is at the core of I.CONTEST. We are dedicated to reducing carbon footprints, promoting renewable energy adoption, and supporting the global transition to a low-carbon economy.",
+    
+    "innovationTitle": "Innovation and Technology",
+    "innovationContent": "As a startup, our team of passionate experts leverages the latest technologies and industry best practices to deliver innovative energy solutions tailored to our clients' unique requirements.",
+    
+    "customerApproachTitle": "Customer-Centric Approach",
+    "customerApproachContent": "We pride ourselves on our customer-centric approach, working closely with our clients to understand their needs and deliver customized solutions that exceed their expectations. Our comprehensive support services ensure long-term satisfaction and success."
+  }
+  

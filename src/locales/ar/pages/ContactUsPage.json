@@ -1,0 +1,15 @@
+{
+  "getInTouch": "ابقى على تواصل",
+  "description": "يرجى ملء النموذج أدناه لإرسال بريد إلكتروني وسنعاود الاتصال بك في أقرب وقت ممكن.",
+  "nameLabel": "الاسم",
+  "emailLabel": "البريد الإلكتروني",
+  "inquiryTypeLabel": "نوع الاستفسار",
+  "privateOption": "خاص",
+  "commercialOption": "تجاري",
+  "messageLabel": "الرسالة",
+  "sendMessageButton": "إرسال الرسالة",
+  "loadingMessage": "جارٍ التحميل...",
+  "emailSuccess": "تم إرسال البريد الإلكتروني بنجاح!",
+  "emailFailure": "فشل في إرسال الرسالة.",
+  "acknowledgmentFailure": "فشل في إرسال بريد الإقرار."
+}

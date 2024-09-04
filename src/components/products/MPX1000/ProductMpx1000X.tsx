@@ -1,16 +1,19 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import ProductHighlights from "./ProductHighlights";
 import ProductTechDetails from "./ProductTechDetails";
 import ProductUseCases from "./ProductUseCases";
 import mpx from "../../../images/mpx1000X.png";
 
-const ProductMpx1000X = () => {
+const ProductMpx1000X: React.FC = () => {
+  const { t } = useTranslation('pages-ProductMpx1000X'); // Use the ProductMpx1000X namespace
+
   return (
     <div className="card mx-auto bg-light" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
-        <h5 className="card-title">Model ESS-MPX-1000-EU</h5>
+        <h5 className="card-title">{t('title')}</h5>
         <p className="p-3">
-          Stand-alone Storage Power Container
+          {t('description')}
         </p>
 
         <div className="row m-3 justify-content-between">

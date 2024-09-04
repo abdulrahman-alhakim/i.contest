@@ -1,0 +1,18 @@
+{
+    "sectionHeader": "An overview of our proposed solution",
+    "overviewDescription": "A microgrid system that integrates renewable energy sources and smart management to create a clean, efficient, and reliable network.",
+    "standAloneTitle": "Stand-alone Integrated Charging Container",
+    "standAloneFeatures": [
+      "Our MPX series provides a sustainable and resilient energy supply by utilizing renewable and alternative energy sources, such as solar, wind, or hydrogen fuel cells, through advanced battery storage.",
+      "The user-friendly software and real-time data monitoring system enable effective management and optimization of energy consumption, including high-power DC charging and stable AC power output."
+    ],
+    "chargingStationTitle": "Charging Station with Discrete Facility",
+    "chargingStationFeatures": [
+      "Total flexibility with system configuration, adaptable to various requirements.",
+      "Modular design suitable for station retrofit or extension, especially important during e-auto ramping-up phase as new life style.",
+      "Equipment room provides extra protection against extreme temperature conditions.",
+      "Plug-and-play installation, easy to relocate.",
+      "Centralized energy and power arrangement makes station qualified for energy trading, extra profitting mechanism."
+    ]
+  }
+  

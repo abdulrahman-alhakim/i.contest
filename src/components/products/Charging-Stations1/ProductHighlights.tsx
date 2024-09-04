@@ -1,28 +1,30 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-const ProductHighlights = () => {
+const ProductHighlights: React.FC = () => {
+  const { t } = useTranslation('pages-ProductHighlights2'); // Use the ProductHighlights namespace
+
   return (
     <div>
       <p className="p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
-        Highlights
+        {t('highlights')}
       </p>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">
-          Simple electric architecture.
+          {t('highlight1')}
         </li>
         <li className="list-group-item">
-          Plug-and-play installation, easy to relocate.
+          {t('highlight2')}
         </li>
         <li className="list-group-item">
-          OEM / ODM possible. Minimal order quantity 500
-          pcs.
+          {t('highlight3')}
         </li>
         <li className="list-group-item">
-          Open protocol for local adaption.
+          {t('highlight4')}
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
-export default ProductHighlights
+export default ProductHighlights;

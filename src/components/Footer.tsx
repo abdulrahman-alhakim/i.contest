@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-
 import logo from "../images/icontest-logo.png";
-import { Button } from "react-bootstrap";
-import CookieConsent from "react-cookie-consent";
+import { useTranslation } from "react-i18next";
 import ImpressumModal from "./ImpressumModal";
 import PrivacyPolicyModal from "./PrivacyPolicyModal";
 
 export const Footer = () => {
+  const { t } = useTranslation('pages-Footer'); // Use the Footer namespace
+
   return (
     <section id='footer'>
       <footer className="card-footer">
@@ -28,7 +28,7 @@ export const Footer = () => {
                   </Link>
                 </div>
                 <div className="text-light">
-                  Make yourself more independent with our Systems, we will accompany you from the consultation to the commissioning
+                  {t('description')}
                 </div>
                 <div className="row mb-sm-0 text-md-start">
                   <div className="d-flex justify-content-center justify-content-md-start col-12 col-md-auto mb-2 mb-md-0">
@@ -43,16 +43,15 @@ export const Footer = () => {
                 </div>
               </div>
 
-
               {/* 2nd and 3rd blocks wrapper */}
               <div className="col-md-8 col-lg-7">
                 <div className="row justify-content-md-end">
                   {/* 2nd block */}
                   <div className="col-sm-4 mb-3 me-1 mb-sm-0 text-center text-md-start">
-                    <h6 className="font-weight-bold text-light mb-3">Contact</h6>
+                    <h6 className="font-weight-bold text-light mb-3">{t('contactTitle')}</h6>
                     <ul className="list-unstyled text-light">
-                      <li>info@i-contest.eu</li>
-                      <li>Tel: +49 157 51751551</li>
+                      <li>{t('email')}</li>
+                      <li>{t('phone')}</li>
                     </ul>
                   </div>
 
@@ -60,12 +59,12 @@ export const Footer = () => {
                   <div className="col-sm-4 mb-3 me-1 mb-sm-0 text-center text-md-start">
                     <a style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }} href="https://www.google.com/maps/place/Hauptstraße+30a,+38446+Wolfsburg,+Germany" target="_blank" rel="noopener noreferrer">
                       <h6 className="text-light font-weight-bold mb-3">
-                        Location
+                        {t('locationTitle')}
                       </h6>
-                      I-CONTEST UG<br />
-                      Hauptstraße 30a<br />
-                      38446 Wolfsburg<br />
-                      Germany
+                      {t('locationName')}<br />
+                      {t('addressLine1')}<br />
+                      {t('addressLine2')}<br />
+                      {t('addressLine3')}
                     </a>
                   </div>
                 </div>
@@ -76,12 +75,9 @@ export const Footer = () => {
             <div className="row text-center">
               {/* Copyright Notice */}
               <div className="text-light text-center">
-                &copy; www.i-contest.eu. All rights reserved.
+                &copy; www.i-contest.eu. {t('copyright')}
               </div>
             </div>
-
-
-
           </div>
         </div>
       </footer>

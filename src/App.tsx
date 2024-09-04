@@ -12,10 +12,12 @@ import PrivacyPolicyModal from './components/PrivacyPolicyModal';
 import AboutUsPage from './pages/AboutUsPage';
 import ProductsPage from './pages/ProductsPage';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useTranslation } from 'react-i18next';
 
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<string>('light');
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -30,47 +32,51 @@ const App: React.FC = () => {
   }, [theme]);
 
   return (
-    <Router>
-      <div className={`d-flex flex-column min-vh-100 App ${theme}-mode`}>
-        <NavBar theme={theme} setTheme={setTheme}/>
-        <div className="flex-grow-1 mt-5">
-          <Switch>
-            <Route
-              path="/"
-              exact
-              render={(props) => <HomePage {...props} theme={theme} setTheme={setTheme} />}
-            />
-            <Route
-              path="/about"
-              render={(props) => <AboutUsPage {...props} theme={theme} setTheme={setTheme} />}
-            />
-            <Route
-              path="/products"
-              render={(props) => <ProductsPage {...props} theme={theme} setTheme={setTheme} />}
-            />
-            <Route
-              path="/contact"
-              render={(props) => <ContactUsPage {...props} theme={theme} setTheme={setTheme} />}
-            />
-          </Switch>
+
+    <div dir={i18n.language === 'ar' ? 'rtl' : 'ltr'} className="overflow-hidden">
+      <Router>
+        <div className={`d-flex flex-column min-vh-100 App ${theme}-mode`}>
+          <NavBar theme={theme} setTheme={setTheme} />
+
+          <div className="flex-grow-1 mt-5">
+            <Switch>
+              <Route
+                path="/"
+                exact
+                render={(props) => <HomePage {...props} theme={theme} setTheme={setTheme} />}
+              />
+              <Route
+                path="/about"
+                render={(props) => <AboutUsPage {...props} theme={theme} setTheme={setTheme} />}
+              />
+              <Route
+                path="/products"
+                render={(props) => <ProductsPage {...props} theme={theme} setTheme={setTheme} />}
+              />
+              <Route
+                path="/contact"
+                render={(props) => <ContactUsPage {...props} theme={theme} setTheme={setTheme} />}
+              />
+            </Switch>
+          </div>
+          {/* <PrivacyPolicyModal /> */}
+          <CookieConsent
+            location="bottom"
+            buttonText="Agree"
+            cookieName="userConsent"
+            style={{ background: "#2B373B" }}
+            buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+            expires={150}
+          >
+            This website uses cookies to enhance the user experience.
+            <span style={{ fontSize: "12px" }}>
+              Agree to<Button variant="link" onClick={() => (document.querySelector("#privacy-policy-btn") as HTMLElement)?.click()}>Privacy Policy</Button>.
+            </span>
+          </CookieConsent>
+          <Footer />
         </div>
-        {/* <PrivacyPolicyModal /> */}
-        <CookieConsent
-          location="bottom"
-          buttonText="Agree"
-          cookieName="userConsent"
-          style={{ background: "#2B373B" }}
-          buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
-          expires={150}
-        >
-          This website uses cookies to enhance the user experience.
-          <span style={{ fontSize: "12px" }}>
-            Agree to<Button variant="link" onClick={() => (document.querySelector("#privacy-policy-btn") as HTMLElement)?.click()}>Privacy Policy</Button>.
-          </span>
-        </CookieConsent>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 };
 

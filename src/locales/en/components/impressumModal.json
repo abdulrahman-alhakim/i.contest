@@ -1,0 +1,16 @@
+{
+  "buttonText": "Impressum",
+  "modalTitle": "Impressum",
+  "companyName": "I-CONTEST UG",
+  "addressLine1": "Hauptstraße 30a",
+  "addressLine2": "38446 Wolfsburg",
+  "addressLine3": "Germany",
+  "phone": "Tel: +49 157 51751551",
+  "email": "Email: info@i-contest.eu",
+  "ceo": "CEO: Eng. Faisal Hakim",
+  "tradeRegister": "Handelsregister: Amtsgericht Hildesheim HRB 204599",
+  "disputeResolution": "EU Commission platform for online dispute resolution:",
+  "disputeLink": "https://ec.europa.eu/odr",
+  "disputeNote": "We are neither obliged nor willing to participate in a dispute resolution procedure before a consumer arbitration board.",
+  "closeButton": "Close"
+}

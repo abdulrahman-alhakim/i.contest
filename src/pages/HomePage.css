@@ -3,3 +3,9 @@
         margin-top: 60px;
     }
   }
+.position-relative {
+    overflow: hidden;
+  }
+  .overlay {
+    background: none; /* Ensure there's no darkening overlay */
+  }

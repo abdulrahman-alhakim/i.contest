@@ -1,16 +1,19 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import cs2 from "../../../images/cs2.png";
 import ProductHighlights from "./ProductHighlights";
 import ProductTechDetails from "./ProductTechDetails";
 import ProductUseCases from "./ProductUseCases";
 
 const Product: React.FC = () => {
+  const { t } = useTranslation('pages-ChargingStations2'); // Use the Product namespace
+
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
-        <h5 className="card-title">Electrical Vehicle DC Charge Station</h5>
+        <h5 className="card-title">{t('title')}</h5>
         <p className="p-3">
-          DC High Power Charge Station
+          {t('description')}
         </p>
 
         <div className="row m-3 justify-content-between">
@@ -22,8 +25,9 @@ const Product: React.FC = () => {
           </div>
         </div>
         <div className="m-3">
-
-          {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          {/* Uncomment if you plan to use tabs in the future */}
+          {/*
+          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item me-2" role="presentation">
               <button
                 className="nav-link active text-white"
@@ -35,9 +39,8 @@ const Product: React.FC = () => {
                 aria-controls="pills-home"
                 aria-selected="true"
                 style={{backgroundColor:"#00796b", borderRadius:"10px" }}
-
               >
-              Technical Details
+                {t('technicalDetailsTab')}
               </button>
             </li>
             <li className="nav-item" role="presentation">
@@ -51,13 +54,12 @@ const Product: React.FC = () => {
                 aria-controls="pills-profile"
                 aria-selected="false"
                 style={{backgroundColor:"#00796b", borderRadius:"10px" }}
-
               >
-              Use Cases
+                {t('useCasesTab')}
               </button>
             </li>
-            
-          </ul> */}
+          </ul>
+          */}
           <div className="tab-content" id="pills-tabContent">
             <div
               className="tab-pane fade show active"
@@ -75,7 +77,6 @@ const Product: React.FC = () => {
             >
               <ProductUseCases />
             </div>
-
           </div>
         </div>
       </div>

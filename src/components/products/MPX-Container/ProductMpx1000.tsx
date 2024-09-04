@@ -1,16 +1,19 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import MPX200 from "../../../images/product1.png";
 import ProductHighlights from "./ProductHighlights";
 import ProductTechDetails from "./ProductTechDetails";
 import ProductUseCases from "./ProductUseCases";
 
 const Product: React.FC = () => {
+  const { t } = useTranslation('pages-ProductMpxC'); // Use the Product namespace
+
   return (
     <div className="card mx-auto" style={{ width: "100%", maxWidth: "75rem" }}>
       <div className="card-body">
-        <h5 className="card-title">Stand-alone Battery Integrated Charging Container</h5>
+        <h5 className="card-title">{t('title')}</h5>
         <p className="p-3">
-        Model MPX-Container-20HQ
+          {t('description')}
         </p>
 
         <div className="row m-3 justify-content-between">
@@ -23,7 +26,6 @@ const Product: React.FC = () => {
         </div>
 
         <div className="m-3">
-         
           <div className="tab-content" id="pills-tabContent">
             <div
               className="tab-pane fade show active"
@@ -41,7 +43,6 @@ const Product: React.FC = () => {
             >
               <ProductUseCases />
             </div>
-
           </div>
         </div>
       </div>

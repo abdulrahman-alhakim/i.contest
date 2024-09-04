@@ -1,7 +1,10 @@
-import { faCar, faSignsPost, faSolarPanel } from "@fortawesome/free-solid-svg-icons";
+import { faCar, faSolarPanel } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 
 export const Carousel = () => {
+  const { t } = useTranslation('pages-Carousel'); // Use the Carousel namespace
+
   return (
     <section>
       <div className="container" style={{ maxWidth: "1280px" }}>
@@ -12,9 +15,8 @@ export const Carousel = () => {
             style={{ maxWidth: "600px" }}
           >
             <h3 className="mb-2">
-              We offer meticulously crafted, high-quality, customized EV charging solutions designed to meet the unique requirements of diverse scenarios.
+              {t('sectionHeader')}
             </h3>
-            
           </div>
 
           <div className="row g-4">
@@ -24,9 +26,9 @@ export const Carousel = () => {
               data-aos-anchor="[data-aos-id-blocks]"
             >
               <FontAwesomeIcon icon={faSolarPanel} beatFade size="2xl" />
-              <h4 className="mb-2">Energy</h4>
+              <h4 className="mb-2">{t('energyTitle')}</h4>
               <p className="mt-2">
-                Revolutionizing the energy landscape with sustainable, high-efficiency EV charging solutions tailored to modern energy needs and environmental conservation.
+                {t('energyDescription')}
               </p>
             </div>
             <div
@@ -35,12 +37,11 @@ export const Carousel = () => {
               data-aos-anchor="[data-aos-id-blocks]"
             >
               <FontAwesomeIcon icon={faCar} beatFade size="2xl" />
-              <h4 className="mb-2">Automotive</h4>
+              <h4 className="mb-2">{t('automotiveTitle')}</h4>
               <p className="mt-2">
-                Leading the automotive electrification era with bespoke, advanced EV charging systems, enhancing the electric vehicle experience for all users.
+                {t('automotiveDescription')}
               </p>
             </div>
-
           </div>
         </div>
       </div>

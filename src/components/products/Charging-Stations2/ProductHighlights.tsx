@@ -1,32 +1,33 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-const ProductHighlights = () => {
+const ProductHighlights: React.FC = () => {
+  const { t } = useTranslation('pages-ProductHighlights3'); // Use the ProductHighlights namespace
+
   return (
     <div>
       <p className="p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
-        Highlights
+        {t('highlights')}
       </p>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">
-          Simple electric architecture via transformer on
-          MV connection. Parallel usage is possible.
+          {t('highlight1')}
         </li>
         <li className="list-group-item">
-          Plug-and-play installation, easy to relocate.
+          {t('highlight2')}
         </li>
         <li className="list-group-item">
-          Suitable for applications with strong grid
-          connection.
+          {t('highlight3')}
         </li>
         <li className="list-group-item">
-          Billing platform adaptable to local service.
+          {t('highlight4')}
         </li>
         <li className="list-group-item">
-          Open protocol for LED screen display.
+          {t('highlight5')}
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
-export default ProductHighlights
+export default ProductHighlights;

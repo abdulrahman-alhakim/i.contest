@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Carousel } from "../components/Carousel";
-import { Card } from "../components/Card";
-import bgImage from "../images/landpage.webp";
+import Card from "../components/Card";
+import backgroundVideo from "../videos/solar.mp4"; // Import your video file
 import "../style.css";
-import { Solution } from "../components/Solution";
+import Solution from "../components/Solution";
 import TurnKeyService from "../components/TurnKeyService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 interface HomePageProps {
   theme: string;
@@ -21,109 +22,65 @@ const scrollToTop = () => {
 };
 
 const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
-  // useEffect(() => {
-  //   const hash = window.location.hash;
-  //   if (hash === "#turnkey") {
-  //     const section = document.getElementById("turnkey");
-  //     if (section) {
-  //       const offset = 120;
-  //       const bodyRect = document.body.getBoundingClientRect().top;
-  //       const sectionRect = section.getBoundingClientRect().top;
-  //       const sectionPosition = sectionRect - bodyRect;
-  //       const offsetPosition = sectionPosition - offset;
+  const { t } = useTranslation('pages-HomePage');
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  //       window.scrollTo({
-  //         top: offsetPosition,
-  //         behavior: "smooth"
-  //       });
-  //     }
-  //   }
-  // }, []);
-
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 2; // Adjust playback speed if needed
+    }
+  }, []);
 
   return (
     <div>
-      <div className="vh-100">
-        <div className="container h-100 mobileMarginTop" >
-          <div className="row align-items-center h-100">
-
-            {/* Text Column */}
-            <div className="col-md-6 text-center text-md-start">
-              <p
-                className="mb-4 display-4"
-                data-aos="fade-up"
-                style={{ color: theme === 'light' ? 'rgb(32,98,98)' : '#7FFFD4' }}
-              >
-                <span>Welcome to I.CONTEST</span>
-              </p>
-              <p className="fs-4 " data-aos="fade-up" data-aos-delay="200" style={{ color: theme === 'light' ? 'rgb(32,98,98)' : '#E0FFFF' }}>
-                Our commitment is to drive the global shift to clean and stable energy with resilient power solutions...
-              </p>
-              {/* <div className="d-flex justify-content-center justify-content-md-start flex-wrap" data-aos="fade-up" data-aos-delay="400">
-                <a
-                  className="btn text-white mx-2 mb-2"
-                  style={{ backgroundColor: "rgb(32,98,98)" }}
-                  href="/about"
-                >
-                  About Us
-                </a>
-                <a
-                  className="btn bg-secondary text-white mx-2 mb-2"
-                  href='/contact'
-                >
-                  Contact Us
-                </a>
-              </div> */}
-            </div>
-
-            {/* Image Column */}
-            <div className="col-md-6 d-flex align-items-center justify-content-center">
-              <img src={bgImage} alt="Custom" className="img-fluid" />
-            </div>
+      <div className="position-relative vh-100 overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="position-absolute top-50 start-50 translate-middle min-vw-100 min-vh-100 w-auto h-auto"
+          style={{ objectFit: 'cover' }}
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-start mt-5 justify-content-center">
+          <div className="text-center text-white p-4">
+            <p
+              className="mb-4 display-4 text-light fw-bold fs-xl"
+              data-aos="fade-up"
+              style={{ textShadow: '2px 2px 8px #00796b, 0 0 25px #6A9C89, 0 0 5px #16423C' }}
+            >
+              {t('welcomeMessage')}
+            </p>
+            <p className="fs-3 text-light " data-aos="fade-up" data-aos-delay="200" style={{ textShadow: '1px 1px 4px #00796b, 0 0 25px #6A9C89, 0 0 5px #16423C' }}
+            >
+              {t('commitment')}
+            </p>
           </div>
         </div>
       </div>
 
-
+      {/* Rest of your component remains the same */}
       <Carousel />
 
-      <button onClick={scrollToTop} style={{
-        position: 'fixed',
-        bottom: '50px',
-        right: '30px',
-        zIndex: '99',
-        cursor: 'pointer',
-        border: 'none',
-        background: 'none'
-      }}>
-        <FontAwesomeIcon icon={faCircleArrowUp} size="2xl" style={{ color: "#309191", }} />
+      <button
+        onClick={scrollToTop}
+        className="position-fixed bottom-0 end-0 mb-4 me-4 bg-transparent border-0"
+        style={{ zIndex: 99 }}
+      >
+        <FontAwesomeIcon icon={faCircleArrowUp} size="2xl" style={{ color: "#309191" }} />
       </button>
 
       <TurnKeyService theme={theme} setTheme={setTheme} />
 
-      <Card theme={theme} setTheme={setTheme} />
+      <Card />
 
-      <Solution theme={theme} setTheme={setTheme} />
+      <Solution />
 
-
-      {/* <div className="container-fluid">
-        <div className="row">
-          <div className="col-12 col-md-8 d-flex align-items-center justify-content-end">
-            <p>Contact us here please</p>
-          </div>
-          <div className="col-12 col-md-4 d-flex align-items-center justify-content-start">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => window.location.href = '/contact'}>
-              Contact Us
-            </button>
-          </div>
-        </div>
-      </div> */}
-
-
-    </div >
+    </div>
   );
 };
 

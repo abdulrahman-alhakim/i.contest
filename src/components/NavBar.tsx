@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import Dropdown from 'react-bootstrap/Dropdown';
 import { Link, useLocation } from "react-router-dom";
-import ThemeToggle from "./ThemeToggle";
+import { useTranslation } from "react-i18next";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface NavBarProps {
   theme: string;
@@ -12,6 +12,7 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
+  const { t } = useTranslation('pages-NavBar'); // Use the NavBar namespace
   const [textColor, setTextColor] = useState("light");
   const [expanded, setExpanded] = useState(false);
   const [activeLink, setActiveLink] = useState<string>("/");
@@ -51,9 +52,13 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
   return (
     <>
       <Navbar
-        bg="light" expand="md"
-        className={`custom-navbar fixed-top ${expanded ? "expanded" : ""}`}
-      ><Navbar.Brand as={Link} to="/" className=" ms-3 ">
+        expand="md"
+        className={`custom-navbar light-mode fixed-top ${expanded ? "expanded" : ""}`}
+      >
+        <div className="align-items-end d-md-none mx-1">
+          <LanguageSwitcher />
+        </div>
+        <Navbar.Brand as={Link} to="/" className=" ms-3">
           <img
             src={require("../images/iconteststereo.png")}
             width="225"
@@ -63,47 +68,92 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             onClick={() => (window.scrollTo(0, 0))}
           />
         </Navbar.Brand>
-        <div className="container d-flex flex-row m-2 justify-content-Between align-items-center d-md-none">
 
+        <div className="container d-flex flex-row m-2 justify-content-between align-items-center d-md-none">
           <div>
             <Nav.Link as={Link} to="/" className={linkClass("/")} onClick={() => { handleLinkClick("/"); window.scrollTo(0, 0); }}>
-              Home
+              {t('home')}
             </Nav.Link>
           </div>
           <div>
             <Nav.Link as={Link} to="/products" className={linkClass("/products")} onClick={() => { handleLinkClick("/products"); window.scrollTo(0, 0); }}>
-              Products
+              {t('products')}
             </Nav.Link>
           </div>
           <div>
-            <Nav.Link as={Link} to="/about" className="text-center" onClick={() => { handleLinkClick("/about"); window.scrollTo(0, 0); }}>
-              About Us
+            <Nav.Link as={Link} to="/about" className={linkClass("/about")} onClick={() => { handleLinkClick("/about"); window.scrollTo(0, 0); }}>
+              {t('aboutUs')}
             </Nav.Link>
           </div>
           <div>
-            <Nav.Link as={Link} to="/contact" className="text-center" onClick={() => { handleLinkClick("/contact"); window.scrollTo(0, 0); }}>
-              Contact Us
+            <Nav.Link as={Link} to="/contact" className={linkClass("/contact")} onClick={() => { handleLinkClick("/contact"); window.scrollTo(0, 0); }}>
+              {t('contactUs')}
             </Nav.Link>
           </div>
         </div>
 
-        <Navbar.Collapse id="basic-navbar-nav " className="custom-dropdown-menu px-2 justify-content-center">
-          <Nav className="mr-auto nav nav-pills" style={{ border: "1px solid #206262", borderRadius: "10px", width: "auto", padding: "3px" }}>
-            <Nav.Link as={Link} to="/" className={linkClass("/")} onClick={() => { handleLinkClick("/"); window.scrollTo(0, 0); }}>
-              Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="/products" className={linkClass("/products")} onClick={() => { handleLinkClick("/products"); window.scrollTo(0, 0); }}>
-              Products
-            </Nav.Link>
-            <Nav.Link as={Link} to="/about" className={linkClass("/about")} onClick={() => { handleLinkClick("/about"); }}>
-              About Us
-            </Nav.Link>
-            <Nav.Link as={Link} to="/contact" className={linkClass("/contact")} onClick={() => { handleLinkClick("/contact"); }}>
-              Contact Us
-            </Nav.Link>
-          </Nav>
+        <Navbar.Collapse id="basic-navbar-nav" className="custom-dropdown-menu light-mode px-2 justify-content-center">
+          <div className="container-fluid">
+            <div className="row justify-content-center align-items-center">
+              {/* Navigation Links */}
+              <div className="col-auto">
+                <Nav
+                  className="nav nav-pills"
+                  style={{ padding: "3px" }}
+                >
+                  <Nav.Link
+                    as={Link}
+                    to="/"
+                    className={linkClass("/")}
+                    onClick={() => {
+                      handleLinkClick("/");
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    {t('home')}
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/products"
+                    className={linkClass("/products")}
+                    onClick={() => {
+                      handleLinkClick("/products");
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    {t('products')}
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/about"
+                    className={linkClass("/about")}
+                    onClick={() => {
+                      handleLinkClick("/about");
+                    }}
+                  >
+                    {t('aboutUs')}
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/contact"
+                    className={linkClass("/contact")}
+                    onClick={() => {
+                      handleLinkClick("/contact");
+                    }}
+                  >
+                    {t('contactUs')}
+                  </Nav.Link>
+                <LanguageSwitcher />
+                </Nav>
+              </div>
+
+              {/* Language Switcher */}
+              <div className="col-auto">
+              </div>
+            </div>
+          </div>
         </Navbar.Collapse>
-        {/* <ThemeToggle theme={theme} setTheme={setTheme} /> */}
+
       </Navbar>
     </>
   );

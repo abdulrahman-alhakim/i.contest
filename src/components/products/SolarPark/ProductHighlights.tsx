@@ -1,34 +1,36 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-const ProductHighlights = () => {
+const ProductHighlights: React.FC = () => {
+  const { t } = useTranslation('pages-ProductHighlights12'); // Use the ProductHighlights namespace
+
   return (
     <div>
       <p className="p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3">
-        Highlights
+        {t('highlights')}
       </p>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">
-          Flexibly configurable and extendable.
+          {t('highlight1')}
         </li>
         <li className="list-group-item">
-          Provide agreeable environment for vehicle parking and electrical facilities.
+          {t('highlight2')}
         </li>
         <li className="list-group-item">
-          Green energy generator.
+          {t('highlight3')}
         </li>
         <li className="list-group-item">
-          Standard design, free of delicate on-site mechanical adjustment and installation.
+          {t('highlight4')}
         </li>
         <li className="list-group-item">
-          Anti strong wind design.
+          {t('highlight5')}
         </li>
         <li className="list-group-item">
-          Industrial aesthetics
+          {t('highlight6')}
         </li>
-
       </ul>
     </div>
-  )
+  );
 }
 
 export default ProductHighlights;

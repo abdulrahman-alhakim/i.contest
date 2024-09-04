@@ -1,0 +1,15 @@
+{
+  "getInTouch": "Get In Touch",
+  "description": "Please fill out the form below to send us an email and we will get back to you as soon as possible.",
+  "nameLabel": "Name",
+  "emailLabel": "Email",
+  "inquiryTypeLabel": "Inquiry Type",
+  "privateOption": "Private",
+  "commercialOption": "Commercial",
+  "messageLabel": "Message",
+  "sendMessageButton": "Send Message",
+  "loadingMessage": "Loading...",
+  "emailSuccess": "Email sent successfully!",
+  "emailFailure": "Failed to send the message.",
+  "acknowledgmentFailure": "Failed to send acknowledgment email."
+}

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useTranslation } from 'react-i18next';
 
 function ImpressumModal() {
+    const { t } = useTranslation('components-ImpressumModal'); // Use the ImpressumModal namespace
     const [show, setShow] = useState(false);
 
     const handleShow = () => setShow(true);
@@ -12,43 +14,38 @@ function ImpressumModal() {
     return (
         <>
             <Button variant="link" onClick={handleShow} id="privacy-policy-btn" style={{ color: 'white', padding: "0" }}>
-                Impressum
+                {t('buttonText')}
             </Button>
 
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title>Impressum</Modal.Title>
+                    <Modal.Title>{t('modalTitle')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {/* Insert your privacy policy content here */}
                     <div>
-                        <h3>I-CONTEST UG</h3>
+                        <h3>{t('companyName')}</h3>
                         
-
                         <ul>
-                            <li>Hauptstraße 30a</li>
-                            <li>38446 Wolfsburg</li>
-                            <li>Germany</li>
+                            <li>{t('addressLine1')}</li>
+                            <li>{t('addressLine2')}</li>
+                            <li>{t('addressLine3')}</li>
                         </ul>
 
+                        <p>{t('phone')}</p>
+                        <p>{t('email')}</p>
 
-                        <p>Tel: +49 157 51751551</p>
-                        <p>Email: info@i-contest.eu</p>
-
-                        <p>CEO: Eng. Faisal Hakim</p>
+                        <p>{t('ceo')}</p>
 
                         {/* <p>VAT id number: xxxxxxxxx</p> */}
 
-                        <p>Handelsregister: Amtsgericht Hildesheim HRB 204599</p>
-                        <p>EU Commission platform for online dispute resolution: <a href="https://ec.europa.eu/odr">https://ec.europa.eu/odr</a> </p>
-                        <p>We are neither obliged nor willing to participate in a dispute resolution procedure before a consumer arbitration board.</p>
-
-
+                        <p>{t('tradeRegister')}</p>
+                        <p>{t('disputeResolution')} <a href={t('disputeLink')} target="_blank" rel="noopener noreferrer">{t('disputeLink')}</a> </p>
+                        <p>{t('disputeNote')}</p>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        {t('closeButton')}
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -57,4 +54,3 @@ function ImpressumModal() {
 }
 
 export default ImpressumModal;
-
