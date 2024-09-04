@@ -19,6 +19,14 @@ body[lang="ar"] {
     position: relative;
   }
 }
+@media (max-width: 768px) {
+  .active-link {
+    border: 2px solid #00796b !important;
+    border-radius: 10px !important;
+    background-color: #00796b !important;
+    color: white !important;
+    }
+  }  
 
 .custom-font-large {
   font-size: 6rem;

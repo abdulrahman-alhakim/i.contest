@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LanguageSwitcher from "./LanguageSwitcher";
-
+import '../index.css';
 interface NavBarProps {
   theme: string;
   setTheme: (theme: string) => void;
@@ -24,6 +24,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
 
   useEffect(() => {
     setActiveLink(location.pathname);
+    linkClass(location.pathname);
   }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
@@ -47,7 +48,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
   };
 
   const linkClass = (path: string) =>
-    `nav-link ${activeLink === path ? "active-link" : ""}`;
+    `nav-link ${activeLink === path ? "active-link px-2 fw-bold" : ""}`;
 
   return (
     <>
@@ -55,10 +56,8 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
         expand="md"
         className={`custom-navbar light-mode fixed-top ${expanded ? "expanded" : ""}`}
       >
-        <div className="align-items-end d-md-none mx-1">
-          <LanguageSwitcher />
-        </div>
-        <Navbar.Brand as={Link} to="/" className=" ms-3">
+
+        <Navbar.Brand as={Link} to="/" className=" ms-3 mb-2">
           <img
             src={require("../images/iconteststereo.png")}
             width="225"
@@ -68,20 +67,23 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             onClick={() => (window.scrollTo(0, 0))}
           />
         </Navbar.Brand>
+        <div className="align-items-end d-md-none mx-1">
+          <LanguageSwitcher />
+        </div>
 
-        <div className="container d-flex flex-row m-2 justify-content-between align-items-center d-md-none">
+        <div className="container d-flex flex-row justify-content-between align-items-center d-md-none mb-1">
           <div>
             <Nav.Link as={Link} to="/" className={linkClass("/")} onClick={() => { handleLinkClick("/"); window.scrollTo(0, 0); }}>
               {t('home')}
             </Nav.Link>
           </div>
           <div>
-            <Nav.Link as={Link} to="/products" className={linkClass("/products")} onClick={() => { handleLinkClick("/products"); window.scrollTo(0, 0); }}>
+            <Nav.Link as={Link} to="/products" className={linkClass("/products")} onClick={() => { handleLinkClick("/products"); window.scrollTo(0, 0); }} >
               {t('products')}
             </Nav.Link>
           </div>
           <div>
-            <Nav.Link as={Link} to="/about" className={linkClass("/about")} onClick={() => { handleLinkClick("/about"); window.scrollTo(0, 0); }}>
+            <Nav.Link as={Link} to="/about" className={linkClass("/about")} onClick={() => { handleLinkClick("/about"); window.scrollTo(0, 0); }} >
               {t('aboutUs')}
             </Nav.Link>
           </div>
@@ -143,7 +145,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
                   >
                     {t('contactUs')}
                   </Nav.Link>
-                <LanguageSwitcher />
+                  <LanguageSwitcher />
                 </Nav>
               </div>
 

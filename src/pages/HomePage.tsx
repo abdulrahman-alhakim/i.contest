@@ -46,10 +46,10 @@ const HomePage: React.FC<HomePageProps> = ({ theme, setTheme }) => {
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-start mt-5 justify-content-center">
+        <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-start mobileMarginTop justify-content-center">
           <div className="text-center text-white p-4">
             <p
-              className="mb-4 display-4 text-light fw-bold fs-xl"
+              className="my-4 display-4 text-light fw-bold fs-xl"
               data-aos="fade-up"
               style={{ textShadow: '2px 2px 8px #00796b, 0 0 25px #6A9C89, 0 0 5px #16423C' }}
             >
