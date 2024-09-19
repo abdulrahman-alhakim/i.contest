@@ -9,7 +9,15 @@ body[lang="ar"] {
   scroll-behavior: smooth;
 }
 
-@media (min-width: 768px) {
+
+@media (min-width: 780px) {
+  .marginNav{
+      margin-left: 140px;
+      margin-right: 150px;
+  }    
+}
+
+@media (min-width: 1080px) {
   .active-link {
     background-color: rgb(32, 98, 98) !important;
     border-radius: 30px;
@@ -19,7 +27,7 @@ body[lang="ar"] {
     position: relative;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   .active-link {
     border: 2px solid #00796b !important;
     border-radius: 10px !important;

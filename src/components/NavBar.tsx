@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LanguageSwitcher from "./LanguageSwitcher";
 import '../index.css';
+import { use } from "i18next";
 interface NavBarProps {
   theme: string;
   setTheme: (theme: string) => void;
@@ -50,6 +49,12 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
   const linkClass = (path: string) =>
     `nav-link ${activeLink === path ? "active-link px-2 fw-bold" : ""}`;
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+  }, []);
+ 
+
   return (
     <>
       <Navbar
@@ -62,7 +67,7 @@ const NavBar: React.FC<NavBarProps> = ({ theme, setTheme }) => {
             src={require("../images/iconteststereo.png")}
             width="225"
             height="40"
-            className="d-inline-block"
+            className="d-inline-block marginNav"
             alt="Logo"
             onClick={() => (window.scrollTo(0, 0))}
           />

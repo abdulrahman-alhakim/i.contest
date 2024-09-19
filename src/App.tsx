@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
 import CookieConsent from 'react-cookie-consent';
 import { Button } from 'react-bootstrap';
-import PrivacyPolicyModal from './components/PrivacyPolicyModal';
+// import PrivacyPolicyModal from './components/PrivacyPolicyModal';
 import AboutUsPage from './pages/AboutUsPage';
 import ProductsPage from './pages/ProductsPage';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -19,8 +19,10 @@ const App: React.FC = () => {
   const [theme, setTheme] = useState<string>('light');
   const { i18n } = useTranslation();
 
+  
+
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'light';    
     setTheme(savedTheme);
   }, []);
 
@@ -30,6 +32,12 @@ const App: React.FC = () => {
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center center';
   }, [theme]);
+  
+    useEffect(() => {
+    const savedLanguage = localStorage.getItem('language') || 'en';
+    i18n.changeLanguage(savedLanguage);
+    document.documentElement.dir = savedLanguage === 'ar' ? 'rtl' : 'ltr';
+  }, [i18n]);
 
   return (
 
