@@ -13,3 +13,8 @@
     border-color: #005349; /* Same as the active state or different as per your design */
     box-shadow: 0 0 0 0.1rem rgba(234,232,237, 0.25); /* Optional, add custom box shadow */
 }
+
+.accordion-button::after {
+  content: none !important; /* Removes the default icon */
+}
+

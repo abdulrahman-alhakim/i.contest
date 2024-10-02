@@ -5,24 +5,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useTranslation } from 'react-i18next';
 
 function PrivacyPolicyModal() {
-    const { t } = useTranslation('components-PrivacyPolicyModal'); // Use the PrivacyPolicyModal namespace
+    const { t, i18n } = useTranslation('components-PrivacyPolicyModal'); // Use the PrivacyPolicyModal namespace
     const [show, setShow] = useState(false);
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
+
+    // Determine the text direction based on the current language
+    const isRTL = i18n.language === 'ar'; // assuming 'ar' for Arabic, adjust based on your language codes
+    const direction = isRTL ? 'rtl' : 'ltr';
 
     return (
         <>
             <Button variant="link" onClick={handleShow} id="privacy-policy-btn" style={{ color: 'white', padding: "0" }}>
                 {t('buttonText')}
             </Button>
-            <Modal show={show} onHide={handleClose} size="lg">
-                <Modal.Header closeButton>
+            <Modal show={show} onHide={handleClose} size="lg" dir={direction}>
+                <Modal.Header>
                     <Modal.Title>{t('modalTitle')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {/* Insert your privacy policy content here */}
-                    <div>
+                    <div dir={direction}>
                         <p className='fs-3'>{t('privacyPolicyHeader')}</p>
                         <p>{t('lastUpdated')}</p>
                         <p>{t('intro')}</p>

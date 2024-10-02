@@ -20,7 +20,7 @@ const AboutUsPage: React.FC<AboutUsPageProps> = ({ theme, setTheme }) => {
   const { t } = useTranslation('pages-AboutUsPage'); // Use the AboutUs namespace
 
   return (
-    <div className="d-flex justify-content-center align-items-center mx-5">
+    <div className="d-flex justify-content-center align-items-center m-5">
       <div className="mobileMarginTop" style={{ maxWidth: '1200px', width: '100%' }}>
         <div className="row">
           <div className="col-12 col-md-6">
