@@ -29,7 +29,7 @@ function ImpressumModal() {
                     <div dir={direction}>
                         <h3>{t('companyName')}</h3>
                         
-                        <ul>
+                        <ul className="list-unstyled">
                             <li>{t('addressLine1')}</li>
                             <li>{t('addressLine2')}</li>
                             <li>{t('addressLine3')}</li>

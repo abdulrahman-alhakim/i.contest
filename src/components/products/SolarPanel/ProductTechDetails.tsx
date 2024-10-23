@@ -5,7 +5,7 @@ import chart2 from '../../../images/special-figures/chart.png'
 
 const ProductTechDetails = () => {
   return (
-    <div className="container" style={{ maxWidth: "100%" }}>
+    <div className="container" style={{ maxWidth: "100%" }} dir="ltr">
       <p className="p-2 text-success fw-bold bg-success-subtle border border-success-subtle rounded-3">
         TECHNICAL DETAILS
       </p>
